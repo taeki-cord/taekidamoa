@@ -193,7 +193,17 @@
     .pledge-form input:focus { outline: 2px solid var(--accent); border-color: transparent; }
     .pledge-form .btn { padding: 12px 22px; font-family: inherit; }
     .pledge-form .btn:disabled { opacity: .6; cursor: default; }
-    #pledgeMsg { color: var(--muted); font-size: 16px; margin: -12px 0 20px; min-height: 1.5em; }
+    .pledge-form { margin-bottom: 16px; }
+    .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .chips > span { color: var(--muted); font-size: 16px; }
+    #chipList { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font: inherit; font-size: 15px; color: var(--text);
+      background: var(--accent-soft); border: 1px solid transparent;
+      border-radius: 999px; padding: 6px 14px; cursor: pointer; text-align: left;
+    }
+    .chip:hover { border-color: var(--accent); }
+    #pledgeMsg { color: var(--muted); font-size: 16px; margin: 0 0 20px; min-height: 1.5em; }
     .pledges { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
     .pledge {
       background: var(--surface); border: 1px solid var(--line);
@@ -326,14 +336,18 @@
   <section class="block" id="pledge" style="padding-top: 0;">
     <div class="wrap">
       <p class="eyebrow">안전 다짐 한마디</p>
-      <h2>오늘의 안전 다짐을 남겨주세요</h2>
-      <p class="lead">한 줄이면 충분합니다. 남겨주신 다짐은 방문하신 모든 분께 보입니다.</p>
+      <h2>오늘 저녁, 꼭 “다녀왔어”라고<br />말해야 하는 이유가 있으신가요?</h2>
+      <p class="lead">누군가에게 당신은 가장이고, 부모고, 믿음직한 동료입니다. 그 이유를 한 줄로 남겨주세요. 당신의 다짐이 오늘 다른 누군가를 멈춰 세웁니다.</p>
 
       <form class="pledge-form" id="pledgeForm">
         <input id="pName" maxlength="20" placeholder="이름 또는 별명" required />
-        <input id="pText" maxlength="100" placeholder="예) 운전 중엔 휴대폰 절대 안 봅니다" required />
-        <button class="btn" type="submit" id="pBtn">다짐 남기기</button>
+        <input id="pText" maxlength="100" placeholder="나의 안전 다짐 한 줄" required />
+        <button class="btn" type="submit" id="pBtn">내 다짐 남기기</button>
       </form>
+      <div class="chips">
+        <span>막막하시면 골라보세요 👉</span>
+        <div id="chipList"></div>
+      </div>
       <p id="pledgeMsg"></p>
       <div class="pledges" id="pledgeList"></div>
     </div>
@@ -457,13 +471,37 @@
     const API = SUPABASE_URL + '/rest/v1/pledges';
     const headers = { apikey: SUPABASE_KEY, 'Content-Type': 'application/json' };
 
+    // 예시 다짐: 누르면 입력칸에 자동으로 채워집니다
+    const examples = [
+      '딸 결혼식엔 두 발로 걸어 들어가겠습니다',
+      '손주 안아줄 허리, 오늘부터 무릎 굽혀 듭니다',
+      '“다녀올게” 약속은 “다녀왔어”로 지키겠습니다',
+      '운전대 잡으면 카톡은 도착해서 봅니다',
+      '한잔했으면 대리비가 제일 싼 보험입니다',
+      '가스 밸브 확인 3초, 후회는 평생입니다',
+      '“괜찮겠지” 한 번 참으면 가족이 평생 편합니다',
+      '내가 다치면 우리 집 월급도 멈춥니다. 안전 먼저!',
+      '퇴근길 “다 왔다” 싶을 때 한 번 더 천천히',
+      '정년까지 다친 데 없이 웃으며 퇴직하겠습니다'
+    ];
+    const pText = document.getElementById('pText');
+    const chipList = document.getElementById('chipList');
+    examples.sort(() => Math.random() - 0.5).slice(0, 4).forEach(text => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.textContent = text;
+      chip.addEventListener('click', () => { pText.value = text; pText.focus(); });
+      chipList.appendChild(chip);
+    });
+
     const pledgeList = document.getElementById('pledgeList');
     const pledgeMsg = document.getElementById('pledgeMsg');
 
     function showPledges(rows) {
       pledgeList.innerHTML = '';
       if (!rows.length) {
-        pledgeMsg.textContent = '아직 다짐이 없습니다. 첫 번째로 남겨주세요!';
+        pledgeMsg.textContent = '아직 아무도 없습니다. 첫 번째 다짐의 주인공이 되어주세요!';
         return;
       }
       rows.forEach(r => {
