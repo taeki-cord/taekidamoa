@@ -325,6 +325,7 @@
       <p>집, 길, 일터에서 꼭 챙겨야 할 기본 수칙을 한 페이지에 정리했습니다. 오늘 5분만 투자해서 우리 집 안전 점수부터 확인해 보시죠.</p>
       <a href="#check" class="btn">내 안전 점수 확인하기</a>
       <a href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" class="btn ghost" target="_blank" rel="noopener">▶ 쇼츠 보러가기</a>
+      <a href="#lotto" class="btn ghost" id="heroLotto">🍀 행운 번호 뽑기</a>
       <p class="visits" id="visits"></p>
     </div>
   </section>
@@ -738,6 +739,10 @@
         box.appendChild(row);
       });
       document.getElementById('lottoWish').hidden = false;
+    });
+    // 첫 화면 버튼: 행운 번호 코너로 내려가면서 바로 번호를 뽑아줍니다
+    document.getElementById('heroLotto').addEventListener('click', () => {
+      document.getElementById('lottoBtn').click();
     });
   </script>
 </body>
