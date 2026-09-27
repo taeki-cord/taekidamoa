@@ -101,6 +101,8 @@
     .btn:hover { filter: brightness(1.08); }
     .btn.ghost { background: transparent; border: 2px solid #52606d; margin-left: 8px; }
     .btn.yt { background: #ff0000; }
+    .visits { margin-top: 28px; color: #cbd2d9; font-size: 17px; min-height: 1.7em; }
+    .visits strong { color: #fff; font-size: 20px; }
     .yt-nav {
       background: #ff0000; color: #fff; text-decoration: none;
       font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 8px; white-space: nowrap;
@@ -268,6 +270,7 @@
       <p>집, 길, 일터에서 꼭 챙겨야 할 기본 수칙을 한 페이지에 정리했습니다. 오늘 5분만 투자해서 우리 집 안전 점수부터 확인해 보시죠.</p>
       <a href="#check" class="btn">내 안전 점수 확인하기</a>
       <a href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" class="btn ghost" target="_blank" rel="noopener">▶ 쇼츠 보러가기</a>
+      <p class="visits" id="visits"></p>
     </div>
   </section>
 
@@ -590,6 +593,41 @@
     });
 
     loadPledges();
+
+    // 방문자 수: 같은 기기는 하루에 한 번만 셉니다 (새로고침으로 부풀지 않게)
+    function visitSource() {
+      const from = new URLSearchParams(location.search).get('from');
+      if (from === 'yt' || from === 'youtube') return 'youtube';
+      const ref = document.referrer;
+      if (!ref) return 'direct';
+      if (/youtube\.com|youtu\.be/.test(ref)) return 'youtube';
+      if (/google\.|naver\.com|daum\.net|bing\.com/.test(ref)) return 'search';
+      return 'other';
+    }
+
+    async function countVisit() {
+      const today = new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
+      let already = false;
+      try { already = localStorage.getItem('visit-day') === today; } catch (e) {}
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/rpc/record_visit', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ src: visitSource(), counted: !already })
+        });
+        if (!res.ok) throw new Error(res.status);
+        const { today: t, total } = await res.json();
+        try { localStorage.setItem('visit-day', today); } catch (e) {}
+        const el = document.getElementById('visits');
+        el.innerHTML = '👀 오늘 <strong></strong>명 · 누적 <strong></strong>명이 함께했습니다';
+        const nums = el.querySelectorAll('strong');
+        nums[0].textContent = Number(t).toLocaleString('ko-KR');
+        nums[1].textContent = Number(total).toLocaleString('ko-KR');
+      } catch (e) {
+        // 집계 실패해도 페이지 이용에는 지장 없도록 조용히 넘어갑니다
+      }
+    }
+    countVisit();
   </script>
 </body>
 </html>
