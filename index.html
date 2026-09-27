@@ -262,6 +262,28 @@
     .pledge p { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
     .pledge small { color: var(--muted); font-size: 15px; }
 
+    /* 행운 번호 */
+    .lotto-sets { display: grid; gap: 12px; margin-top: 24px; }
+    .lotto-set {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 14px; padding: 12px 16px;
+    }
+    .lotto-set .label { color: var(--muted); font-weight: 700; width: 1.6em; }
+    .ball {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px; color: #1f2933;
+    }
+    /* 동행복권 공 색상: 1~10 노랑, 11~20 파랑, 21~30 빨강, 31~40 회색, 41~45 초록 */
+    .ball.c1 { background: #fbc400; }
+    .ball.c2 { background: #69c8f2; }
+    .ball.c3 { background: #ff7272; }
+    .ball.c4 { background: #aaaaaa; }
+    .ball.c5 { background: #b0d840; }
+    .lotto-wish { font-size: 24px; font-weight: 900; color: var(--safe); margin-top: 20px; }
+    .lotto-note { color: var(--muted); font-size: 15px; margin-top: 14px; }
+
     footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15px; }
 
     @media (max-width: 640px) {
@@ -270,6 +292,8 @@
       .grid { grid-template-columns: 1fr; }
       .shorts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .pledge-form { grid-template-columns: 1fr; }
+      .ball { width: 38px; height: 38px; font-size: 16px; }
+      .lotto-set { gap: 6px; padding: 10px 12px; }
       .hero { padding: 56px 0 64px; }
       .hero p { font-size: 18px; }
       .btn.ghost { margin: 10px 0 0; }
@@ -287,6 +311,7 @@
         <li><a class="menu" href="#check">안전 점검</a></li>
         <li><a class="menu" href="#pledge">안전 다짐</a></li>
         <li><a class="menu" href="#call">긴급 연락처</a></li>
+        <li><a class="menu" href="#lotto">행운 번호</a></li>
       </ul>
       <a class="yt-nav" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">▶ 유튜브</a>
     </div>
@@ -454,6 +479,19 @@
         <a class="phone" href="tel:1339"><strong>1339</strong><span>질병관리청 콜센터</span></a>
         <a class="phone" href="tel:110"><strong>110</strong><span>정부 민원 안내</span></a>
       </div>
+    </div>
+  </section>
+
+  <!-- 행운 번호 -->
+  <section class="block" id="lotto">
+    <div class="wrap">
+      <p class="eyebrow">쉬어가는 코너</p>
+      <h2>오늘의 행운 번호 뽑기</h2>
+      <p class="lead">버튼을 누르면 1~45 중에서 번호 6개씩, 5세트를 뽑아드립니다.</p>
+      <button type="button" class="btn" id="lottoBtn">🎯 번호 뽑기</button>
+      <div class="lotto-sets" id="lottoSets" aria-live="polite"></div>
+      <p class="lotto-wish" id="lottoWish" hidden>🍀 행운을 빕니다!</p>
+      <p class="lotto-note">재미로 보는 무작위 번호입니다. 당첨을 보장하지 않으니 가볍게 즐겨주세요.</p>
     </div>
   </section>
 
@@ -677,6 +715,30 @@
       }
     }
     countVisit();
+
+    // 행운 번호 뽑기
+    function drawLottoSet() {
+      const nums = new Set();
+      while (nums.size < 6) nums.add(Math.floor(Math.random() * 45) + 1);
+      return [...nums].sort((a, b) => a - b);
+    }
+    document.getElementById('lottoBtn').addEventListener('click', () => {
+      const box = document.getElementById('lottoSets');
+      box.innerHTML = '';
+      'ABCDE'.split('').forEach(label => {
+        const row = document.createElement('div');
+        row.className = 'lotto-set';
+        row.innerHTML = '<span class="label">' + label + '</span>';
+        drawLottoSet().forEach(n => {
+          const ball = document.createElement('span');
+          ball.className = 'ball c' + (Math.floor((n - 1) / 10) + 1);
+          ball.textContent = n;
+          row.appendChild(ball);
+        });
+        box.appendChild(row);
+      });
+      document.getElementById('lottoWish').hidden = false;
+    });
   </script>
 </body>
 </html>
