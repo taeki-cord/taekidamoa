@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>안전과 사람</title>
   <meta name="description" content="일상 속 안전 수칙과 긴급 연락처를 한눈에 정리한 페이지" />
+  <!-- 카카오톡·SNS 공유 미리보기 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="안전과 사람" />
+  <meta property="og:title" content="안전과 사람 | 우리 가족 안전 가이드" />
+  <meta property="og:description" content="집, 길, 일터에서 꼭 챙겨야 할 안전 수칙과 긴급 연락처를 한 페이지에 정리했습니다." />
+  <meta property="og:url" content="https://taeki-cord.github.io/taekidamoa/" />
+  <meta property="og:image" content="https://taeki-cord.github.io/taekidamoa/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -19,8 +29,10 @@
       --accent-soft: #fff1e6;
       --safe: #2b8a3e;
       --safe-soft: #ebfbee;
-      --hero: #1f2933;
+      --hero: #1c4e8f;
       --hero-text: #ffffff;
+      --hero-sub: #d0e2f7;
+      --hero-em: #ffd43b;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -33,8 +45,10 @@
         --accent-soft: #3a2616;
         --safe: #51cf66;
         --safe-soft: #17301d;
-        --hero: #0c0f12;
+        --hero: #0f2a4a;
         --hero-text: #ffffff;
+        --hero-sub: #d0e2f7;
+        --hero-em: #ffd43b;
       }
     }
 
@@ -64,9 +78,9 @@
       height: 60px; gap: 12px;
     }
     .logo { color: var(--hero-text); font-weight: 900; font-size: 20px; text-decoration: none; }
-    .logo span { color: var(--accent); }
+    .logo span { color: var(--hero-em); }
     .nav ul { display: flex; gap: 20px; list-style: none; }
-    .nav a.menu { color: #cbd2d9; text-decoration: none; font-size: 16px; }
+    .nav a.menu { color: var(--hero-sub); text-decoration: none; font-size: 16px; }
     .nav a.menu:hover { color: #fff; }
 
     /* 히어로 */
@@ -89,8 +103,8 @@
       line-height: 1.3;
       margin-bottom: 20px;
     }
-    .hero h1 em { font-style: normal; color: var(--accent); }
-    .hero p { font-size: 20px; color: #cbd2d9; max-width: 620px; margin-bottom: 32px; }
+    .hero h1 em { font-style: normal; color: var(--hero-em); }
+    .hero p { font-size: 20px; color: var(--hero-sub); max-width: 620px; margin-bottom: 32px; }
     .btn {
       display: inline-block;
       background: var(--accent); color: #fff;
@@ -99,9 +113,9 @@
       text-decoration: none; border: none; cursor: pointer;
     }
     .btn:hover { filter: brightness(1.08); }
-    .btn.ghost { background: transparent; border: 2px solid #52606d; margin-left: 8px; }
+    .btn.ghost { background: transparent; border: 2px solid rgba(255,255,255,.55); margin-left: 8px; }
     .btn.yt { background: #ff0000; }
-    .visits { margin-top: 28px; color: #cbd2d9; font-size: 17px; min-height: 1.7em; }
+    .visits { margin-top: 28px; color: var(--hero-sub); font-size: 17px; min-height: 1.7em; }
     .visits strong { color: #fff; font-size: 20px; }
     .yt-nav {
       background: #ff0000; color: #fff; text-decoration: none;
@@ -115,12 +129,27 @@
       border-radius: 20px; padding: 40px 32px;
       display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
     }
-    .channel .eyebrow { color: #ff6b6b; }
+    .channel .eyebrow { color: #ffa8a8; }
     .channel h2 { color: var(--hero-text); }
-    .channel p.desc { color: #cbd2d9; max-width: 520px; }
+    .channel p.desc { color: var(--hero-sub); max-width: 520px; }
     .channel .handle { display: inline-block; margin-top: 12px; font-weight: 700; color: #fff; }
     .channel .actions { display: flex; flex-direction: column; gap: 10px; }
     .channel .actions .btn { text-align: center; margin: 0; }
+
+    /* 쇼츠 영상 */
+    .shorts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .shorts iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      border-radius: 16px;
+      background: var(--hero);
+    }
 
     /* 공통 섹션 */
     section.block { padding: 72px 0; }
@@ -239,6 +268,7 @@
       body { font-size: 17px; }
       .nav ul { display: none; }
       .grid { grid-template-columns: 1fr; }
+      .shorts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .pledge-form { grid-template-columns: 1fr; }
       .hero { padding: 56px 0 64px; }
       .hero p { font-size: 18px; }
@@ -390,6 +420,22 @@
           <a class="btn yt" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp?sub_confirmation=1" target="_blank" rel="noopener">구독하기</a>
           <a class="btn ghost" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">쇼츠 전체 보기</a>
         </div>
+      </div>
+
+      <!-- 새 쇼츠를 올리면 iframe 한 덩어리를 복사해 embed/ 뒤의 영상 ID만 바꾸면 됩니다 -->
+      <div class="shorts">
+        <iframe src="https://www.youtube-nocookie.com/embed/v9Mda15sG1A" title="안전 쇼츠 1" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/JtkOf-NSSzI" title="안전 쇼츠 2" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/0JLuagDY7GM" title="안전 쇼츠 3" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/EaM05x1NpYo" title="안전 쇼츠 4" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </section>
