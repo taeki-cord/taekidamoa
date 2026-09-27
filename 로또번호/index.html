@@ -1,85 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 추천</title>
-    <style>
-        body {
-            font-family: '맑은 고딕', sans-serif;
-            text-align: center;
-            background: #f4f6f8;
-            padding: 50px;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #2980b9;
-        }
-        .set {
-            margin-top: 20px;
-        }
-        .ball {
-            display: inline-block;
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
-            border-radius: 50%;
-            background: #ffcc00;
-            margin: 5px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>행운 번호 뽑기 | 안전과 사람</title>
+  <!-- 로또 번호 추천기는 첫 화면의 '행운 번호' 코너로 옮겼습니다 -->
+  <meta http-equiv="refresh" content="0; url=../#lotto" />
+  <link rel="canonical" href="../#lotto" />
 </head>
 <body>
-
-<h1>🎯 로또 번호 추천기</h1>
-<p>버튼을 누르면 5세트 번호가 생성됩니다!</p>
-
-<button onclick="generateSets()">번호 뽑기</button>
-
-<div id="result"></div>
-
-<script>
-function generateOneSet() {
-    let numbers = [];
-
-    while(numbers.length < 6) {
-        let num = Math.floor(Math.random() * 45) + 1;
-        if(!numbers.includes(num)) {
-            numbers.push(num);
-        }
-    }
-
-    return numbers.sort((a, b) => a - b);
-}
-
-function generateSets() {
-    let resultHTML = "";
-
-    for(let i = 0; i < 5; i++) {
-        let set = generateOneSet();
-
-        resultHTML += '<div class="set">';
-        set.forEach(n => {
-            resultHTML += '<span class="ball">' + n + '</span>';
-        });
-        resultHTML += '</div>';
-    }
-
-    document.getElementById("result").innerHTML = resultHTML;
-}
-</script>
-
+  <p>페이지가 이동했습니다. <a href="../#lotto">행운 번호 뽑기 바로가기</a></p>
 </body>
 </html>
