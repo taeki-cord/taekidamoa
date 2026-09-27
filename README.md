@@ -24,3 +24,11 @@
 - 사이트 주소가 바뀌면 `index.html` 상단의 `og:url`, `og:image` 주소도 함께 바꿔야 미리보기가 정상적으로 나옵니다.
 - 쇼츠 영상은 `index.html`의 `<div class="shorts">` 안에 있습니다. 새 영상을 걸 때는 `iframe` 한 덩어리를 복사해서 `embed/` 뒤의 영상 ID만 바꾸면 됩니다. 영상 ID는 유튜브 스튜디오 주소 `studio.youtube.com/video/영상ID/edit`에서 확인할 수 있습니다.
 - **주인 모드:** 사이트 주소 끝에 `?owner=on`을 붙여 한 번 접속하면, 그 기기·브라우저는 방문자 수 집계에서 빠지고 방문자 수가 항상 보입니다. 해제는 `?owner=off`. 휴대폰·PC·브라우저마다 따로 한 번씩 켜야 합니다.
+- **공유 버튼:** 안전 점검 결과 아래와 맨 아래에 있습니다. 공유 링크 끝에는 `?from=share`가 붙어서, 공유로 들어온 방문이 따로 집계됩니다.
+- **방문 경로 표시:** 주소 끝에 `?from=yt`(유튜브), `?from=share`(공유)를 붙이면 경로별로 집계됩니다. 나머지는 검색·직접·기타로 자동 분류됩니다.
+
+## 검색 등록
+
+- `sitemap.xml` — 검색 사이트에 페이지 목록을 알려주는 파일입니다. 주소: `https://taeki-cord.github.io/taekidamoa/sitemap.xml`
+- 네이버 서치어드바이저·구글 서치콘솔에서 받은 확인 코드는 `index.html` 상단의 `naver-site-verification`, `google-site-verification` 줄에 넣습니다.
+- `robots.txt`는 사이트 주소의 맨 앞(`taeki-cord.github.io/robots.txt`)에만 둘 수 있어서 이 저장소에는 만들지 않았습니다. 없어도 검색 등록에는 문제가 없습니다.
