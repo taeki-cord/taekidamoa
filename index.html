@@ -692,22 +692,42 @@
 
     const SHOW_VISITS_FROM = 100; // 누적 방문자가 이 숫자 이상일 때만 화면에 표시
 
+    // 주인 모드: 주소 끝에 ?owner=on 을 붙여 한 번 접속하면 이 기기·브라우저는 방문자 수에서 빠집니다.
+    // 해제는 ?owner=off. 주인 모드에서는 방문자 수가 100명 전이라도 항상 보입니다.
+    function isOwner() {
+      const params = new URLSearchParams(location.search);
+      const flag = params.get('owner');
+      try {
+        if (flag === 'on') localStorage.setItem('site-owner', '1');
+        if (flag === 'off') localStorage.removeItem('site-owner');
+      } catch (e) {}
+      if (flag !== null) {
+        // 주소창에서 ?owner=... 를 지워서 이 주소가 그대로 공유되지 않게 합니다
+        params.delete('owner');
+        const q = params.toString();
+        history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash);
+      }
+      try { return localStorage.getItem('site-owner') === '1'; } catch (e) { return flag === 'on'; }
+    }
+
     async function countVisit() {
       const today = new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
+      const owner = isOwner();
       let already = false;
       try { already = localStorage.getItem('visit-day') === today; } catch (e) {}
       try {
         const res = await fetch(SUPABASE_URL + '/rest/v1/rpc/record_visit', {
           method: 'POST',
           headers,
-          body: JSON.stringify({ src: visitSource(), counted: !already })
+          body: JSON.stringify({ src: visitSource(), counted: !owner && !already })
         });
         if (!res.ok) throw new Error(res.status);
         const { today: t, total } = await res.json();
         try { localStorage.setItem('visit-day', today); } catch (e) {}
-        if (Number(total) < SHOW_VISITS_FROM) return; // 초반엔 숫자를 숨기고 집계만 합니다
+        if (!owner && Number(total) < SHOW_VISITS_FROM) return; // 초반엔 숫자를 숨기고 집계만 합니다
         const el = document.getElementById('visits');
-        el.innerHTML = '👀 오늘 <strong></strong>명 · 누적 <strong></strong>명이 함께했습니다';
+        el.innerHTML = (owner ? '🔑 주인 모드 (내 방문은 제외)<br>' : '') +
+          '👀 오늘 <strong></strong>명 · 누적 <strong></strong>명이 함께했습니다';
         const nums = el.querySelectorAll('strong');
         nums[0].textContent = Number(t).toLocaleString('ko-KR');
         nums[1].textContent = Number(total).toLocaleString('ko-KR');
