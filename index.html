@@ -100,6 +100,25 @@
     }
     .btn:hover { filter: brightness(1.08); }
     .btn.ghost { background: transparent; border: 2px solid #52606d; margin-left: 8px; }
+    .btn.yt { background: #ff0000; }
+    .yt-nav {
+      background: #ff0000; color: #fff; text-decoration: none;
+      font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 8px; white-space: nowrap;
+    }
+    .yt-nav:hover { filter: brightness(1.1); }
+
+    /* 유튜브 채널 */
+    .channel {
+      background: var(--hero); color: var(--hero-text);
+      border-radius: 20px; padding: 40px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .channel .eyebrow { color: #ff6b6b; }
+    .channel h2 { color: var(--hero-text); }
+    .channel p.desc { color: #cbd2d9; max-width: 520px; }
+    .channel .handle { display: inline-block; margin-top: 12px; font-weight: 700; color: #fff; }
+    .channel .actions { display: flex; flex-direction: column; gap: 10px; }
+    .channel .actions .btn { text-align: center; margin: 0; }
 
     /* 공통 섹션 */
     section.block { padding: 72px 0; }
@@ -237,6 +256,7 @@
         <li><a class="menu" href="#pledge">안전 다짐</a></li>
         <li><a class="menu" href="#call">긴급 연락처</a></li>
       </ul>
+      <a class="yt-nav" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">▶ 유튜브</a>
     </div>
   </header>
 
@@ -247,7 +267,7 @@
       <h1>안전은 결국<br /><em>사람</em>을 지키는 일입니다</h1>
       <p>집, 길, 일터에서 꼭 챙겨야 할 기본 수칙을 한 페이지에 정리했습니다. 오늘 5분만 투자해서 우리 집 안전 점수부터 확인해 보시죠.</p>
       <a href="#check" class="btn">내 안전 점수 확인하기</a>
-      <a href="#call" class="btn ghost">긴급 연락처 보기</a>
+      <a href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" class="btn ghost" target="_blank" rel="noopener">▶ 쇼츠 보러가기</a>
     </div>
   </section>
 
@@ -350,6 +370,24 @@
       </div>
       <p id="pledgeMsg"></p>
       <div class="pledges" id="pledgeList"></div>
+    </div>
+  </section>
+
+  <!-- 유튜브 채널 -->
+  <section class="block" id="youtube" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="channel">
+        <div>
+          <p class="eyebrow">유튜브 쇼츠</p>
+          <h2>안전 이야기, 1분이면 충분합니다</h2>
+          <p class="desc">출퇴근길, 점심시간에 가볍게 보는 안전 쇼츠. 구독해 두시면 새 영상을 가장 먼저 받아보실 수 있습니다.</p>
+          <span class="handle">@태기tp</span>
+        </div>
+        <div class="actions">
+          <a class="btn yt" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp?sub_confirmation=1" target="_blank" rel="noopener">구독하기</a>
+          <a class="btn ghost" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">쇼츠 전체 보기</a>
+        </div>
+      </div>
     </div>
   </section>
 
