@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또 번호 추천</title>
     <style>
         body {
@@ -53,7 +54,7 @@
 function generateOneSet() {
     let numbers = [];
 
-    while(numbers.length < 5) {
+    while(numbers.length < 6) {
         let num = Math.floor(Math.random() * 45) + 1;
         if(!numbers.includes(num)) {
             numbers.push(num);
