@@ -605,6 +605,8 @@
       return 'other';
     }
 
+    const SHOW_VISITS_FROM = 100; // 누적 방문자가 이 숫자 이상일 때만 화면에 표시
+
     async function countVisit() {
       const today = new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
       let already = false;
@@ -618,6 +620,7 @@
         if (!res.ok) throw new Error(res.status);
         const { today: t, total } = await res.json();
         try { localStorage.setItem('visit-day', today); } catch (e) {}
+        if (Number(total) < SHOW_VISITS_FROM) return; // 초반엔 숫자를 숨기고 집계만 합니다
         const el = document.getElementById('visits');
         el.innerHTML = '👀 오늘 <strong></strong>명 · 누적 <strong></strong>명이 함께했습니다';
         const nums = el.querySelectorAll('strong');
