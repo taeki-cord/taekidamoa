@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>안전과 사람</title>
-  <meta name="description" content="일상 속 안전 수칙과 긴급 연락처를 한눈에 정리한 페이지" />
+  <title>안전과 사람 | 생활 안전 수칙 · 우리 집 안전 점검 · 긴급 연락처</title>
+  <meta name="description" content="집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
+  <link rel="canonical" href="https://taeki-cord.github.io/taekidamoa/" />
+  <!-- 검색 등록 확인 코드: 네이버 서치어드바이저·구글 서치콘솔에서 받은 값을 content에 넣습니다 -->
+  <!-- <meta name="naver-site-verification" content="" /> -->
+  <!-- <meta name="google-site-verification" content="" /> -->
   <!-- 카카오톡·SNS 공유 미리보기 -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="안전과 사람" />
@@ -214,7 +218,15 @@
       margin-top: 20px; padding: 16px 20px; border-radius: 12px;
       background: var(--safe-soft); color: var(--text); font-weight: 500;
     }
-    .reset { margin-top: 14px; background: none; border: none; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: 15px; font-family: inherit; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 14px; padding: 12px 20px; border-radius: 12px;
+      background: #fee500; color: #191919; border: none;
+      font-size: 17px; font-weight: 700; font-family: inherit; cursor: pointer;
+    }
+    .share-btn:hover { filter: brightness(.96); }
+    .share-msg { color: var(--safe); font-weight: 700; font-size: 15px; margin-top: 8px; min-height: 1.4em; }
+    .reset { display: block; margin-top: 14px; background: none; border: none; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: 15px; font-family: inherit; }
 
     /* 긴급 연락처 */
     .alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -406,6 +418,8 @@
         </div>
         <div id="list"></div>
         <div id="result"></div>
+        <button type="button" class="share-btn" id="shareScore">💬 우리 가족에게 공유하기</button>
+        <p class="share-msg" id="shareScoreMsg" aria-live="polite"></p>
         <button type="button" class="reset" id="resetBtn">처음부터 다시 하기</button>
       </div>
     </div>
@@ -499,6 +513,8 @@
   <footer>
     <div class="wrap">
       <p>안전과 사람 · 오늘도 무사히 퇴근하세요.</p>
+      <button type="button" class="share-btn" id="sharePage">💬 이 페이지 공유하기</button>
+      <p class="share-msg" id="sharePageMsg" aria-live="polite"></p>
     </div>
   </footer>
 
@@ -589,6 +605,31 @@
     });
 
     render();
+
+    // 공유하기: 휴대폰은 공유 창(카톡 등)을 띄우고, 안 되면 링크를 복사합니다
+    const SHARE_URL = 'https://taeki-cord.github.io/taekidamoa/?from=share';
+    async function sharePage(text, msgEl) {
+      if (navigator.share) {
+        try { await navigator.share({ title: '안전과 사람', text, url: SHARE_URL }); return; }
+        catch (e) { if (e.name === 'AbortError') return; }
+      }
+      const full = text + '\n' + SHARE_URL;
+      try {
+        await navigator.clipboard.writeText(full);
+        msgEl.textContent = '✅ 링크를 복사했습니다. 카톡 대화방에 붙여넣기 해주세요.';
+      } catch (e) {
+        window.prompt('아래 내용을 복사해서 보내주세요.', full);
+      }
+    }
+    document.getElementById('shareScore').addEventListener('click', () => {
+      const score = document.getElementById('score').textContent;
+      sharePage('우리 집 안전 점수는 ' + score + '! 우리 집은 몇 점인지 1분만 체크해 보세요 👇',
+        document.getElementById('shareScoreMsg'));
+    });
+    document.getElementById('sharePage').addEventListener('click', () => {
+      sharePage('생활 안전 수칙이랑 긴급 연락처를 한 페이지에 정리해 놓은 곳이에요. 가족들도 한 번씩 보세요 👇',
+        document.getElementById('sharePageMsg'));
+    });
 
     // 안전 다짐 게시판 (Supabase REST API)
     // 공개용(publishable) 키라서 페이지에 넣어도 됩니다. 읽기·쓰기 권한은 DB의 RLS 정책으로 제한돼 있습니다.
@@ -683,6 +724,7 @@
     function visitSource() {
       const from = new URLSearchParams(location.search).get('from');
       if (from === 'yt' || from === 'youtube') return 'youtube';
+      if (from === 'share') return 'share';
       const ref = document.referrer;
       if (!ref) return 'direct';
       if (/youtube\.com|youtu\.be/.test(ref)) return 'youtube';
