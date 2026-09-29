@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>안전과 사람 | 생활 안전 수칙 · 우리 집 안전 점검 · 긴급 연락처</title>
-  <meta name="description" content="집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
+  <title>안전, 그리고 우리 가족 | 생활 안전 수칙 · 우리 집 안전 점검 · 긴급 연락처</title>
+  <meta name="description" content="안전 그리고 우리 가족 — 집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
   <link rel="canonical" href="https://taeki-cord.github.io/taekidamoa/" />
   <!-- 검색 등록 확인 코드: 네이버 서치어드바이저·구글 서치콘솔에서 받은 값을 content에 넣습니다 -->
   <!-- <meta name="naver-site-verification" content="" /> -->
   <!-- <meta name="google-site-verification" content="" /> -->
   <!-- 카카오톡·SNS 공유 미리보기 -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="안전과 사람" />
-  <meta property="og:title" content="안전과 사람 | 우리 가족 안전 가이드" />
+  <meta property="og:site_name" content="안전, 그리고 우리 가족" />
+  <meta property="og:title" content="안전, 그리고 우리 가족 | 생활 안전 수칙 · 긴급 연락처" />
   <meta property="og:description" content="집, 길, 일터에서 꼭 챙겨야 할 안전 수칙과 긴급 연락처를 한 페이지에 정리했습니다." />
   <meta property="og:url" content="https://taeki-cord.github.io/taekidamoa/" />
   <meta property="og:image" content="https://taeki-cord.github.io/taekidamoa/og-image.png" />
@@ -317,7 +317,7 @@
 
   <header class="nav">
     <div class="wrap">
-      <a href="#top" class="logo">안전<span>과</span> 사람</a>
+      <a href="#top" class="logo">안전, 그리고 <span>우리 가족</span></a>
       <ul>
         <li><a class="menu" href="#rules">생활 안전 수칙</a></li>
         <li><a class="menu" href="#check">안전 점검</a></li>
@@ -512,7 +512,7 @@
 
   <footer>
     <div class="wrap">
-      <p>안전과 사람 · 오늘도 무사히 퇴근하세요.</p>
+      <p>안전, 그리고 우리 가족 · 오늘도 무사히 퇴근하세요.</p>
       <button type="button" class="share-btn" id="sharePage">💬 이 페이지 공유하기</button>
       <p class="share-msg" id="sharePageMsg" aria-live="polite"></p>
     </div>
@@ -610,7 +610,7 @@
     const SHARE_URL = 'https://taeki-cord.github.io/taekidamoa/?from=share';
     async function sharePage(text, msgEl) {
       if (navigator.share) {
-        try { await navigator.share({ title: '안전과 사람', text, url: SHARE_URL }); return; }
+        try { await navigator.share({ title: '안전, 그리고 우리 가족', text, url: SHARE_URL }); return; }
         catch (e) { if (e.name === 'AbortError') return; }
       }
       const full = text + '\n' + SHARE_URL;
