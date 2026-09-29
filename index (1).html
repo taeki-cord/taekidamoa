@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>안전, 그리고 우리 가족 | 생활 안전 수칙 · 우리 집 안전 점검 · 긴급 연락처</title>
+  <meta name="description" content="37년 산업안전 강사가 정리한 안전 그리고 우리 가족 — 집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
+  <link rel="canonical" href="https://taeki-cord.github.io/taekidamoa/" />
+  <!-- 브라우저 탭 아이콘(방패 로고) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#3b7dd8" />
+  <!-- 검색 등록 확인 코드: 네이버 서치어드바이저·구글 서치콘솔에서 받은 값을 content에 넣습니다 -->
+  <!-- <meta name="naver-site-verification" content="" /> -->
+  <!-- <meta name="google-site-verification" content="" /> -->
+  <!-- 카카오톡·SNS 공유 미리보기 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="안전, 그리고 우리 가족" />
+  <meta property="og:title" content="안전, 그리고 우리 가족 | 생활 안전 수칙 · 긴급 연락처" />
+  <meta property="og:description" content="37년 산업안전 강사가 정리한 집, 길, 일터에서 꼭 챙겨야 할 안전 수칙과 긴급 연락처를 한 페이지에 정리했습니다." />
+  <meta property="og:url" content="https://taeki-cord.github.io/taekidamoa/" />
+  <meta property="og:image" content="https://taeki-cord.github.io/taekidamoa/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --line: #e4e0d8;
+      --accent: #e8590c;
+      --accent-soft: #fff1e6;
+      --safe: #2b8a3e;
+      --safe-soft: #ebfbee;
+      --hero: #3b7dd8;
+      --hero-text: #ffffff;
+      --hero-sub: #eef5ff;
+      --hero-em: #ffd43b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #14181d;
+        --surface: #1e242b;
+        --text: #eef1f4;
+        --muted: #a9b4bf;
+        --line: #2f3740;
+        --accent: #ff8a3d;
+        --accent-soft: #3a2616;
+        --safe: #51cf66;
+        --safe-soft: #17301d;
+        --hero: #3b7dd8;
+        --hero-text: #ffffff;
+        --hero-sub: #eef5ff;
+        --hero-em: #ffd43b;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, 'Malgun Gothic', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 18px;           /* 40~50대 가독성을 위해 기본 글자 크게 */
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+    /* 상단 메뉴 */
+    header.nav {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--hero);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    header.nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; gap: 12px;
+    }
+    .logo { color: var(--hero-text); font-weight: 900; font-size: 20px; text-decoration: none; }
+    .logo span { color: var(--hero-em); }
+    .nav ul { display: flex; gap: 20px; list-style: none; }
+    .nav a.menu { color: var(--hero-sub); text-decoration: none; font-size: 16px; }
+    .nav a.menu:hover { color: #fff; }
+
+    /* 히어로 */
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      padding: 80px 0 90px;
+    }
+    .hero .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px; font-weight: 700;
+      padding: 4px 14px; border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--hero-em); }
+    .hero p { font-size: 20px; color: var(--hero-sub); max-width: 620px; margin-bottom: 32px; }
+    .btn {
+      display: inline-block;
+      background: var(--accent); color: #fff;
+      font-size: 18px; font-weight: 700;
+      padding: 14px 28px; border-radius: 12px;
+      text-decoration: none; border: none; cursor: pointer;
+    }
+    .btn:hover { filter: brightness(1.08); }
+    .btn.ghost { background: transparent; border: 2px solid rgba(255,255,255,.55); margin-left: 8px; }
+    .btn.yt { background: #ff0000; }
+    .visits { margin-top: 28px; color: var(--hero-sub); font-size: 17px; min-height: 1.7em; }
+    .visits strong { color: #fff; font-size: 20px; }
+    .yt-nav {
+      background: #ff0000; color: #fff; text-decoration: none;
+      font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 8px; white-space: nowrap;
+    }
+    .yt-nav:hover { filter: brightness(1.1); }
+
+    /* 유튜브 채널 */
+    .channel {
+      background: var(--hero); color: var(--hero-text);
+      border-radius: 20px; padding: 40px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .channel .eyebrow { color: #ffe3e3; }
+    .channel h2 { color: var(--hero-text); }
+    .channel p.desc { color: var(--hero-sub); max-width: 520px; }
+    .channel .handle { display: inline-block; margin-top: 12px; font-weight: 700; color: #fff; }
+    .channel .actions { display: flex; flex-direction: column; gap: 10px; }
+    .channel .actions .btn { text-align: center; margin: 0; }
+
+    /* 쇼츠 영상 */
+    .shorts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .shorts iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      border-radius: 16px;
+      background: var(--hero);
+    }
+    /* 쇼츠 카드: 쇼츠 썸네일과 같은 스타일. 누르면 그 자리에서 영상이 재생됩니다 */
+    .short {
+      container-type: inline-size;
+      position: relative; display: flex; flex-direction: column; justify-content: center;
+      width: 100%; aspect-ratio: 9 / 16; padding: 0 8% 0 11%; overflow: hidden;
+      border: 0; border-radius: 16px; cursor: pointer; text-align: left; font-family: inherit;
+      background: #3b7dd8; color: #fff;
+      box-shadow: inset 5px 0 0 #e8590c;
+    }
+    .short::before, .short::after {
+      content: ""; position: absolute; border-radius: 50%; border: 4.3cqw solid rgba(255, 255, 255, .07);
+    }
+    .short::before { width: 70cqw; height: 70cqw; left: -38cqw; top: -22cqw; }
+    .short::after { width: 88cqw; height: 88cqw; right: -48cqw; bottom: -30cqw; }
+    .short .s-tag {
+      align-self: flex-start; background: #e8590c; color: #fff; font-weight: 700;
+      font-size: 6.4cqw; padding: 1.4cqw 3.6cqw; border-radius: 99px; margin-bottom: 5cqw;
+    }
+    .short .s-title { font-weight: 900; font-size: 12.5cqw; line-height: 1.28; letter-spacing: -.02em; word-break: keep-all; }
+    .short .s-title em { font-style: normal; color: #ffd43b; }
+    .short .s-brand {
+      position: absolute; left: 11cqw; bottom: 22%; display: flex; align-items: center; gap: 2cqw;
+      font-weight: 900; font-size: 5.4cqw; white-space: nowrap;
+    }
+    .short .s-brand svg { width: 9cqw; height: 9cqw; flex: none; }
+    .short .s-brand span { color: #ffd43b; }
+    .short .s-play {
+      position: absolute; right: 7cqw; bottom: 7cqw; width: 15cqw; height: 15cqw; border-radius: 50%;
+      background: #ff0000; display: grid; place-items: center; font-size: 6cqw; padding-left: .8cqw;
+      box-shadow: 0 1cqw 3cqw rgba(0, 0, 0, .25);
+    }
+    .short:hover .s-play { filter: brightness(1.1); }
+    .short:focus-visible { outline: 3px solid var(--hero-em); outline-offset: 3px; }
+
+    /* 공통 섹션 */
+    section.block { padding: 72px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+    h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 900; margin-bottom: 12px; line-height: 1.35; }
+    .lead { color: var(--muted); margin-bottom: 36px; max-width: 680px; }
+
+    /* 오늘의 한마디 */
+    .quote {
+      background: var(--accent-soft);
+      border-left: 6px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .quote p { font-size: 21px; font-weight: 700; }
+    .quote button {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--line); border-radius: 10px;
+      padding: 10px 18px; font-size: 16px; cursor: pointer; font-family: inherit;
+    }
+
+    /* 수칙 카드 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .card .icon { font-size: 36px; margin-bottom: 10px; }
+    .card h3 { font-size: 22px; margin-bottom: 12px; }
+    .card ul { padding-left: 20px; color: var(--muted); }
+    .card li { margin-bottom: 6px; }
+
+    /* 체크리스트 */
+    .check-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .progress-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .bar { flex: 1; height: 14px; background: var(--line); border-radius: 999px; overflow: hidden; }
+    .bar div { height: 100%; width: 0; background: var(--safe); transition: width .3s; }
+    #score { font-weight: 900; font-size: 20px; min-width: 70px; text-align: right; }
+    .check-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 4px;
+      border-bottom: 1px dashed var(--line);
+      cursor: pointer;
+    }
+    .check-item:last-of-type { border-bottom: none; }
+    .check-item input { width: 24px; height: 24px; accent-color: var(--safe); cursor: pointer; flex-shrink: 0; }
+    .check-item.done span { color: var(--muted); text-decoration: line-through; }
+    #result {
+      margin-top: 20px; padding: 16px 20px; border-radius: 12px;
+      background: var(--safe-soft); color: var(--text); font-weight: 500;
+    }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 14px; padding: 12px 20px; border-radius: 12px;
+      background: #fee500; color: #191919; border: none;
+      font-size: 17px; font-weight: 700; font-family: inherit; cursor: pointer;
+    }
+    .share-btn:hover { filter: brightness(.96); }
+    .share-msg { color: var(--safe); font-weight: 700; font-size: 15px; margin-top: 8px; min-height: 1.4em; }
+    .reset { display: block; margin-top: 14px; background: none; border: none; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: 15px; font-family: inherit; }
+
+    /* 긴급 연락처 */
+    .alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .phones { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .phone {
+      display: block; text-decoration: none; color: var(--text);
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 16px; padding: 24px; text-align: center;
+    }
+    .phone:hover { border-color: var(--accent); }
+    .phone strong { display: block; font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1.2; }
+    .phone span { color: var(--muted); font-size: 16px; }
+
+    /* 이달의 안전 */
+    .season-box { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; }
+    .season-box ul { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 12px; }
+    .season-box li { display: flex; gap: 10px; font-size: 18px; line-height: 1.5; }
+    .season-box li::before { content: "✔"; color: var(--safe); font-weight: 900; flex: none; }
+    .parent-tip { background: var(--accent-soft); color: var(--text); border-radius: 10px; padding: 12px 14px; font-size: 16px; margin: 14px 0 4px; }
+    .lotto-dday { font-weight: 700; color: var(--accent); margin: -20px 0 20px; }
+
+    /* 안전 다짐 게시판 */
+    .pledge-form {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 24px;
+      display: grid; grid-template-columns: 160px 1fr auto; gap: 12px;
+      margin-bottom: 24px;
+    }
+    .pledge-form input {
+      font: inherit; font-size: 17px; color: var(--text);
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 10px; padding: 12px 14px; min-width: 0;
+    }
+    .pledge-form input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+    .pledge-form .btn { padding: 12px 22px; font-family: inherit; }
+    .pledge-form .btn:disabled { opacity: .6; cursor: default; }
+    .pledge-form { margin-bottom: 16px; }
+    .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .chips > span { color: var(--muted); font-size: 16px; }
+    #chipList { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font: inherit; font-size: 15px; color: var(--text);
+      background: var(--accent-soft); border: 1px solid transparent;
+      border-radius: 999px; padding: 6px 14px; cursor: pointer; text-align: left;
+    }
+    .chip:hover { border-color: var(--accent); }
+    #pledgeMsg { color: var(--muted); font-size: 16px; margin: 0 0 20px; min-height: 1.5em; }
+    .pledges { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .pledge {
+      background: var(--surface); border: 1px solid var(--line);
+      border-top: 4px solid var(--safe); border-radius: 12px; padding: 18px 20px;
+    }
+    .pledge p { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+    .pledge small { color: var(--muted); font-size: 15px; }
+
+    /* 행운 번호 */
+    .lotto-sets { display: grid; gap: 12px; margin-top: 24px; }
+    .lotto-set {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 14px; padding: 12px 16px;
+    }
+    .lotto-set .label { color: var(--muted); font-weight: 700; width: 1.6em; }
+    .ball {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px; color: #1f2933;
+    }
+    /* 동행복권 공 색상: 1~10 노랑, 11~20 파랑, 21~30 빨강, 31~40 회색, 41~45 초록 */
+    .ball.c1 { background: #fbc400; }
+    .ball.c2 { background: #69c8f2; }
+    .ball.c3 { background: #ff7272; }
+    .ball.c4 { background: #aaaaaa; }
+    .ball.c5 { background: #b0d840; }
+    .lotto-wish { font-size: 24px; font-weight: 900; color: var(--safe); margin-top: 20px; }
+    .lotto-note { color: var(--muted); font-size: 15px; margin-top: 14px; }
+
+    footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15px; }
+
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      .nav ul { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .shorts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .pledge-form { grid-template-columns: 1fr; }
+      .ball { width: 38px; height: 38px; font-size: 16px; }
+      .lotto-set { gap: 6px; padding: 10px 12px; }
+      .hero { padding: 56px 0 64px; }
+      .hero p { font-size: 18px; }
+      .btn.ghost { margin: 10px 0 0; }
+      section.block { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="logo">안전, 그리고 <span>우리 가족</span></a>
+      <ul>
+        <li><a class="menu" href="#season">이달의 안전</a></li>
+        <li><a class="menu" href="#rules">생활 안전 수칙</a></li>
+        <li><a class="menu" href="#check">안전 점검</a></li>
+        <li><a class="menu" href="#pledge">안전 다짐</a></li>
+        <li><a class="menu" href="#call">긴급 연락처</a></li>
+        <li><a class="menu" href="#lotto">행운 번호</a></li>
+      </ul>
+      <a class="yt-nav" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">▶ 유튜브</a>
+    </div>
+  </header>
+
+  <!-- 히어로 -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="tag">37년 산업안전 강사가 정리한 우리 가족 안전 가이드</span>
+      <h1>안전은 결국<br /><em>가족</em>을 지키는 일입니다</h1>
+      <p>집, 길, 일터에서 꼭 챙겨야 할 기본 수칙을 한 페이지에 정리했습니다. 오늘 5분만 투자해서 우리 집 안전 점수부터 확인해 보시죠.</p>
+      <a href="#check" class="btn">내 안전 점수 확인하기</a>
+      <a href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" class="btn ghost" target="_blank" rel="noopener">▶ 쇼츠 보러가기</a>
+      <a href="#lotto" class="btn ghost" id="heroLotto">🍀 행운 번호 뽑기</a>
+      <p class="visits" id="visits"></p>
+    </div>
+  </section>
+
+  <!-- 오늘의 한마디 -->
+  <section class="block" style="padding-bottom: 0;">
+    <div class="wrap">
+      <div class="quote">
+        <p id="tip">“설마”가 사고를 부르고, “혹시”가 사람을 살립니다.</p>
+        <button type="button" id="tipBtn">다른 한마디 보기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이달의 계절 안전 (달이 바뀌면 자동으로 내용이 바뀝니다) -->
+  <section class="block" id="season">
+    <div class="wrap">
+      <p class="eyebrow" id="seasonEyebrow">이달의 안전</p>
+      <h2 id="seasonTitle"></h2>
+      <p class="lead" id="seasonLead"></p>
+      <div class="season-box">
+        <ul id="seasonList"></ul>
+        <button type="button" class="share-btn" id="shareSeason">💬 부모님께 보내드리기</button>
+        <p class="share-msg" id="shareSeasonMsg" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 생활 안전 수칙 -->
+  <section class="block" id="rules">
+    <div class="wrap">
+      <p class="eyebrow">생활 안전 수칙</p>
+      <h2>이것만 지켜도 사고 절반은 줄입니다</h2>
+      <p class="lead">어렵지 않습니다. 매일 하는 습관 몇 가지만 바꿔도 충분합니다.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🏠</div>
+          <h3>집 안 안전</h3>
+          <ul>
+            <li>외출 전 가스 밸브·전기 플러그 확인</li>
+            <li>욕실엔 미끄럼 방지 매트 깔기</li>
+            <li>문어발 콘센트는 쓰지 않기</li>
+            <li>소화기 위치는 가족 모두 알아두기</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🚶</div>
+          <h3>길 위의 안전</h3>
+          <ul>
+            <li>걸을 때는 스마트폰 잠시 내려두기</li>
+            <li>초록불이 깜빡이면 다음 신호 기다리기</li>
+            <li>밤길엔 밝은 색 옷 입기</li>
+            <li>운전 중 졸리면 무조건 쉬었다 가기</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🏢</div>
+          <h3>일터 안전</h3>
+          <ul>
+            <li>비상구 위치는 출근 첫날 확인</li>
+            <li>무거운 짐은 무릎을 굽혀서 들기</li>
+            <li>보호구는 “잠깐인데”라도 꼭 착용</li>
+            <li>위험하다 싶으면 바로 멈추고 말하기</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">❤️</div>
+          <h3>몸과 마음 안전</h3>
+          <ul>
+            <li>가슴 통증·한쪽 마비는 즉시 119</li>
+            <li>심폐소생술(CPR) 한 번은 배워두기</li>
+            <li>상비약·복용약 목록 지갑에 넣어두기</li>
+            <li>힘들 땐 혼자 버티지 말고 도움 요청</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 체크리스트 -->
+  <section class="block" id="check" style="padding-top: 0;">
+    <div class="wrap">
+      <p class="eyebrow">셀프 점검</p>
+      <h2>우리 집 안전 점수는 몇 점일까요?</h2>
+      <p class="lead">해당하는 항목에 체크해 보세요. 체크한 내용은 이 기기에만 저장됩니다.</p>
+
+      <div class="check-box">
+        <div class="progress-row">
+          <div class="bar"><div id="barFill"></div></div>
+          <div id="score">0점</div>
+        </div>
+        <div id="list"></div>
+        <div id="result"></div>
+        <p class="parent-tip">💡 부모님 댁도 대신 점검해 드려 보세요. 결과를 가족 단톡방에 공유하면 다 같이 확인할 수 있습니다.</p>
+        <button type="button" class="share-btn" id="shareScore">💬 우리 가족에게 공유하기</button>
+        <p class="share-msg" id="shareScoreMsg" aria-live="polite"></p>
+        <button type="button" class="reset" id="resetBtn">처음부터 다시 하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 안전 다짐 게시판 -->
+  <section class="block" id="pledge" style="padding-top: 0;">
+    <div class="wrap">
+      <p class="eyebrow">안전 다짐 한마디</p>
+      <h2>오늘 저녁, 꼭 “다녀왔어”라고<br />말해야 하는 이유가 있으신가요?</h2>
+      <p class="lead">누군가에게 당신은 가장이고, 부모고, 믿음직한 동료입니다. 그 이유를 한 줄로 남겨주세요. 당신의 다짐이 오늘 다른 누군가를 멈춰 세웁니다.</p>
+
+      <form class="pledge-form" id="pledgeForm">
+        <input id="pName" maxlength="20" placeholder="이름 또는 별명" required />
+        <input id="pText" maxlength="100" placeholder="나의 안전 다짐 한 줄" required />
+        <button class="btn" type="submit" id="pBtn">내 다짐 남기기</button>
+      </form>
+      <div class="chips">
+        <span>막막하시면 골라보세요 👉</span>
+        <div id="chipList"></div>
+      </div>
+      <p id="pledgeMsg"></p>
+      <div class="pledges" id="pledgeList"></div>
+    </div>
+  </section>
+
+  <!-- 유튜브 채널 -->
+  <section class="block" id="youtube" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="channel">
+        <div>
+          <p class="eyebrow">유튜브 쇼츠</p>
+          <h2>안전 이야기, 1분이면 충분합니다</h2>
+          <p class="desc">출퇴근길, 점심시간에 가볍게 보는 안전 쇼츠. 구독해 두시면 새 영상을 가장 먼저 받아보실 수 있습니다.</p>
+          <span class="handle">@태기tp</span>
+        </div>
+        <div class="actions">
+          <a class="btn yt" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp?sub_confirmation=1" target="_blank" rel="noopener">구독하기</a>
+          <a class="btn ghost" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">쇼츠 전체 보기</a>
+        </div>
+      </div>
+
+      <!-- 방패 로고: 쇼츠 카드에서 같이 씁니다 -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="shield-logo" viewBox="0 0 100 100"><path d="M50 4 L88 18 V48 C88 72 71 88 50 96 C29 88 12 72 12 48 V18 Z" fill="#ffd43b"/><path d="M50 26 L74 46 H67 V70 H33 V46 H26 Z" fill="#3b7dd8"/><path d="M50 66 C42 60 38 56 38 51.5 C38 48 40.5 46 43.5 46 C46 46 48 47.5 50 50 C52 47.5 54 46 56.5 46 C59.5 46 62 48 62 51.5 C62 56 58 60 50 66 Z" fill="#e8590c"/></symbol>
+      </svg>
+
+      <!-- 새 쇼츠를 올리면 button 한 덩어리를 복사해서 data-id(영상 ID), 코너 이름, 제목만 바꾸면 됩니다.
+           제목에서 <em>…</em>으로 감싼 글자는 노란색, <br />은 줄 바꿈입니다 -->
+      <div class="shorts">
+        <button type="button" class="short" data-id="hFjkNtjIMIo" aria-label="작은 신호 를 무시하면 큰 사고가 됩니다 (쇼츠 재생)">
+          <span class="s-tag">사고에서 배우기</span>
+          <strong class="s-title"><em>작은 신호</em>를<br />무시하면<br />큰 사고가 됩니다</strong>
+          <span class="s-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#shield-logo" /></svg>안전, 그리고 <span>우리 가족</span></span>
+          <span class="s-play" aria-hidden="true">▶</span>
+        </button>
+        <button type="button" class="short" data-id="JtkOf-NSSzI" aria-label="괜찮겠지가 부른 73초의 비극 (쇼츠 재생)">
+          <span class="s-tag">사고에서 배우기</span>
+          <strong class="s-title"><em>“괜찮겠지”</em>가<br />부른<br />73초의 비극</strong>
+          <span class="s-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#shield-logo" /></svg>안전, 그리고 <span>우리 가족</span></span>
+          <span class="s-play" aria-hidden="true">▶</span>
+        </button>
+        <button type="button" class="short" data-id="EUGzskpm4j4" aria-label="뒷좌석도 안전벨트 꼭 매세요 (쇼츠 재생)">
+          <span class="s-tag">교통 안전</span>
+          <strong class="s-title"><em>뒷좌석도</em><br />안전벨트<br />꼭 매세요</strong>
+          <span class="s-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#shield-logo" /></svg>안전, 그리고 <span>우리 가족</span></span>
+          <span class="s-play" aria-hidden="true">▶</span>
+        </button>
+        <button type="button" class="short" data-id="EaM05x1NpYo" aria-label="미뤄둔 점검이 도시를 삼켰습니다 (쇼츠 재생)">
+          <span class="s-tag">사고에서 배우기</span>
+          <strong class="s-title"><em>미뤄둔 점검</em>이<br />도시를<br />삼켰습니다</strong>
+          <span class="s-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#shield-logo" /></svg>안전, 그리고 <span>우리 가족</span></span>
+          <span class="s-play" aria-hidden="true">▶</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 긴급 연락처 -->
+  <section class="block alt" id="call">
+    <div class="wrap">
+      <p class="eyebrow">긴급 연락처</p>
+      <h2>급할 땐 이 번호부터</h2>
+      <p class="lead">휴대폰에서 누르면 바로 전화가 연결됩니다.</p>
+
+      <div class="phones">
+        <a class="phone" href="tel:119"><strong>119</strong><span>화재 · 구조 · 구급</span></a>
+        <a class="phone" href="tel:112"><strong>112</strong><span>범죄 신고 · 경찰</span></a>
+        <a class="phone" href="tel:122"><strong>122</strong><span>해양 사고</span></a>
+        <a class="phone" href="tel:1339"><strong>1339</strong><span>질병관리청 콜센터</span></a>
+        <a class="phone" href="tel:110"><strong>110</strong><span>정부 민원 안내</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 행운 번호 -->
+  <section class="block" id="lotto">
+    <div class="wrap">
+      <p class="eyebrow">쉬어가는 코너</p>
+      <h2>오늘의 행운 번호 뽑기</h2>
+      <p class="lead">버튼을 누르면 1~45 중에서 번호 6개씩, 5세트를 뽑아드립니다.</p>
+      <p class="lotto-dday" id="lottoDday"></p>
+      <button type="button" class="btn" id="lottoBtn">🎯 번호 뽑기</button>
+      <div class="lotto-sets" id="lottoSets" aria-live="polite"></div>
+      <p class="lotto-wish" id="lottoWish" hidden>🍀 행운을 빕니다!</p>
+      <p class="lotto-note">재미로 보는 무작위 번호입니다. 당첨을 보장하지 않으니 가볍게 즐겨주세요.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>안전, 그리고 우리 가족 · 오늘도 무사히 퇴근하세요.</p>
+      <button type="button" class="share-btn" id="sharePage">💬 이 페이지 공유하기</button>
+      <p class="share-msg" id="sharePageMsg" aria-live="polite"></p>
+    </div>
+  </footer>
+
+  <script>
+    // 오늘의 한마디
+    const tips = [
+      '“설마”가 사고를 부르고, “혹시”가 사람을 살립니다.',
+      '빨리 가는 것보다 무사히 가는 게 먼저입니다.',
+      '안전 수칙은 누군가의 사고 위에서 만들어졌습니다.',
+      '오늘 확인한 가스 밸브 하나가 가족을 지킵니다.',
+      '위험하다고 말하는 사람이 가장 용기 있는 사람입니다.',
+      '보호구는 불편해도, 사고는 더 불편합니다.'
+    ];
+    let tipIndex = 0;
+    document.getElementById('tipBtn').addEventListener('click', () => {
+      tipIndex = (tipIndex + 1) % tips.length;
+      document.getElementById('tip').textContent = tips[tipIndex];
+    });
+
+    // 안전 점검 체크리스트
+    const items = [
+      '집에 소화기가 있고, 위치를 알고 있다',
+      '화재경보기(단독경보형 감지기)가 설치돼 있다',
+      '외출 전 가스 밸브를 잠그는 습관이 있다',
+      '욕실에 미끄럼 방지 매트가 있다',
+      '비상시 대피 경로를 가족과 이야기해 봤다',
+      '휴대폰에 가족 비상 연락처가 저장돼 있다',
+      '심폐소생술(CPR) 방법을 대략 알고 있다',
+      '상비약(해열제·소독약·밴드)이 준비돼 있다',
+      '운전할 때 스마트폰을 보지 않는다',
+      '문어발 콘센트를 쓰지 않는다'
+    ];
+    const KEY = 'safety-check-v1';
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || []; }
+      catch (e) { return []; }
+    }
+    function save(state) {
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    let state = load();
+    const list = document.getElementById('list');
+
+    items.forEach((text, i) => {
+      const label = document.createElement('label');
+      label.className = 'check-item';
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.checked = !!state[i];
+      const span = document.createElement('span');
+      span.textContent = text;
+      label.append(input, span);
+      input.addEventListener('change', () => {
+        state[i] = input.checked;
+        save(state);
+        render();
+      });
+      list.appendChild(label);
+    });
+
+    function render() {
+      const labels = list.querySelectorAll('.check-item');
+      let count = 0;
+      labels.forEach((el, i) => {
+        const on = !!state[i];
+        el.classList.toggle('done', on);
+        if (on) count++;
+      });
+      const score = Math.round((count / items.length) * 100);
+      document.getElementById('score').textContent = score + '점';
+      document.getElementById('barFill').style.width = score + '%';
+
+      let msg;
+      if (score === 100) msg = '🎉 완벽합니다! 지금처럼만 유지하시면 됩니다.';
+      else if (score >= 70) msg = '👍 잘하고 계십니다. 체크 안 된 항목만 이번 주에 챙겨보시죠.';
+      else if (score >= 40) msg = '🙂 절반은 왔습니다. 소화기·경보기부터 먼저 챙기시는 걸 추천드립니다.';
+      else msg = '⚠️ 조금 신경 쓰셔야겠습니다. 오늘 한 가지만 바꿔도 충분히 달라집니다.';
+      document.getElementById('result').textContent = msg;
+    }
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      state = [];
+      save(state);
+      list.querySelectorAll('input').forEach(el => { el.checked = false; });
+      render();
+    });
+
+    render();
+
+    // 쇼츠 카드를 누르면 그 자리에 유튜브 플레이어를 띄웁니다 (처음부터 영상 4개를 불러오지 않아 빠릅니다)
+    document.querySelectorAll('.short').forEach(card => {
+      card.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.id + '?autoplay=1&playsinline=1';
+        f.title = card.getAttribute('aria-label').replace(' (쇼츠 재생)', '');
+        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        f.referrerPolicy = 'strict-origin-when-cross-origin';
+        f.allowFullscreen = true;
+        card.replaceWith(f);
+      });
+    });
+
+    // 공유하기: 휴대폰은 공유 창(카톡 등)을 띄우고, 안 되면 링크를 복사합니다
+    const SHARE_URL = 'https://taeki-cord.github.io/taekidamoa/?from=share';
+    async function sharePage(text, msgEl) {
+      if (navigator.share) {
+        try { await navigator.share({ title: '안전, 그리고 우리 가족', text, url: SHARE_URL }); return; }
+        catch (e) { if (e.name === 'AbortError') return; }
+      }
+      const full = text + '\n' + SHARE_URL;
+      try {
+        await navigator.clipboard.writeText(full);
+        msgEl.textContent = '✅ 링크를 복사했습니다. 카톡 대화방에 붙여넣기 해주세요.';
+      } catch (e) {
+        window.prompt('아래 내용을 복사해서 보내주세요.', full);
+      }
+    }
+    document.getElementById('shareScore').addEventListener('click', () => {
+      const score = document.getElementById('score').textContent;
+      sharePage('우리 집 안전 점수는 ' + score + '! 우리 집은 몇 점인지 1분만 체크해 보세요 👇',
+        document.getElementById('shareScoreMsg'));
+    });
+    document.getElementById('sharePage').addEventListener('click', () => {
+      sharePage('생활 안전 수칙이랑 긴급 연락처를 한 페이지에 정리해 놓은 곳이에요. 가족들도 한 번씩 보세요 👇',
+        document.getElementById('sharePageMsg'));
+    });
+
+    // 안전 다짐 게시판 (Supabase REST API)
+    // 공개용(publishable) 키라서 페이지에 넣어도 됩니다. 읽기·쓰기 권한은 DB의 RLS 정책으로 제한돼 있습니다.
+    const SUPABASE_URL = 'https://fydyfkegmcazmldfhowf.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_KQORj--X7LpoHi7BzTyH-w_FyIm3ohQ';
+    const API = SUPABASE_URL + '/rest/v1/pledges';
+    const headers = { apikey: SUPABASE_KEY, 'Content-Type': 'application/json' };
+
+    // 예시 다짐: 누르면 입력칸에 자동으로 채워집니다
+    const examples = [
+      '딸 결혼식엔 두 발로 걸어 들어가겠습니다',
+      '손주 안아줄 허리, 오늘부터 무릎 굽혀 듭니다',
+      '“다녀올게” 약속은 “다녀왔어”로 지키겠습니다',
+      '운전대 잡으면 카톡은 도착해서 봅니다',
+      '한잔했으면 대리비가 제일 싼 보험입니다',
+      '가스 밸브 확인 3초, 후회는 평생입니다',
+      '“괜찮겠지” 한 번 참으면 가족이 평생 편합니다',
+      '내가 다치면 우리 집 월급도 멈춥니다. 안전 먼저!',
+      '퇴근길 “다 왔다” 싶을 때 한 번 더 천천히',
+      '정년까지 다친 데 없이 웃으며 퇴직하겠습니다'
+    ];
+    const pText = document.getElementById('pText');
+    const chipList = document.getElementById('chipList');
+    examples.sort(() => Math.random() - 0.5).slice(0, 4).forEach(text => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.textContent = text;
+      chip.addEventListener('click', () => { pText.value = text; pText.focus(); });
+      chipList.appendChild(chip);
+    });
+
+    const pledgeList = document.getElementById('pledgeList');
+    const pledgeMsg = document.getElementById('pledgeMsg');
+
+    function showPledges(rows) {
+      pledgeList.innerHTML = '';
+      if (!rows.length) {
+        pledgeMsg.textContent = '아직 아무도 없습니다. 첫 번째 다짐의 주인공이 되어주세요!';
+        return;
+      }
+      rows.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'pledge';
+        const p = document.createElement('p');
+        p.textContent = r.message;
+        const small = document.createElement('small');
+        small.textContent = r.name + ' · ' + new Date(r.created_at).toLocaleDateString('ko-KR');
+        card.append(p, small);
+        pledgeList.appendChild(card);
+      });
+    }
+
+    async function loadPledges() {
+      try {
+        const res = await fetch(API + '?select=name,message,created_at&order=created_at.desc&limit=12', { headers });
+        if (!res.ok) throw new Error(res.status);
+        pledgeMsg.textContent = '';
+        showPledges(await res.json());
+      } catch (e) {
+        pledgeMsg.textContent = '다짐 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';
+      }
+    }
+
+    document.getElementById('pledgeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('pName').value.trim();
+      const message = document.getElementById('pText').value.trim();
+      if (!name || !message) return;
+      const btn = document.getElementById('pBtn');
+      btn.disabled = true;
+      try {
+        const res = await fetch(API, {
+          method: 'POST',
+          headers: { ...headers, Prefer: 'return=minimal' },
+          body: JSON.stringify({ name, message })
+        });
+        if (!res.ok) throw new Error(res.status);
+        document.getElementById('pText').value = '';
+        await loadPledges();
+        pledgeMsg.textContent = '감사합니다! 다짐이 등록됐습니다.';
+      } catch (err) {
+        pledgeMsg.textContent = '등록에 실패했습니다. 잠시 후 다시 시도해 주세요.';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    loadPledges();
+
+    // 방문자 수: 같은 기기는 하루에 한 번만 셉니다 (새로고침으로 부풀지 않게)
+    function visitSource() {
+      const from = new URLSearchParams(location.search).get('from');
+      if (from === 'yt' || from === 'youtube') return 'youtube';
+      if (from === 'share') return 'share';
+      const ref = document.referrer;
+      if (!ref) return 'direct';
+      if (/youtube\.com|youtu\.be/.test(ref)) return 'youtube';
+      if (/google\.|naver\.com|daum\.net|bing\.com/.test(ref)) return 'search';
+      return 'other';
+    }
+
+    const SHOW_VISITS_FROM = 100; // 누적 방문자가 이 숫자 이상일 때만 화면에 표시
+
+    // 주인 모드: 주소 끝에 ?owner=on 을 붙여 한 번 접속하면 이 기기·브라우저는 방문자 수에서 빠집니다.
+    // 해제는 ?owner=off. 주인 모드에서는 방문자 수가 100명 전이라도 항상 보입니다.
+    function isOwner() {
+      const params = new URLSearchParams(location.search);
+      const flag = params.get('owner');
+      try {
+        if (flag === 'on') localStorage.setItem('site-owner', '1');
+        if (flag === 'off') localStorage.removeItem('site-owner');
+      } catch (e) {}
+      if (flag !== null) {
+        // 주소창에서 ?owner=... 를 지워서 이 주소가 그대로 공유되지 않게 합니다
+        params.delete('owner');
+        const q = params.toString();
+        history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash);
+      }
+      try { return localStorage.getItem('site-owner') === '1'; } catch (e) { return flag === 'on'; }
+    }
+
+    async function countVisit() {
+      const today = new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
+      const owner = isOwner();
+      let already = false;
+      try { already = localStorage.getItem('visit-day') === today; } catch (e) {}
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/rpc/record_visit', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ src: visitSource(), counted: !owner && !already })
+        });
+        if (!res.ok) throw new Error(res.status);
+        const { today: t, total } = await res.json();
+        try { localStorage.setItem('visit-day', today); } catch (e) {}
+        if (!owner && Number(total) < SHOW_VISITS_FROM) return; // 초반엔 숫자를 숨기고 집계만 합니다
+        const el = document.getElementById('visits');
+        el.innerHTML = (owner ? '🔑 주인 모드 (내 방문은 제외)<br>' : '') +
+          '👀 오늘 <strong></strong>명 · 누적 <strong></strong>명이 함께했습니다';
+        const nums = el.querySelectorAll('strong');
+        nums[0].textContent = Number(t).toLocaleString('ko-KR');
+        nums[1].textContent = Number(total).toLocaleString('ko-KR');
+      } catch (e) {
+        // 집계 실패해도 페이지 이용에는 지장 없도록 조용히 넘어갑니다
+      }
+    }
+    countVisit();
+
+    // 이달의 계절 안전
+    const seasons = {
+      1:  ['한파 속 빙판길 안전', '넘어지면 골절로 이어지는 계절입니다.', ['주머니에 손 넣고 걷지 않기', '미끄럼 방지 신발·아이젠 챙기기', '새벽 운동은 해 뜬 뒤로 미루기', '수도 계량기 보온재로 동파 막기']],
+      2:  ['해빙기 안전', '얼었던 땅이 녹으면서 무너짐 사고가 늘어납니다.', ['축대·담장 금 간 곳 살펴보기', '산행 시 낙석 주의 구간 피하기', '얼음 낚시·빙판 위 출입 삼가기', '실내외 온도차 큰 날 혈압 관리']],
+      3:  ['봄철 산불·황사 안전', '건조한 바람에 작은 불씨도 큰불이 됩니다.', ['논·밭두렁 태우기 하지 않기', '산에서는 라이터·버너 쓰지 않기', '미세먼지 나쁨이면 KF94 마스크', '환기는 대기 좋은 시간에 짧게']],
+      4:  ['나들이철 교통 안전', '봄나들이 차량이 몰려 사고가 늘어납니다.', ['2시간 운전하면 무조건 휴게소', '뒷좌석도 안전벨트 꼭 착용', '자전거 탈 땐 헬멧 쓰기', '음주 후엔 대리운전이 답']],
+      5:  ['야외 활동·벌 쏘임 안전', '등산·캠핑이 많아지는 달입니다.', ['산행은 해 지기 2시간 전 하산', '향수·화려한 옷은 벌을 부릅니다', '캠핑 텐트 안 난로·화로 금지', '진드기 대비 긴 옷 입기']],
+      6:  ['장마 대비 안전', '집중호우가 시작되기 전에 챙겨두세요.', ['하수구·배수구 막힌 곳 청소', '지하 주차장 침수 시 바로 대피', '물 찬 도로는 차로 건너지 않기', '젖은 손으로 전기 만지지 않기']],
+      7:  ['폭염·물놀이 안전', '더위는 조용히 사람을 쓰러뜨립니다.', ['낮 12시~오후 5시 야외 작업 줄이기', '목마르기 전에 물 자주 마시기', '물놀이 전 준비운동, 음주 후 입수 금지', '어르신 댁 에어컨 켜져 있는지 확인']],
+      8:  ['태풍·휴가철 안전', '휴가지와 집, 양쪽 다 챙기셔야 합니다.', ['태풍 예보 땐 창문 테이프보다 창틀 고정', '베란다 화분·물건 안으로 들이기', '계곡은 비 온 뒤 바로 들어가지 않기', '빈집 가스 밸브·전기 차단 확인']],
+      9:  ['명절 귀성길 안전', '장거리 운전과 음식 준비로 바쁜 달입니다.', ['출발 전 타이어 공기압·와이퍼 점검', '졸음 오면 졸음쉼터로 바로', '전 부칠 때 식용유 불은 물 말고 뚜껑으로', '벌초 땐 예초기 보호구 착용']],
+      10: ['겨울 난방 미리 점검', '첫 난방 켜는 날 화재가 가장 많이 납니다.', ['보일러 연통 빠진 곳·녹슨 곳 확인', '전기장판 접힌 채로 보관했으면 교체 검토', '난로 주변 1m 안에 물건 두지 않기', '일산화탄소 경보기 달아두기']],
+      11: ['김장철·건조기 화재 안전', '허리 부상과 화재가 함께 늘어나는 달입니다.', ['배추 옮길 땐 무릎 굽혀서 들기', '멀티탭에 전열기구 여러 개 꽂지 않기', '가스레인지 장시간 사용 땐 환기', '주택용 소화기 사용법 한 번 확인']],
+      12: ['연말 모임·한파 안전', '술자리와 추위가 겹치는 달입니다.', ['음주 후 운전대는 절대 잡지 않기', '술 마신 날 난방 켠 채 잠들지 않기', '외출 전 가스·전열기구 전원 끄기', '독거 어르신 안부 전화 한 통']]
+    };
+    const month = new Date().getMonth() + 1;
+    const [sTitle, sLead, sItems] = seasons[month];
+    document.getElementById('seasonEyebrow').textContent = month + '월의 안전';
+    document.getElementById('seasonTitle').textContent = sTitle;
+    document.getElementById('seasonLead').textContent = sLead;
+    const sList = document.getElementById('seasonList');
+    sItems.forEach(t => { const li = document.createElement('li'); li.textContent = t; sList.appendChild(li); });
+    document.getElementById('shareSeason').addEventListener('click', () => {
+      sharePage(month + '월 안전 수칙: ' + sTitle + '\n· ' + sItems.join('\n· ') + '\n\n더 자세한 건 여기서 보세요 👇',
+        document.getElementById('shareSeasonMsg'));
+    });
+
+    // 다음 로또 추첨까지 (매주 토요일 20:35)
+    (function () {
+      const now = new Date();
+      const draw = new Date(now);
+      draw.setDate(now.getDate() + ((6 - now.getDay() + 7) % 7));
+      draw.setHours(20, 35, 0, 0);
+      if (draw <= now) draw.setDate(draw.getDate() + 7);
+      const days = Math.floor((draw - now) / 86400000);
+      const el = document.getElementById('lottoDday');
+      el.textContent = days === 0 ? '🔔 오늘 저녁 추첨! 번호 뽑아 가세요' : '🗓 이번 주 추첨까지 ' + days + '일 남았습니다 (토요일 저녁)';
+    })();
+
+    // 행운 번호 뽑기
+    function drawLottoSet() {
+      const nums = new Set();
+      while (nums.size < 6) nums.add(Math.floor(Math.random() * 45) + 1);
+      return [...nums].sort((a, b) => a - b);
+    }
+    document.getElementById('lottoBtn').addEventListener('click', () => {
+      const box = document.getElementById('lottoSets');
+      box.innerHTML = '';
+      'ABCDE'.split('').forEach(label => {
+        const row = document.createElement('div');
+        row.className = 'lotto-set';
+        row.innerHTML = '<span class="label">' + label + '</span>';
+        drawLottoSet().forEach(n => {
+          const ball = document.createElement('span');
+          ball.className = 'ball c' + (Math.floor((n - 1) / 10) + 1);
+          ball.textContent = n;
+          row.appendChild(ball);
+        });
+        box.appendChild(row);
+      });
+      document.getElementById('lottoWish').hidden = false;
+    });
+    // 첫 화면 버튼: 행운 번호 코너로 내려가면서 바로 번호를 뽑아줍니다
+    document.getElementById('heroLotto').addEventListener('click', () => {
+      document.getElementById('lottoBtn').click();
+    });
+  </script>
+</body>
+</html>
