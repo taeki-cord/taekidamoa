@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>안전, 그리고 우리 가족 | 생활 안전 수칙 · 우리 집 안전 점검 · 긴급 연락처</title>
-  <meta name="description" content="안전 그리고 우리 가족 — 집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
+  <meta name="description" content="37년 산업안전 강사가 정리한 우리 가족 안전가이드 — 집, 길, 일터에서 꼭 챙겨야 할 생활 안전 수칙과 우리 집 안전 점수 셀프 점검, 긴급 연락처를 한 페이지에 정리했습니다." />
   <link rel="canonical" href="https://taeki-cord.github.io/taekidamoa/" />
   <!-- 브라우저 탭 아이콘(방패 로고) -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="안전, 그리고 우리 가족" />
   <meta property="og:title" content="안전, 그리고 우리 가족 | 생활 안전 수칙 · 긴급 연락처" />
-  <meta property="og:description" content="집, 길, 일터에서 꼭 챙겨야 할 안전 수칙과 긴급 연락처를 한 페이지에 정리했습니다." />
+  <meta property="og:description" content="37년 산업안전 강사가 정리한 우리 가족 안전가이드 — 집, 길, 일터에서 꼭 챙겨야 할 안전 수칙과 긴급 연락처를 한 페이지에 담았습니다." />
   <meta property="og:url" content="https://taeki-cord.github.io/taekidamoa/" />
   <meta property="og:image" content="https://taeki-cord.github.io/taekidamoa/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -278,6 +278,13 @@
     .phone strong { display: block; font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1.2; }
     .phone span { color: var(--muted); font-size: 16px; }
 
+    /* 이달의 안전 */
+    .season-box { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; }
+    .season-box ul { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 12px; }
+    .season-box li { display: flex; gap: 10px; font-size: 18px; line-height: 1.5; }
+    .season-box li::before { content: "✔"; color: var(--safe); font-weight: 900; flex: none; }
+    .lotto-dday { font-size: 19px; font-weight: 700; color: var(--accent); margin: -8px 0 20px; }
+
     /* 안전 다짐 게시판 */
     .pledge-form {
       background: var(--surface); border: 1px solid var(--line);
@@ -357,6 +364,7 @@
     <div class="wrap">
       <a href="#top" class="logo">안전, 그리고 <span>우리 가족</span></a>
       <ul>
+        <li><a class="menu" href="#season">이달의 안전</a></li>
         <li><a class="menu" href="#rules">생활 안전 수칙</a></li>
         <li><a class="menu" href="#check">안전 점검</a></li>
         <li><a class="menu" href="#pledge">안전 다짐</a></li>
@@ -386,6 +394,20 @@
       <div class="quote">
         <p id="tip">“설마”가 사고를 부르고, “혹시”가 사람을 살립니다.</p>
         <button type="button" id="tipBtn">다른 한마디 보기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이달의 안전: 달이 바뀌면 아래 스크립트가 자동으로 그 달 내용을 보여줍니다 -->
+  <section class="block" id="season">
+    <div class="wrap">
+      <p class="eyebrow" id="seasonEyebrow">이달의 안전</p>
+      <h2 id="seasonTitle"></h2>
+      <p class="lead" id="seasonLead"></p>
+      <div class="season-box">
+        <ul id="seasonList"></ul>
+        <button type="button" class="share-btn" id="shareSeason">💬 부모님께 보내드리기</button>
+        <p class="share-msg" id="shareSeasonMsg" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -559,6 +581,7 @@
       <p class="eyebrow">쉬어가는 코너</p>
       <h2>오늘의 행운 번호 뽑기</h2>
       <p class="lead">버튼을 누르면 1~45 중에서 번호 6개씩, 5세트를 뽑아드립니다.</p>
+      <p class="lotto-dday" id="lottoDday"></p>
       <button type="button" class="btn" id="lottoBtn">🎯 번호 뽑기</button>
       <div class="lotto-sets" id="lottoSets" aria-live="polite"></div>
       <p class="lotto-wish" id="lottoWish" hidden>🍀 행운을 빕니다!</p>
@@ -875,6 +898,48 @@
     document.getElementById('heroLotto').addEventListener('click', () => {
       document.getElementById('lottoBtn').click();
     });
+
+    // 한국 시간 기준 오늘 날짜 (해외·시간대 설정이 달라도 한국 날짜로 계산)
+    const kst = new Date(Date.now() + 9 * 3600000);
+    const kstMonth = kst.getUTCMonth() + 1;          // 1~12
+    const kstDay = kst.getUTCDay();                  // 0=일 ~ 6=토
+    const kstMinutes = kst.getUTCHours() * 60 + kst.getUTCMinutes();
+
+    // 이달의 안전: [제목, 한 줄 설명, 수칙 4개]. 문구를 바꾸려면 해당 달 줄만 고치면 됩니다
+    const seasons = {
+      1:  ['한파 속 빙판길 안전', '넘어지면 골절로 이어지는 계절입니다.', ['주머니에 손 넣고 걷지 않기', '미끄럼 방지 신발·아이젠 챙기기', '새벽 운동은 해 뜬 뒤로 미루기', '수도 계량기 보온재로 동파 막기']],
+      2:  ['해빙기 안전', '얼었던 땅이 녹으면서 무너짐 사고가 늘어납니다.', ['축대·담장 금 간 곳 살펴보기', '산행 시 낙석 주의 구간 피하기', '녹기 시작한 얼음 위에는 올라가지 않기', '실내외 온도차 큰 날 혈압 관리']],
+      3:  ['봄철 산불·황사 안전', '건조한 바람에 작은 불씨도 큰불이 됩니다.', ['논·밭두렁 태우기 하지 않기', '산에서는 라이터·버너 쓰지 않기', '미세먼지 나쁨이면 KF94 마스크', '환기는 대기 좋은 시간에 짧게']],
+      4:  ['나들이철 교통 안전', '봄나들이 차량이 몰려 사고가 늘어납니다.', ['2시간 운전하면 무조건 휴게소', '뒷좌석도 안전벨트 꼭 착용', '자전거 탈 땐 헬멧 쓰기', '술 한 잔이라도 마셨으면 대리운전']],
+      5:  ['야외 활동·벌 쏘임 안전', '등산·캠핑이 많아지는 달입니다.', ['산행은 해 지기 2시간 전 하산', '향수·화려한 옷은 벌을 부릅니다', '캠핑 텐트 안에서 난로·화로 쓰지 않기', '진드기 대비 긴 옷 입기']],
+      6:  ['장마 대비 안전', '집중호우가 시작되기 전에 챙겨두세요.', ['하수구·배수구 막힌 곳 청소', '지하 주차장 물 차기 시작하면 바로 대피', '물 찬 도로는 차로 건너지 않기', '젖은 손으로 전기 만지지 않기']],
+      7:  ['폭염·물놀이 안전', '더위는 조용히 사람을 쓰러뜨립니다.', ['낮 12시~오후 5시 야외 작업 줄이기', '목마르기 전에 물 자주 마시기', '물놀이 전 준비운동, 술 마시고 물에 들어가지 않기', '부모님 댁 에어컨 켜져 있는지 확인']],
+      8:  ['태풍·휴가철 안전', '휴가지와 집, 양쪽 다 챙기셔야 합니다.', ['태풍 예보 땐 창문 테이프보다 창틀 고정', '베란다 화분·물건 안으로 들이기', '계곡은 비 온 뒤 바로 들어가지 않기', '집 비울 땐 가스 밸브·전기 차단 확인']],
+      9:  ['명절 귀성길 안전', '장거리 운전과 음식 준비로 바쁜 달입니다.', ['출발 전 타이어 공기압·와이퍼 점검', '졸음 오면 참지 말고 졸음쉼터로', '기름에 불붙으면 물 말고 뚜껑부터 덮기', '벌초 땐 예초기 보호구 착용']],
+      10: ['겨울 난방 미리 점검', '첫 난방 켜는 날 화재가 가장 많이 납니다.', ['보일러 연통 빠진 곳·녹슨 곳 확인', '접어서 보관한 전기장판은 전선 상태 확인', '난로 주변 1m 안에 물건 두지 않기', '일산화탄소 경보기 달아두기']],
+      11: ['김장철·건조기 화재 안전', '허리 부상과 화재가 함께 늘어나는 달입니다.', ['배추 옮길 땐 무릎 굽혀서 들기', '멀티탭 하나에 전열기구 여러 개 꽂지 않기', '가스레인지 오래 쓸 땐 환기', '집에 있는 소화기 위치·사용법 확인']],
+      12: ['연말 모임·한파 안전', '술자리와 추위가 겹치는 달입니다.', ['술 마신 날은 운전대 절대 잡지 않기', '술 마신 날 난로 켠 채 잠들지 않기', '외출 전 가스·전열기구 전원 끄기', '혼자 사시는 어르신께 안부 전화 한 통']]
+    };
+    const [sTitle, sLead, sItems] = seasons[kstMonth];
+    document.getElementById('seasonEyebrow').textContent = kstMonth + '월의 안전';
+    document.getElementById('seasonTitle').textContent = sTitle;
+    document.getElementById('seasonLead').textContent = sLead;
+    const sList = document.getElementById('seasonList');
+    sItems.forEach(t => { const li = document.createElement('li'); li.textContent = t; sList.appendChild(li); });
+    document.getElementById('shareSeason').addEventListener('click', () => {
+      sharePage(kstMonth + '월 안전 수칙 — ' + sTitle + '\n· ' + sItems.join('\n· ') + '\n\n더 자세한 건 여기서 보세요 👇',
+        document.getElementById('shareSeasonMsg'));
+    });
+
+    // 로또 추첨 D-day (매주 토요일 저녁 8시 35분 추첨, 한국 시간 기준)
+    (function () {
+      const DRAW_MINUTES = 20 * 60 + 35;
+      let days = (6 - kstDay + 7) % 7;               // 토요일까지 남은 날짜 수
+      if (days === 0 && kstMinutes >= DRAW_MINUTES) days = 7;
+      document.getElementById('lottoDday').textContent = days === 0
+        ? '🔔 오늘 저녁 추첨! 번호 뽑아 가세요'
+        : '🗓 ' + (days === 7 ? '다음 주' : '이번 주') + ' 추첨까지 ' + days + '일 남았습니다 (토요일 저녁 8시 35분)';
+    })();
   </script>
 </body>
 </html>
