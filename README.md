@@ -33,4 +33,5 @@
 
 - `sitemap.xml` — 검색 사이트에 페이지 목록을 알려주는 파일입니다. 주소: `https://taeki-cord.github.io/taekidamoa/sitemap.xml`
 - 네이버 서치어드바이저·구글 서치콘솔에서 받은 확인 코드는 `index.html` 상단의 `naver-site-verification`, `google-site-verification` 줄에 넣습니다.
+- `google469a92133bca08f9.html` — 구글 서치콘솔 소유 확인용 파일입니다. 지우면 구글 등록이 풀리니 그대로 두세요.
 - `robots.txt`는 사이트 주소의 맨 앞(`taeki-cord.github.io/robots.txt`)에만 둘 수 있어서 이 저장소에는 만들지 않았습니다. 없어도 검색 등록에는 문제가 없습니다.
