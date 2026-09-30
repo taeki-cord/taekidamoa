@@ -160,11 +160,11 @@
       border-radius: 16px;
       background: var(--hero);
     }
-    /* 쇼츠 카드: 쇼츠 썸네일과 같은 스타일. 누르면 그 자리에서 영상이 재생됩니다 */
+    /* 쇼츠 카드: 위쪽 절반은 실제 영상 장면, 아래쪽 절반은 제목. 누르면 그 자리에서 영상이 재생됩니다 */
     .short {
       container-type: inline-size;
-      position: relative; display: flex; flex-direction: column; justify-content: center;
-      width: 100%; aspect-ratio: 9 / 16; padding: 0 8% 0 11%; overflow: hidden;
+      position: relative; display: flex; flex-direction: column; justify-content: flex-start;
+      width: 100%; aspect-ratio: 9 / 16; padding: 96% 8% 0 11%; overflow: hidden;
       border: 0; border-radius: 16px; cursor: pointer; text-align: left; font-family: inherit;
       background: #3b7dd8; color: #fff;
       box-shadow: inset 5px 0 0 #e8590c;
@@ -174,21 +174,31 @@
     }
     .short::before { width: 70cqw; height: 70cqw; left: -38cqw; top: -22cqw; }
     .short::after { width: 88cqw; height: 88cqw; right: -48cqw; bottom: -30cqw; }
+    /* 영상 장면: 유튜브 기본 썸네일(4:3, 양옆 검은 띠)에서 가운데 세로 화면만 잘라 보여줍니다 */
+    .short .s-thumb {
+      position: absolute; left: 0; right: 0; top: 0; height: 50%;
+      background: #10243f center 30% / 237% auto no-repeat;
+    }
+    .short .s-thumb::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, #3b7dd8);
+    }
     .short .s-tag {
       align-self: flex-start; background: #e8590c; color: #fff; font-weight: 700;
-      font-size: 6.4cqw; padding: 1.4cqw 3.6cqw; border-radius: 99px; margin-bottom: 5cqw;
+      font-size: 6.4cqw; padding: 1.4cqw 3.6cqw; border-radius: 99px; margin-bottom: 3.5cqw;
     }
-    .short .s-title { font-weight: 900; font-size: 12.5cqw; line-height: 1.28; letter-spacing: -.02em; word-break: keep-all; }
+    .short .s-title { font-weight: 900; font-size: 10.5cqw; line-height: 1.28; letter-spacing: -.02em; word-break: keep-all; }
     .short .s-title em { font-style: normal; color: #ffd43b; }
     .short .s-brand {
-      position: absolute; left: 11cqw; bottom: 22%; display: flex; align-items: center; gap: 2cqw;
+      position: absolute; left: 11cqw; bottom: 7cqw; display: flex; align-items: center; gap: 2cqw;
       font-weight: 900; font-size: 5.4cqw; white-space: nowrap;
     }
     .short .s-brand svg { width: 9cqw; height: 9cqw; flex: none; }
     .short .s-brand span { color: #ffd43b; }
     .short .s-play {
-      position: absolute; right: 7cqw; bottom: 7cqw; width: 15cqw; height: 15cqw; border-radius: 50%;
-      background: #ff0000; display: grid; place-items: center; font-size: 6cqw; padding-left: .8cqw;
+      position: absolute; left: 50%; top: 25%; transform: translate(-50%, -50%); z-index: 1;
+      width: 22cqw; height: 22cqw; border-radius: 50%;
+      background: #ff0000; display: grid; place-items: center; font-size: 9cqw; padding-left: 1.2cqw;
       box-shadow: 0 1cqw 3cqw rgba(0, 0, 0, .25);
     }
     .short:hover .s-play { filter: brightness(1.1); }
@@ -691,6 +701,12 @@
 
     // 쇼츠 카드를 누르면 그 자리에 유튜브 플레이어를 띄웁니다 (처음부터 영상 4개를 불러오지 않아 빠릅니다)
     document.querySelectorAll('.short').forEach(card => {
+      // 위쪽 절반에 실제 영상 장면(유튜브 썸네일)을 깔아서 영상이라는 걸 바로 알 수 있게 합니다
+      const thumb = document.createElement('span');
+      thumb.className = 's-thumb';
+      thumb.setAttribute('aria-hidden', 'true');
+      thumb.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + card.dataset.id + '/hqdefault.jpg)';
+      card.prepend(thumb);
       card.addEventListener('click', () => {
         const f = document.createElement('iframe');
         f.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.id + '?autoplay=1&playsinline=1';
