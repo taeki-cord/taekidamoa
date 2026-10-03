@@ -1,0 +1,96 @@
+<template>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root *{box-sizing:border-box}
+.f03-bg{position:absolute;inset:0;background:#fdfae7}
+.f03-stage{position:absolute;inset:0}
+.f03-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f03-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
+.f03-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f03-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
+.f03-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
+.f03-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
+.f03-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
+.f03-muted{color:#6b6b6b;font-weight:600}
+.f03-w{display:inline-block}
+.f03-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f03-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
+.f03-pill.solid{background:#1e2bfa;color:#fdfae7}
+.f03-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
+.f03-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+
+
+.f03-head{position:absolute;left:96px;top:200px;width:1728px}
+.f03-title{font-size:120px}
+.f03-b{color:#111}
+.f03-cards{position:absolute;left:96px;top:470px;width:1728px;display:flex;gap:40px}
+.f03-card{position:relative;height:330px;display:flex;align-items:center;gap:40px;padding:0 64px}
+.f03-c1{width:900px}
+.f03-c2{width:788px;border-style:dashed;border-width:3px;justify-content:center}
+.f03-cl{font-size:96px;font-weight:800;letter-spacing:-0.03em}
+.f03-cl2{color:#1e2bfa}
+.f03-qq{font-size:150px;font-weight:800;color:#1e2bfa;line-height:1}
+.f03-strike{position:absolute;left:170px;top:146px;width:640px}
+
+</style>
+<div id="root" data-composition-id="03-not-sleep" data-width="1920" data-height="1080" data-duration="7.866">
+  <div id="f03-bg" class="f03-bg clip" data-start="0" data-duration="7.866" data-track-index="0"></div>
+  <div id="f03-stage" class="f03-stage clip" data-start="0" data-duration="7.866" data-track-index="1">
+    <div class="f03-eyebrow"><i></i><span>만성 피로의 원인</span></div>
+    <div class="f03-counter">03 / 11</div>
+
+    <div class="f03-head">
+      <div class="f03-h1 f03-title"><span class="f03-w f03-a">만성 피로,</span> <span class="f03-w f03-b">원인은?</span></div>
+    </div>
+    <div class="f03-cards">
+      <div class="f03-card f03-c1">
+        <svg viewBox="0 0 120 120" width="120" height="120"><path class="ink" d="M78 18 A44 44 0 1 0 102 78 A36 36 0 0 1 78 18 Z"/></svg>
+        <div class="f03-cl">수면 부족</div>
+        <svg class="f03-strike" viewBox="0 0 600 40" width="600" height="40"><path class="cob" pathLength="1" d="M10 22 L590 18" style="stroke-width:10"/></svg>
+      </div>
+      <div class="f03-card f03-c2">
+        <div class="f03-qq">?</div>
+        <div class="f03-cl f03-cl2">진짜 원인</div>
+      </div>
+    </div>
+
+    <div class="f03-track"></div>
+    <div class="f03-prog"></div>
+  </div>
+</div>
+<script>
+(() => {
+
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const q = (s) => document.querySelectorAll('[data-composition-id="03-not-sleep"] ' + s);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
+tl.fromTo(q(".f03-prog"), { width: 349 }, { width: 524, duration: 0.9, ease: "power2.inOut" }, 0.1);
+up(".f03-eyebrow", 0.25);
+fade(".f03-counter", 0.25);
+
+
+up(".f03-a", 0.8, { y: 50 });
+up(".f03-b", 3.6, { y: 50 });
+up(".f03-c1", 4.6, { y: 60, duration: 0.8 });
+draw(".f03-strike [pathLength]", 5.8, 0.5);
+tl.to(q(".f03-c1 svg:first-child, .f03-c1 .f03-cl"), { opacity: 0.35, duration: 0.5, ease: "power2.out" }, 6.0);
+up(".f03-c2", 6.2, { y: 60, duration: 0.8 });
+
+tl.set({}, {}, 7.366);
+window.__timelines = window.__timelines || {};
+window.__timelines["03-not-sleep"] = tl;
+})();
+</script>
+</template>

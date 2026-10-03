@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fdfae7;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="82.39"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-hook"
+        class="scene"
+        data-composition-id="01-hook"
+        data-composition-src="compositions/frames/01-hook.html"
+        data-start="0"
+        data-duration="8.075"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-hook-voice"
+        src="assets/voice/01.wav"
+        data-start="0"
+        data-duration="7.575"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-heavy"
+        class="scene"
+        data-composition-id="02-heavy"
+        data-composition-src="compositions/frames/02-heavy.html"
+        data-start="7.575"
+        data-duration="7.085"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-heavy-voice"
+        src="assets/voice/02.wav"
+        data-start="7.575"
+        data-duration="6.585"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-not-sleep"
+        class="scene"
+        data-composition-id="03-not-sleep"
+        data-composition-src="compositions/frames/03-not-sleep.html"
+        data-start="14.16"
+        data-duration="7.866"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-03-not-sleep-voice"
+        src="assets/voice/03.wav"
+        data-start="14.16"
+        data-duration="7.366"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-eye-strain"
+        class="scene"
+        data-composition-id="04-eye-strain"
+        data-composition-src="compositions/frames/04-eye-strain.html"
+        data-start="21.526"
+        data-duration="6.157"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-04-eye-strain-voice"
+        src="assets/voice/04.wav"
+        data-start="21.526"
+        data-duration="5.657"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-brain-overload"
+        class="scene"
+        data-composition-id="05-brain-overload"
+        data-composition-src="compositions/frames/05-brain-overload.html"
+        data-start="27.183"
+        data-duration="7.626"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-05-brain-overload-voice"
+        src="assets/voice/05.wav"
+        data-start="27.183"
+        data-duration="7.126"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-marathon"
+        class="scene"
+        data-composition-id="06-marathon"
+        data-composition-src="compositions/frames/06-marathon.html"
+        data-start="34.309"
+        data-duration="6.943"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-06-marathon-voice"
+        src="assets/voice/06.wav"
+        data-start="34.309"
+        data-duration="6.943"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-small-break"
+        class="scene"
+        data-composition-id="07-small-break"
+        data-composition-src="compositions/frames/07-small-break.html"
+        data-start="41.251999999999995"
+        data-duration="9.751"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-07-small-break-voice"
+        src="assets/voice/07.wav"
+        data-start="41.251999999999995"
+        data-duration="9.251"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-50-5"
+        class="scene"
+        data-composition-id="08-50-5"
+        data-composition-src="compositions/frames/08-50-5.html"
+        data-start="50.50299999999999"
+        data-duration="8.196"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-08-50-5-voice"
+        src="assets/voice/08.wav"
+        data-start="50.50299999999999"
+        data-duration="7.696"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-stretch"
+        class="scene"
+        data-composition-id="09-stretch"
+        data-composition-src="compositions/frames/09-stretch.html"
+        data-start="58.19899999999999"
+        data-duration="9.335"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-09-stretch-voice"
+        src="assets/voice/09.wav"
+        data-start="58.19899999999999"
+        data-duration="8.835"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-10-real-rest"
+        class="scene"
+        data-composition-id="10-real-rest"
+        data-composition-src="compositions/frames/10-real-rest.html"
+        data-start="67.03399999999999"
+        data-duration="8.796"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-10-real-rest-voice"
+        src="assets/voice/10.wav"
+        data-start="67.03399999999999"
+        data-duration="8.196"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-11-cheer"
+        class="scene"
+        data-composition-id="11-cheer"
+        data-composition-src="compositions/frames/11-cheer.html"
+        data-start="75.22999999999999"
+        data-duration="7.16"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-11-cheer-voice"
+        src="assets/voice/11.wav"
+        data-start="75.22999999999999"
+        data-duration="7.16"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-hook", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 7.575);
+        tl.fromTo("#el-02-heavy", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 7.575);
+        tl.addLabel("hf:transition:01-hook:02-heavy:crossfade", 7.575);
+        tl.to("#el-02-heavy", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 14.16);
+        tl.fromTo("#el-03-not-sleep", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 14.16);
+        tl.addLabel("hf:transition:02-heavy:03-not-sleep:crossfade", 14.16);
+        tl.to("#el-03-not-sleep", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 21.526);
+        tl.fromTo("#el-04-eye-strain", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 21.526);
+        tl.addLabel("hf:transition:03-not-sleep:04-eye-strain:push-slide", 21.526);
+        tl.to("#el-04-eye-strain", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 27.183);
+        tl.fromTo("#el-05-brain-overload", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 27.183);
+        tl.addLabel("hf:transition:04-eye-strain:05-brain-overload:push-slide", 27.183);
+        tl.to("#el-05-brain-overload", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 34.309);
+        tl.fromTo("#el-06-marathon", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 34.309);
+        tl.addLabel("hf:transition:05-brain-overload:06-marathon:crossfade", 34.309);
+        tl.to("#el-07-small-break", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 50.503);
+        tl.fromTo("#el-08-50-5", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 50.503);
+        tl.addLabel("hf:transition:07-small-break:08-50-5:push-slide", 50.503);
+        tl.to("#el-08-50-5", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 58.199);
+        tl.fromTo("#el-09-stretch", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 58.199);
+        tl.addLabel("hf:transition:08-50-5:09-stretch:push-slide", 58.199);
+        tl.to("#el-09-stretch", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 67.034);
+        tl.fromTo("#el-10-real-rest", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 67.034);
+        tl.addLabel("hf:transition:09-stretch:10-real-rest:crossfade", 67.034);
+        tl.to("#el-10-real-rest", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 75.23);
+        tl.fromTo("#el-11-cheer", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 75.23);
+        tl.addLabel("hf:transition:10-real-rest:11-cheer:blur-crossfade", 75.23);
+        tl.to({}, { duration: 82.39 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>

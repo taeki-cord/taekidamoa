@@ -1,0 +1,104 @@
+<template>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root *{box-sizing:border-box}
+.f06-bg{position:absolute;inset:0;background:#fdfae7}
+.f06-stage{position:absolute;inset:0}
+.f06-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f06-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
+.f06-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f06-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
+.f06-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
+.f06-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
+.f06-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
+.f06-muted{color:#6b6b6b;font-weight:600}
+.f06-w{display:inline-block}
+.f06-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f06-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
+.f06-pill.solid{background:#1e2bfa;color:#fdfae7}
+.f06-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
+.f06-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+
+
+.f06-split{position:absolute;left:96px;top:190px;width:1728px;height:700px;display:flex;gap:48px;perspective:1600px}
+.f06-side{position:relative;flex:1;height:680px;display:flex;flex-direction:column;align-items:center;padding-top:40px}
+.f06-who{font-size:84px;font-weight:800;letter-spacing:-0.03em}
+.f06-cob{color:#1e2bfa}
+.f06-side svg{margin-top:10px}
+.f06-meter{font-size:76px;font-weight:800;margin-top:6px;font-variant-numeric:tabular-nums}
+.f06-runbar{position:absolute;left:80px;right:80px;bottom:140px;height:16px;border-radius:8px;background:rgba(30,43,250,0.08);overflow:hidden}
+.f06-runfill{display:block;height:100%;width:100%;background:#1e2bfa;border-radius:8px}
+.f06-badge{position:absolute;bottom:40px}
+.f06-mind .f06-meter{margin-bottom:40px}
+
+</style>
+<div id="root" data-composition-id="06-marathon" data-width="1920" data-height="1080" data-duration="6.943">
+  <div id="f06-bg" class="f06-bg clip" data-start="0" data-duration="6.943" data-track-index="0"></div>
+  <div id="f06-stage" class="f06-stage clip" data-start="0" data-duration="6.943" data-track-index="1">
+    <div class="f06-eyebrow"><i></i><span>몸 vs 뇌</span></div>
+    <div class="f06-counter">06 / 11</div>
+
+    <div class="f06-split">
+      <div class="f06-card f06-side f06-body">
+        <div class="f06-who">몸</div>
+        <svg viewBox="0 0 260 300" width="208" height="240">
+          <circle cx="120" cy="50" r="34" class="ink"/>
+          <path class="ink" d="M120 88 L120 180 L200 180 L200 270 M60 130 L120 150 M40 180 L40 290 M40 180 L230 180"/>
+        </svg>
+        <div class="f06-meter"><span class="f06-num0">0</span> km</div>
+        <div class="f06-pill soft f06-badge f06-b1">가만히 앉아 있음</div>
+      </div>
+      <div class="f06-card f06-side f06-mind">
+        <div class="f06-who f06-cob">뇌</div>
+        <svg viewBox="0 0 260 300" width="208" height="240">
+          <circle cx="150" cy="44" r="34" class="cob"/>
+          <path class="cob" d="M140 84 L110 170 L170 210 L150 290 M110 170 L50 230 M130 110 L200 140 L240 110 M130 110 L70 120 L40 160"/>
+        </svg>
+        <div class="f06-meter f06-cob"><span class="f06-num">0</span> km</div>
+        <div class="f06-runbar"><i class="f06-runfill"></i></div>
+        <div class="f06-pill solid f06-badge f06-b2">하루 종일 풀코스</div>
+      </div>
+    </div>
+
+    <div class="f06-track"></div>
+    <div class="f06-prog"></div>
+  </div>
+</div>
+<script>
+(() => {
+
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const q = (s) => document.querySelectorAll('[data-composition-id="06-marathon"] ' + s);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
+tl.fromTo(q(".f06-prog"), { width: 873 }, { width: 1047, duration: 0.9, ease: "power2.inOut" }, 0.1);
+up(".f06-eyebrow", 0.25);
+fade(".f06-counter", 0.25);
+
+
+tl.fromTo(q(".f06-body"), { opacity: 0, x: -160, rotationY: 18 }, { opacity: 1, x: 0, rotationY: 6, duration: 0.9, ease: E }, 0.4);
+tl.fromTo(q(".f06-mind"), { opacity: 0, x: 160, rotationY: -18 }, { opacity: 1, x: 0, rotationY: -6, duration: 0.9, ease: E }, 3.0);
+pop(".f06-b1", 1.6, { duration: 0.5 });
+tl.fromTo(q(".f06-runfill"), { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 2.0, ease: "power2.inOut" }, 4.0);
+const km = { v: 0 }, kmEl = q(".f06-num")[0];
+tl.fromTo(km, { v: 0 }, { v: 42.195, duration: 2.0, ease: "power2.inOut", onUpdate: () => { kmEl.textContent = km.v.toFixed(km.v >= 42.19 ? 3 : 1); } }, 4.0);
+pop(".f06-b2", 5.6, { duration: 0.5 });
+tl.to(q(".f06-body, .f06-mind"), { rotationY: 0, duration: 0.8, ease: E }, 6.0);
+
+tl.set({}, {}, 6.943);
+window.__timelines = window.__timelines || {};
+window.__timelines["06-marathon"] = tl;
+})();
+</script>
+</template>

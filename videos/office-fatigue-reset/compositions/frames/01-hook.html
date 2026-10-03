@@ -1,0 +1,106 @@
+<template>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root *{box-sizing:border-box}
+.f01-bg{position:absolute;inset:0;background:#fdfae7}
+.f01-stage{position:absolute;inset:0}
+.f01-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f01-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
+.f01-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f01-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
+.f01-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
+.f01-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
+.f01-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
+.f01-muted{color:#6b6b6b;font-weight:600}
+.f01-w{display:inline-block}
+.f01-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f01-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
+.f01-pill.solid{background:#1e2bfa;color:#fdfae7}
+.f01-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
+.f01-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+
+
+.f01-line{position:absolute;left:96px;top:190px}
+.f01-linelbl{position:absolute;left:96px;top:250px;width:900px;font-size:30px;font-weight:600;color:#6b6b6b}
+.f01-l2{position:absolute;right:0;color:#1e2bfa;font-weight:700}
+.f01-cupwrap{position:absolute;left:250px;top:330px}
+.f01-copy{position:absolute;left:880px;top:390px;width:960px}
+.f01-sub{font-size:52px;margin-bottom:22px}
+.f01-hero{font-size:160px}
+.f01-qm{color:#1e2bfa;margin-left:12px;font-size:1em}
+
+</style>
+<div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080" data-duration="8.075">
+  <div id="f01-bg" class="f01-bg clip" data-start="0" data-duration="8.075" data-track-index="0"></div>
+  <div id="f01-stage" class="f01-stage clip" data-start="0" data-duration="8.075" data-track-index="1">
+    <div class="f01-eyebrow"><i></i><span>출근길 · AM 08:50</span></div>
+    <div class="f01-counter">01 / 11</div>
+
+    <svg class="f01-line" viewBox="0 0 900 60" width="900" height="60">
+      <path class="soft" d="M20 30 L880 30"/>
+      <path class="cob" pathLength="1" d="M20 30 L880 30"/>
+      <circle class="f01-dot" cx="20" cy="30" r="14" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6"/>
+      <circle class="f01-dot" cx="306" cy="30" r="14" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6"/>
+      <circle class="f01-dot" cx="593" cy="30" r="14" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6"/>
+      <circle class="f01-dot" cx="880" cy="30" r="18" fill="#1e2bfa"/>
+    </svg>
+    <div class="f01-linelbl"><span class="f01-l1">지옥철</span><span class="f01-l2">도착 · 착석</span></div>
+    <div class="f01-cupwrap"><svg class="f01-cup" viewBox="0 0 400 540" width="400" height="540">
+      <path class="f01-liquid" d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(30,43,250,0.14)"/>
+      <rect class="f01-ice" x="130" y="250" width="70" height="70" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(-12 165 285)"/>
+      <rect class="f01-ice" x="210" y="290" width="66" height="66" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(10 243 323)"/>
+      <rect class="f01-ice" x="150" y="350" width="62" height="62" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(6 181 381)"/>
+      <path class="ink" pathLength="1" d="M70 150 L330 150 L300 500 Q298 520 276 520 L124 520 Q102 520 100 500 Z"/>
+      <path class="ink" pathLength="1" d="M56 150 Q56 112 96 112 L304 112 Q344 112 344 150"/>
+      <path class="cob" pathLength="1" d="M236 112 L262 20 L300 20"/>
+    </svg></div>
+    <div class="f01-copy">
+      <div class="f01-sub f01-muted">습관처럼, 일단</div>
+      <div class="f01-h1 f01-hero"><span class="f01-w f01-a">아이스</span><br><span class="f01-w f01-b">아메리카노</span><span class="f01-w f01-qm">?</span></div>
+    </div>
+
+    <div class="f01-track"></div>
+    <div class="f01-prog"></div>
+  </div>
+</div>
+<script>
+(() => {
+
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const q = (s) => document.querySelectorAll('[data-composition-id="01-hook"] ' + s);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
+tl.fromTo(q(".f01-prog"), { width: 0 }, { width: 175, duration: 0.9, ease: "power2.inOut" }, 0.1);
+up(".f01-eyebrow", 0.25);
+fade(".f01-counter", 0.25);
+
+
+pop(".f01-dot", 0.5, { stagger: 0.45, duration: 0.45 });
+draw(".f01-line .cob", 0.5, 1.8);
+up(".f01-l1", 0.9, { y: 20 });
+up(".f01-l2", 2.3, { y: 20 });
+draw(".f01-cup [pathLength]", 2.5, 0.9, { stagger: 0.15 });
+tl.fromTo(q(".f01-liquid"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.8, ease: E }, 3.1);
+pop(".f01-ice", 3.3, { stagger: 0.12, duration: 0.5 });
+up(".f01-sub", 3.1);
+up(".f01-a", 4.0, { y: 60, duration: 0.8 });
+up(".f01-b", 4.5, { y: 60, duration: 0.8 });
+up(".f01-qm", 6.4, { y: 50, duration: 0.7 });
+
+tl.set({}, {}, 7.575);
+window.__timelines = window.__timelines || {};
+window.__timelines["01-hook"] = tl;
+})();
+</script>
+</template>

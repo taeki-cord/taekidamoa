@@ -1,0 +1,122 @@
+<template>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root *{box-sizing:border-box}
+.f09-bg{position:absolute;inset:0;background:#fdfae7}
+.f09-stage{position:absolute;inset:0}
+.f09-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f09-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
+.f09-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f09-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
+.f09-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
+.f09-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
+.f09-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
+.f09-muted{color:#6b6b6b;font-weight:600}
+.f09-w{display:inline-block}
+.f09-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f09-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
+.f09-pill.solid{background:#1e2bfa;color:#fdfae7}
+.f09-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
+.f09-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+
+
+.f09-fig{position:absolute;left:180px;top:240px;width:600px;height:640px}
+.f09-dot{position:absolute;display:flex;align-items:center;gap:12px;font-size:34px;font-weight:700;color:#1e2bfa}
+.f09-dot i{display:block;width:22px;height:22px;border-radius:50%;background:#1e2bfa}
+.f09-dneck{left:330px;top:250px}
+.f09-dsh{left:410px;top:300px}
+.f09-label{position:absolute;left:960px;top:360px;width:880px}
+.f09-sub{font-size:52px;margin-bottom:14px}
+.f09-hero{font-size:150px}
+.f09-oxy{margin-top:80px;font-size:40px}
+
+</style>
+<div id="root" data-composition-id="09-stretch" data-width="1920" data-height="1080" data-duration="9.335">
+  <div id="f09-bg" class="f09-bg clip" data-start="0" data-duration="9.335" data-track-index="0"></div>
+  <div id="f09-stage" class="f09-stage clip" data-start="0" data-duration="9.335" data-track-index="1">
+    <div class="f09-eyebrow"><i></i><span>실천 둘</span></div>
+    <div class="f09-counter">09 / 11</div>
+
+    <div class="f09-fig">
+      <svg viewBox="0 0 600 640" width="600" height="640">
+        <g class="f09-o2">
+          <circle cx="170" cy="560" r="14" fill="#1e2bfa"/><circle cx="430" cy="590" r="12" fill="#1e2bfa"/>
+          <circle cx="300" cy="620" r="16" fill="#1e2bfa"/><circle cx="235" cy="600" r="10" fill="#1e2bfa"/>
+          <circle cx="370" cy="570" r="13" fill="#1e2bfa"/>
+        </g>
+        <path class="ink" d="M190 540 L410 540 M210 540 L210 620 M390 540 L390 620"/>
+        <path class="ink" d="M300 300 L300 520"/>
+        <g class="f09-upper">
+          <g class="f09-head">
+            <circle class="f09-glow" cx="300" cy="190" r="96" fill="rgba(30,43,250,0.12)"/>
+            <circle cx="300" cy="196" r="58" class="ink"/>
+          </g>
+          <path class="f09-shoulders ink" d="M210 304 L390 304"/>
+          <g class="f09-armL"><path class="ink" d="M212 304 L170 420 L222 476"/></g>
+          <g class="f09-armR"><path class="ink" d="M388 304 L430 420 L378 476"/></g>
+        </g>
+      </svg>
+      <div class="f09-dot f09-dneck"><i></i>목</div>
+      <div class="f09-dot f09-dsh"><i></i>어깨</div>
+    </div>
+    <div class="f09-label">
+      <div class="f09-sub f09-muted">앉은 채로, 가볍게</div>
+      <div class="f09-h1 f09-hero">기지개 한 번</div>
+      <div class="f09-pill soft f09-oxy">뇌에 산소 공급 ↑</div>
+    </div>
+
+    <div class="f09-track"></div>
+    <div class="f09-prog"></div>
+  </div>
+</div>
+<script>
+(() => {
+
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+const q = (s) => document.querySelectorAll('[data-composition-id="09-stretch"] ' + s);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
+tl.fromTo(q(".f09-prog"), { width: 1396 }, { width: 1571, duration: 0.9, ease: "power2.inOut" }, 0.1);
+up(".f09-eyebrow", 0.25);
+fade(".f09-counter", 0.25);
+
+
+// hunched start: head dropped forward, shoulders rolled in
+tl.set(q(".f09-head"), { y: 34 }, 0);
+tl.set(q(".f09-shoulders"), { scaleX: 0.82, svgOrigin: "300 304" }, 0);
+tl.set(q(".f09-armL"), { x: 16, y: 10 }, 0);
+tl.set(q(".f09-armR"), { x: -16, y: 10 }, 0);
+fade(".f09-fig", 0.5, { duration: 0.6 });
+up(".f09-sub", 1.5);
+up(".f09-hero", 2.2, { y: 60, duration: 0.8 });
+pop(".f09-dneck", 3.2, { duration: 0.45 });
+pop(".f09-dsh", 3.6, { duration: 0.45 });
+// open up: head lifts, shoulders widen, both arms sweep overhead
+tl.to(q(".f09-head"), { y: 0, duration: 1.0, ease: "power2.inOut" }, 4.2);
+tl.to(q(".f09-shoulders"), { scaleX: 1, svgOrigin: "300 304", duration: 1.0, ease: "power2.inOut" }, 4.2);
+tl.to(q(".f09-armL"), { x: 0, y: 0, rotation: 150, svgOrigin: "212 304", duration: 1.2, ease: "power2.inOut" }, 4.4);
+tl.to(q(".f09-armR"), { x: 0, y: 0, rotation: -150, svgOrigin: "388 304", duration: 1.2, ease: "power2.inOut" }, 4.4);
+tl.to(q(".f09-dneck, .f09-dsh"), { opacity: 0, duration: 0.4 }, 5.4);
+// oxygen rises into the head
+tl.fromTo(q(".f09-o2 circle"), { opacity: 0, y: 0 }, { opacity: 1, y: -340, duration: 1.6, ease: "power2.out", stagger: 0.15 }, 6.0);
+tl.to(q(".f09-o2 circle"), { opacity: 0, duration: 0.4, stagger: 0.15 }, 7.4);
+tl.fromTo(q(".f09-glow"), { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.9, ease: E }, 6.9);
+pop(".f09-oxy", 6.9, { duration: 0.6 });
+
+tl.set({}, {}, 8.835);
+window.__timelines = window.__timelines || {};
+window.__timelines["09-stretch"] = tl;
+})();
+</script>
+</template>
