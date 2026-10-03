@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Pretendard";font-weight:600;src:url("../assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:800;src:url("../assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1280px;height:720px;overflow:hidden}
+body{position:relative;background:#FFD43B;font-family:"Pretendard",sans-serif;color:#1B1B3A;word-break:keep-all}
+.deco1{position:absolute;width:620px;height:620px;border-radius:50%;right:-170px;top:-210px;background:rgba(255,255,255,0.32)}
+.deco2{position:absolute;width:300px;height:300px;border-radius:50%;left:-110px;bottom:-130px;background:rgba(255,90,54,0.25)}
+.copy{position:absolute;left:64px;top:92px;width:760px}
+.tag{display:inline-block;padding:12px 26px;border-radius:100px;background:#1B1B3A;color:#FFD43B;font-weight:800;font-size:34px;letter-spacing:-0.01em}
+.title{margin-top:30px;font-weight:800;font-size:150px;line-height:1.06;letter-spacing:-0.045em}
+.title .hl{background:linear-gradient(transparent 60%, rgba(255,90,54,0.75) 60%);padding:0 6px}
+.sub{margin-top:30px;font-weight:600;font-size:42px;color:rgba(27,27,58,0.85)}
+.art{position:absolute;right:70px;top:150px;width:360px;height:470px}
+.art svg{position:absolute;left:0;top:0}
+</style>
+</head>
+<body>
+  <div class="deco1"></div><div class="deco2"></div>
+  <div class="copy">
+    <div class="tag">직장인 만성 피로</div>
+    <div class="title">커피로는<br><span class="hl">안 풀립니다</span></div>
+    <div class="sub">직장인 피로의 진짜 이유</div>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 400 540" width="360" height="486">
+      <path d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(122,74,42,0.9)"/>
+      <rect x="130" y="250" width="70" height="70" rx="10" fill="#fff" stroke="#2340F5" stroke-width="7" transform="rotate(-12 165 285)"/>
+      <rect x="210" y="290" width="66" height="66" rx="10" fill="#fff" stroke="#2340F5" stroke-width="7" transform="rotate(10 243 323)"/>
+      <rect x="150" y="350" width="62" height="62" rx="10" fill="#fff" stroke="#2340F5" stroke-width="7" transform="rotate(6 181 381)"/>
+      <path d="M70 150 L330 150 L300 500 Q298 520 276 520 L124 520 Q102 520 100 500 Z" fill="none" stroke="#1B1B3A" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M56 150 Q56 112 96 112 L304 112 Q344 112 344 150" fill="none" stroke="#1B1B3A" stroke-width="12" stroke-linecap="round"/>
+      <path d="M236 112 L262 20 L300 20" fill="none" stroke="#2340F5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg viewBox="0 0 400 400" width="380" height="380" style="left:-10px;top:60px">
+      <path d="M40 40 L360 360 M360 40 L40 360" fill="none" stroke="#FF5A36" stroke-width="44" stroke-linecap="round"/>
+    </svg>
+  </div>
+</body>
+</html>
