@@ -7,6 +7,7 @@ file; every authored class/id is prefixed with the frame prefix (fNN-) so frames
 never collide once assembled. Durations are read from STORYBOARD.md so a voice
 swap only needs `sync-durations` + a re-run of this script.
 """
+import json
 import re
 from pathlib import Path
 
@@ -55,13 +56,16 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 
 BASE_JS = """
 const tl = gsap.timeline({ paused: true });
+// W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
+const __K = __KNOTS__, D = __DUR__;
+const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="__ID__"] ' + s);
-const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
-const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
-const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
-const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
-const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), W(t));
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), W(t));
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), W(t));
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), W(t));
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, W(t));
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".P-prog"), { width: __PFROM__ }, { width: __PTO__, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".P-eyebrow", 0.25);
@@ -111,8 +115,26 @@ def apply_theme(html, t):
     return html
 
 
+ALIGN_PATH = ROOT / "tools" / "voice_align.json"
+ALIGN = json.loads(ALIGN_PATH.read_text(encoding="utf-8")) if ALIGN_PATH.exists() else {}
+
+
+def warp_js(js):
+    """Wrap literal / loop-variable positions of raw tl.* calls in W()."""
+    out = []
+    for line in js.split("\n"):
+        if line.lstrip().startswith("tl."):
+            line = re.sub(r", (\d+(?:\.\d+)?)\);$", r", W(\1));", line)
+            line = re.sub(r", t\);$", ", W(t));", line)
+        out.append(line)
+    return "\n".join(out)
+
+
 def frame(n, fid, eyebrow, body, css, js, final=False):
     dur = durations[n]
+    al = ALIGN.get(str(n))
+    knots = json.dumps(al["knots"]) if al else "[[0,0],[1,1]]"
+    js = warp_js(js)
     p = "f%02d-" % n
     pfrom = round((n - 1) / TOTAL * 1920)
     pto = round(n / TOTAL * 1920)
@@ -147,6 +169,7 @@ window.__timelines["{fid}"] = tl;
 </script>
 </template>
 """
+    html = html.replace("__KNOTS__", knots).replace("__DUR__", str(dur))
     html = html.replace("__ID__", fid).replace("__PFROM__", str(pfrom)).replace("__PTO__", str(pto))
     html = html.replace("P-", p)
     html = apply_theme(html, THEMES[THEME_FOR[n]])
@@ -409,7 +432,7 @@ draw(".P-brain [pathLength]", 1.9, 1.0, { stagger: 0.2 });
 [[".P-k1", 2.5], [".P-k2", 2.9], [".P-k3", 3.3], [".P-k4", 3.7]].forEach(([s, t], i) => {
   pop(s, t, { duration: 0.5 });
   const dx = [40, -30, 30, -40][i], dy = [30, 40, -30, -30][i];
-  tl.to(q(s), { x: dx, y: dy, duration: 7.1 - t, ease: "sine.inOut" }, t + 0.5);
+  tl.to(q(s), { x: dx, y: dy, duration: Math.max(0.5, D - W(t) - 0.5), ease: "sine.inOut" }, W(t) + 0.5);
 });
 tl.to(q(".P-brain .ink"), { stroke: "#1e2bfa", duration: 0.5 }, 4.5);
 up(".P-label .P-sub", 3.1);

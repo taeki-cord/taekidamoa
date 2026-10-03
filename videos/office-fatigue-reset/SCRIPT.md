@@ -1,6 +1,6 @@
 # SCRIPT — office-fatigue-reset
 
-**Voice:** 임시 — sherpa-onnx vits-mimic3 ko_KO-kss (오프라인). 최종: 사용자 본인 음성(Voicebox)으로 교체 예정
+**Voice:** 사용자 본인 목소리 (Voicebox, profile-taeki)
 **Voice direction:** 차분하고 따뜻한 선배 직장인 톤. 서두르지 않게.
 
 ---

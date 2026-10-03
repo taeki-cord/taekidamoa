@@ -19,7 +19,7 @@ vo_mode: verbatim
 
 ## Assets
 
-- (대기) 사용자 본인 목소리 나레이션 — 사용자 PC의 Voicebox 프로필(profile-taeki.voicebox.zip\samples). 아직 미전달.
+- assets/voice/narration-full-clean.wav — 사용자 본인 목소리(Voicebox) 나레이션, ** 낭독 부분 4곳 제거. 처리 기록: tools/VOICE_NOTES.md
 
 ## Customizations
 

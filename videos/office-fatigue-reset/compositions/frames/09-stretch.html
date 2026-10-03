@@ -41,9 +41,9 @@ svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:
 .f09-oxy{margin-top:80px;font-size:40px}
 
 </style>
-<div id="root" data-composition-id="09-stretch" data-width="1920" data-height="1080" data-duration="9.335">
-  <div id="f09-bg" class="f09-bg clip" data-start="0" data-duration="9.335" data-track-index="0"><div class="f09-deco f09-deco1"></div><div class="f09-deco f09-deco2"></div><div class="f09-deco f09-deco3"></div></div>
-  <div id="f09-stage" class="f09-stage clip" data-start="0" data-duration="9.335" data-track-index="1">
+<div id="root" data-composition-id="09-stretch" data-width="1920" data-height="1080" data-duration="8.41">
+  <div id="f09-bg" class="f09-bg clip" data-start="0" data-duration="8.41" data-track-index="0"><div class="f09-deco f09-deco1"></div><div class="f09-deco f09-deco2"></div><div class="f09-deco f09-deco3"></div></div>
+  <div id="f09-stage" class="f09-stage clip" data-start="0" data-duration="8.41" data-track-index="1">
     <div class="f09-eyebrow"><i></i><span>실천 둘</span></div>
     <div class="f09-counter">09 / 11</div>
 
@@ -83,13 +83,16 @@ svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:
 (() => {
 
 const tl = gsap.timeline({ paused: true });
+// W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
+const __K = [[0.0, 0.0], [0.42, 0.296], [0.812, 0.598], [1.203, 0.91], [1.594, 1.24], [1.986, 1.558], [2.378, 1.906], [2.769, 2.194], [3.161, 2.512], [3.552, 3.154], [3.944, 3.508], [4.335, 3.826], [4.727, 4.258], [5.118, 4.516], [5.51, 4.813], [5.901, 5.238], [6.292, 6.006], [6.684, 6.354], [7.076, 6.672], [7.467, 7.05], [7.858, 7.372], [8.25, 7.619]], D = 7.91;
+const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="09-stretch"] ' + s);
-const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
-const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
-const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
-const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
-const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), W(t));
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), W(t));
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), W(t));
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), W(t));
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, W(t));
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f09-prog"), { width: 1396 }, { width: 1571, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f09-eyebrow", 0.25);
@@ -100,28 +103,28 @@ fade(".f09-counter", 0.25);
 
 
 // hunched start: head dropped forward, shoulders rolled in
-tl.set(q(".f09-head"), { y: 34 }, 0);
-tl.set(q(".f09-shoulders"), { scaleX: 0.82, svgOrigin: "300 304" }, 0);
-tl.set(q(".f09-armL"), { x: 16, y: 10 }, 0);
-tl.set(q(".f09-armR"), { x: -16, y: 10 }, 0);
+tl.set(q(".f09-head"), { y: 34 }, W(0));
+tl.set(q(".f09-shoulders"), { scaleX: 0.82, svgOrigin: "300 304" }, W(0));
+tl.set(q(".f09-armL"), { x: 16, y: 10 }, W(0));
+tl.set(q(".f09-armR"), { x: -16, y: 10 }, W(0));
 fade(".f09-fig", 0.5, { duration: 0.6 });
 up(".f09-sub", 1.5);
 up(".f09-hero", 2.2, { y: 60, duration: 0.8 });
 pop(".f09-dneck", 3.2, { duration: 0.45 });
 pop(".f09-dsh", 3.6, { duration: 0.45 });
 // open up: head lifts, shoulders widen, both arms sweep overhead
-tl.to(q(".f09-head"), { y: 0, duration: 1.0, ease: "power2.inOut" }, 4.2);
-tl.to(q(".f09-shoulders"), { scaleX: 1, svgOrigin: "300 304", duration: 1.0, ease: "power2.inOut" }, 4.2);
-tl.to(q(".f09-armL"), { x: 0, y: 0, rotation: 150, svgOrigin: "212 304", duration: 1.2, ease: "power2.inOut" }, 4.4);
-tl.to(q(".f09-armR"), { x: 0, y: 0, rotation: -150, svgOrigin: "388 304", duration: 1.2, ease: "power2.inOut" }, 4.4);
-tl.to(q(".f09-dneck, .f09-dsh"), { opacity: 0, duration: 0.4 }, 5.4);
+tl.to(q(".f09-head"), { y: 0, duration: 1.0, ease: "power2.inOut" }, W(4.2));
+tl.to(q(".f09-shoulders"), { scaleX: 1, svgOrigin: "300 304", duration: 1.0, ease: "power2.inOut" }, W(4.2));
+tl.to(q(".f09-armL"), { x: 0, y: 0, rotation: 150, svgOrigin: "212 304", duration: 1.2, ease: "power2.inOut" }, W(4.4));
+tl.to(q(".f09-armR"), { x: 0, y: 0, rotation: -150, svgOrigin: "388 304", duration: 1.2, ease: "power2.inOut" }, W(4.4));
+tl.to(q(".f09-dneck, .f09-dsh"), { opacity: 0, duration: 0.4 }, W(5.4));
 // oxygen rises into the head
-tl.fromTo(q(".f09-o2 circle"), { opacity: 0, y: 0 }, { opacity: 1, y: -340, duration: 1.6, ease: "power2.out", stagger: 0.15 }, 6.0);
-tl.to(q(".f09-o2 circle"), { opacity: 0, duration: 0.4, stagger: 0.15 }, 7.4);
-tl.fromTo(q(".f09-glow"), { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.9, ease: E }, 6.9);
+tl.fromTo(q(".f09-o2 circle"), { opacity: 0, y: 0 }, { opacity: 1, y: -340, duration: 1.6, ease: "power2.out", stagger: 0.15 }, W(6.0));
+tl.to(q(".f09-o2 circle"), { opacity: 0, duration: 0.4, stagger: 0.15 }, W(7.4));
+tl.fromTo(q(".f09-glow"), { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.9, ease: E }, W(6.9));
 pop(".f09-oxy", 6.9, { duration: 0.6 });
 
-tl.set({}, {}, 8.835);
+tl.set({}, {}, 7.91);
 window.__timelines = window.__timelines || {};
 window.__timelines["09-stretch"] = tl;
 })();

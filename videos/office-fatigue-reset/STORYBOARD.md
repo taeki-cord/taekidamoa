@@ -21,7 +21,7 @@ music: none
 
 - scene: 크림 배경 중앙에 아이스 아메리카노 컵 라인 아이콘, 질문 문구가 단어 단위로 올라옴
 - voiceover: "출근길 지옥철을 뚫고 자리에 앉자마자, 습관적으로 아이스 아메리카노부터 찾고 계시진 않나요?"
-- duration: 7.575s
+- duration: 7.832s
 - transition_in: cut
 - status: animated
 - src: compositions/frames/01-hook.html
@@ -37,7 +37,7 @@ keyMessage: 출근하자마자 커피부터 찾는 건 당신만이 아니다.
 
 - scene: 같은 무대. 배터리 게이지가 100%에서 오전 시간 동안 뚝뚝 떨어지고, '천근만근' 큰 글자가 아래로 무겁게 내려앉음
 - voiceover: "분명 어제 푹 잔 것 같은데도, 오전부터 몸은 천근만근 무겁기만 합니다."
-- duration: 6.585s
+- duration: 6.037s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/02-heavy.html
@@ -53,7 +53,7 @@ keyMessage: 잠을 자도 피로가 풀리지 않는다.
 
 - scene: '수면 부족' 카드가 등장했다가 가로줄이 그어지며 흐려지고, 옆에 '?' 자리가 남음
 - voiceover: "우리 직장인들을 끈질기게 괴롭히는 이 만성 피로의 원인은, 단순히 '수면 부족'만이 아닙니다."
-- duration: 7.366s
+- duration: 6.947s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/03-not-sleep.html
@@ -69,7 +69,7 @@ keyMessage: 원인은 수면 부족만이 아니다.
 
 - scene: 엑셀 격자 창과 메신저 말풍선 창이 번갈아 깜빡이고, 그 사이 눈 아이콘 아래 '시각적 피로' 라벨 카드(01)가 고정
 - voiceover: "하루 종일 엑셀과 메신저 창을 번갈아 보며 생기는 '시각적 피로',"
-- duration: 5.657s
+- duration: 5.326s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/04-eye-strain.html
@@ -85,7 +85,7 @@ keyMessage: 범인 ① 하루 종일 화면을 오가는 눈의 피로.
 
 - scene: 같은 무대(카드 02). 뇌 아이콘 주변으로 업무 키워드 점들이 계속 맴돌고, 퇴근 후 시계가 지나도 멈추지 않음 → '뇌의 과부하' + '진짜 범인' 강조
 - voiceover: "그리고 퇴근 후에도 머릿속을 맴도는 업무 스트레스로 인한 '뇌의 과부하'가 진짜 범인이죠."
-- duration: 7.126s
+- duration: 6.503s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/05-brain-overload.html
@@ -101,7 +101,7 @@ keyMessage: 범인 ② 퇴근 후에도 쉬지 못하는 뇌.
 
 - scene: 좌우 분할. 왼쪽 '몸' — 의자에 앉은 정지 실루엣, 0 km. 오른쪽 '뇌' — 러닝 트랙 진행 바가 42.195km로 차오름
 - voiceover: "몸은 가만히 의자에 앉아 있지만, 우리의 뇌는 하루 종일 마라톤을 하고 있는 셈입니다."
-- duration: 6.943s
+- duration: 5.767s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/06-marathon.html
@@ -117,7 +117,7 @@ keyMessage: 몸은 쉬어도 뇌는 하루 종일 달린다.
 
 - scene: 질문 문구 → '헬스장 등록'이 작게 밀려나고 '작은 끊어내기'가 가운데 크게 자리잡으며 선이 '툭' 끊기는 모션
 - voiceover: "그렇다면 이 무거운 피로를 어떻게 덜어낼 수 있을까요? 거창한 헬스장 등록보다 중요한 건, 일상 속 '작은 끊어내기'입니다."
-- duration: 9.251s
+- duration: 8.682s
 - transition_in: cut
 - status: animated
 - src: compositions/frames/07-small-break.html
@@ -133,7 +133,7 @@ keyMessage: 해법은 '작은 끊어내기'.
 
 - scene: 원형 타이머가 50분까지 코발트로 차오르고, 5분 구간이 분리되며 '먼 곳 보기' 아이콘(모니터·폰 → 멀리 보는 눈)
 - voiceover: "업무 중 50분이 지났다면, 딱 5분만 모니터와 스마트폰에서 눈을 떼고, 먼 곳을 바라보세요."
-- duration: 7.696s
+- duration: 6.979s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/08-50-5.html
@@ -149,7 +149,7 @@ keyMessage: 50분마다 5분, 화면에서 눈을 떼고 먼 곳 보기.
 
 - scene: 같은 무대(STEP 02). 굽은 목·어깨 라인이 펴지는 단순 실루엣, 위로 O₂ 점들이 떠올라 머리로 모임
 - voiceover: "의자에 앉은 채로 가볍게 기지개를 켜며, 굽은 목과 어깨를 열어주는 것만으로도, 뇌에 신선한 산소가 공급됩니다."
-- duration: 8.835s
+- duration: 7.91s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/09-stretch.html
@@ -164,7 +164,7 @@ keyMessage: 앉은 채로 기지개 — 뇌에 산소가 들어간다.
 
 - scene: 첫 장면의 커피 컵이 돌아옴(콜백) → 컵이 옅어지며 배터리가 '짧지만 진짜인 휴식'으로 다시 차오름
 - voiceover: "당신의 방전된 체력, 오늘부터는 차가운 카페인이 아니라, 짧지만 진짜인 휴식으로 채워보는 건 어떨까요?"
-- duration: 8.196s
+- duration: 7.643s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/10-real-rest.html
@@ -180,7 +180,7 @@ keyMessage: 카페인이 아니라 짧지만 진짜인 휴식으로 채우자.
 
 - scene: 동심원 링이 퍼지는 크림 배경 중앙에 '오늘도 버텨낸 당신을 응원합니다', 아래 작은 구독 안내 pill
 - voiceover: "오늘도 묵묵히 하루를 버텨낸 당신을, 진심으로 응원합니다."
-- duration: 7.16s
+- duration: 6.413s
 - transition_in: blur-crossfade
 - status: animated
 - src: compositions/frames/11-cheer.html

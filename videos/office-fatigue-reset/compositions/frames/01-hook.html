@@ -40,9 +40,9 @@ svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:
 .f01-qm{color:#2340F5;margin-left:12px;font-size:1em}
 
 </style>
-<div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080" data-duration="8.075">
-  <div id="f01-bg" class="f01-bg clip" data-start="0" data-duration="8.075" data-track-index="0"><div class="f01-deco f01-deco1"></div><div class="f01-deco f01-deco2"></div><div class="f01-deco f01-deco3"></div></div>
-  <div id="f01-stage" class="f01-stage clip" data-start="0" data-duration="8.075" data-track-index="1">
+<div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080" data-duration="8.332">
+  <div id="f01-bg" class="f01-bg clip" data-start="0" data-duration="8.332" data-track-index="0"><div class="f01-deco f01-deco1"></div><div class="f01-deco f01-deco2"></div><div class="f01-deco f01-deco3"></div></div>
+  <div id="f01-stage" class="f01-stage clip" data-start="0" data-duration="8.332" data-track-index="1">
     <div class="f01-eyebrow"><i></i><span>출근길 · AM 08:50</span></div>
     <div class="f01-counter">01 / 11</div>
 
@@ -77,13 +77,16 @@ svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:
 (() => {
 
 const tl = gsap.timeline({ paused: true });
+// W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
+const __K = [[0.0, 0.0], [0.46, 0.43], [0.786, 0.891], [1.111, 1.308], [1.436, 1.653], [1.762, 2.076], [2.088, 2.467], [2.413, 2.706], [2.738, 3.036], [3.064, 3.384], [3.39, 3.726], [3.715, 4.335], [4.041, 4.944], [4.366, 5.202], [4.692, 5.472], [5.017, 5.778], [5.342, 6.155], [5.668, 6.354], [5.994, 6.648], [6.319, 6.888], [6.644, 7.295], [6.97, 7.47]], D = 7.832;
+const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="01-hook"] ' + s);
-const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
-const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
-const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
-const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
-const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), W(t));
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), W(t));
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), W(t));
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), W(t));
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, W(t));
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f01-prog"), { width: 0 }, { width: 175, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f01-eyebrow", 0.25);
@@ -98,14 +101,14 @@ draw(".f01-line .cob", 0.5, 1.8);
 up(".f01-l1", 0.9, { y: 20 });
 up(".f01-l2", 2.3, { y: 20 });
 draw(".f01-cup [pathLength]", 2.5, 0.9, { stagger: 0.15 });
-tl.fromTo(q(".f01-liquid"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.8, ease: E }, 3.1);
+tl.fromTo(q(".f01-liquid"), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.8, ease: E }, W(3.1));
 pop(".f01-ice", 3.3, { stagger: 0.12, duration: 0.5 });
 up(".f01-sub", 3.1);
 up(".f01-a", 4.0, { y: 60, duration: 0.8 });
 up(".f01-b", 4.5, { y: 60, duration: 0.8 });
 up(".f01-qm", 6.4, { y: 50, duration: 0.7 });
 
-tl.set({}, {}, 7.575);
+tl.set({}, {}, 7.832);
 window.__timelines = window.__timelines || {};
 window.__timelines["01-hook"] = tl;
 })();

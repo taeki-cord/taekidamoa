@@ -51,9 +51,9 @@ svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:
 .f04-eye{position:absolute;left:330px;top:0}
 
 </style>
-<div id="root" data-composition-id="04-eye-strain" data-width="1920" data-height="1080" data-duration="6.157">
-  <div id="f04-bg" class="f04-bg clip" data-start="0" data-duration="6.157" data-track-index="0"><div class="f04-deco f04-deco1"></div><div class="f04-deco f04-deco2"></div><div class="f04-deco f04-deco3"></div></div>
-  <div id="f04-stage" class="f04-stage clip" data-start="0" data-duration="6.157" data-track-index="1">
+<div id="root" data-composition-id="04-eye-strain" data-width="1920" data-height="1080" data-duration="5.826">
+  <div id="f04-bg" class="f04-bg clip" data-start="0" data-duration="5.826" data-track-index="0"><div class="f04-deco f04-deco1"></div><div class="f04-deco f04-deco2"></div><div class="f04-deco f04-deco3"></div></div>
+  <div id="f04-stage" class="f04-stage clip" data-start="0" data-duration="5.826" data-track-index="1">
     <div class="f04-eyebrow"><i></i><span>진짜 범인</span></div>
     <div class="f04-counter">04 / 11</div>
 
@@ -85,13 +85,16 @@ svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:
 (() => {
 
 const tl = gsap.timeline({ paused: true });
+// W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
+const __K = [[0.0, 0.0], [0.43, 0.363], [0.66, 0.578], [0.889, 0.773], [1.118, 1.013], [1.348, 1.193], [1.578, 1.493], [1.807, 1.763], [2.037, 1.943], [2.266, 2.153], [2.496, 2.378], [2.725, 2.573], [2.955, 2.768], [3.184, 2.933], [3.414, 3.243], [3.643, 3.873], [3.872, 4.068], [4.102, 4.293], [4.332, 4.503], [4.561, 4.683], [4.79, 4.818], [5.02, 5.085]], D = 5.326;
+const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="04-eye-strain"] ' + s);
-const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), t);
-const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), t);
-const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), t);
-const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), t);
-const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, t);
+const up = (s, t, o) => tl.fromTo(q(s), { opacity: 0, y: 40 }, Object.assign({ opacity: 1, y: 0, duration: 0.7, ease: E }, o || {}), W(t));
+const fade = (s, t, o) => tl.fromTo(q(s), { opacity: 0 }, Object.assign({ opacity: 1, duration: 0.6, ease: "power2.out" }, o || {}), W(t));
+const pop = (s, t, o) => tl.fromTo(q(s), { opacity: 0, scale: 0.6 }, Object.assign({ opacity: 1, scale: 1, duration: 0.6, ease: E }, o || {}), W(t));
+const draw = (s, t, d, o) => tl.fromTo(q(s), { strokeDashoffset: 1, opacity: 1 }, Object.assign({ strokeDashoffset: 0, duration: d || 1, ease: "power2.inOut" }, o || {}), W(t));
+const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.7, ease: "power2.inOut" }, W(t));
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f04-prog"), { width: 524 }, { width: 698, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f04-eyebrow", 0.25);
@@ -109,16 +112,16 @@ up(".f04-eye", 2.4, { y: 20 });
 // alternating focus: hard-cut z-order swaps + the pupil darting between windows
 const xl = q(".f04-xl")[0], msg = q(".f04-msg")[0];
 [2.6, 3.0, 3.4, 3.8].forEach((t, i) => {
-  tl.set(i % 2 === 0 ? xl : msg, { zIndex: 3 }, t);
-  tl.set(i % 2 === 0 ? msg : xl, { zIndex: 1 }, t);
-  tl.to(q(".f04-pupil"), { x: i % 2 === 0 ? -44 : 44, duration: 0.16, ease: "power3.out" }, t);
+  tl.set(i % 2 === 0 ? xl : msg, { zIndex: 3 }, W(t));
+  tl.set(i % 2 === 0 ? msg : xl, { zIndex: 1 }, W(t));
+  tl.to(q(".f04-pupil"), { x: i % 2 === 0 ? -44 : 44, duration: 0.16, ease: "power3.out" }, W(t));
 });
-tl.to(q(".f04-pupil"), { x: 0, duration: 0.3, ease: E }, 4.2);
+tl.to(q(".f04-pupil"), { x: 0, duration: 0.3, ease: E }, W(4.2));
 up(".f04-label .f04-sub", 3.4);
 up(".f04-label .f04-h1", 4.1, { y: 60, duration: 0.8 });
 mark(".f04-m", 4.7);
 
-tl.set({}, {}, 5.657);
+tl.set({}, {}, 5.326);
 window.__timelines = window.__timelines || {};
 window.__timelines["04-eye-strain"] = tl;
 })();

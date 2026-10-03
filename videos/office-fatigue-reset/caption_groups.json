@@ -1,0 +1,1270 @@
+{
+  "total_duration_s": 76.039,
+  "width": 1920,
+  "height": 1080,
+  "groups": [
+    {
+      "id": "caption-group-0",
+      "frame": 1,
+      "start": 0.43,
+      "end": 2.76,
+      "text": "출근길 지옥철을 뚫고 자리에",
+      "words": [
+        {
+          "id": "caption-word-0-0",
+          "text": "출근길",
+          "start": 0.43,
+          "end": 1.18
+        },
+        {
+          "id": "caption-word-0-1",
+          "text": "지옥철을",
+          "start": 1.2,
+          "end": 1.96
+        },
+        {
+          "id": "caption-word-0-2",
+          "text": "뚫고",
+          "start": 1.98,
+          "end": 2.38
+        },
+        {
+          "id": "caption-word-0-3",
+          "text": "자리에",
+          "start": 2.4,
+          "end": 2.74
+        }
+      ]
+    },
+    {
+      "id": "caption-group-1",
+      "frame": 1,
+      "start": 2.76,
+      "end": 3.48,
+      "text": "앉자마자,",
+      "words": [
+        {
+          "id": "caption-word-1-0",
+          "text": "앉자마자,",
+          "start": 2.76,
+          "end": 3.46
+        }
+      ]
+    },
+    {
+      "id": "caption-group-2",
+      "frame": 1,
+      "start": 3.48,
+      "end": 6.63,
+      "text": "습관적으로 아이스 아메리카노부터 찾고",
+      "words": [
+        {
+          "id": "caption-word-2-0",
+          "text": "습관적으로",
+          "start": 3.48,
+          "end": 4.87
+        },
+        {
+          "id": "caption-word-2-1",
+          "text": "아이스",
+          "start": 4.89,
+          "end": 5.29
+        },
+        {
+          "id": "caption-word-2-2",
+          "text": "아메리카노부터",
+          "start": 5.31,
+          "end": 6.31
+        },
+        {
+          "id": "caption-word-2-3",
+          "text": "찾고",
+          "start": 6.33,
+          "end": 6.61
+        }
+      ]
+    },
+    {
+      "id": "caption-group-3",
+      "frame": 1,
+      "start": 6.63,
+      "end": 7.57,
+      "text": "계시진 않나요?",
+      "words": [
+        {
+          "id": "caption-word-3-0",
+          "text": "계시진",
+          "start": 6.63,
+          "end": 7.03
+        },
+        {
+          "id": "caption-word-3-1",
+          "text": "않나요?",
+          "start": 7.05,
+          "end": 7.45
+        }
+      ]
+    },
+    {
+      "id": "caption-group-4",
+      "frame": 2,
+      "start": 8.2,
+      "end": 9.21,
+      "text": "분명 어제 푹",
+      "words": [
+        {
+          "id": "caption-word-4-0",
+          "text": "분명",
+          "start": 8.2,
+          "end": 8.65
+        },
+        {
+          "id": "caption-word-4-1",
+          "text": "어제",
+          "start": 8.67,
+          "end": 8.95
+        },
+        {
+          "id": "caption-word-4-2",
+          "text": "푹",
+          "start": 8.97,
+          "end": 9.19
+        }
+      ]
+    },
+    {
+      "id": "caption-group-5",
+      "frame": 2,
+      "start": 9.21,
+      "end": 10.7,
+      "text": "잔 것 같은데도,",
+      "words": [
+        {
+          "id": "caption-word-5-0",
+          "text": "잔",
+          "start": 9.21,
+          "end": 9.37
+        },
+        {
+          "id": "caption-word-5-1",
+          "text": "것",
+          "start": 9.39,
+          "end": 9.49
+        },
+        {
+          "id": "caption-word-5-2",
+          "text": "같은데도,",
+          "start": 9.51,
+          "end": 10.68
+        }
+      ]
+    },
+    {
+      "id": "caption-group-6",
+      "frame": 2,
+      "start": 10.7,
+      "end": 13.22,
+      "text": "오전부터 몸은 천근만근 무겁기만",
+      "words": [
+        {
+          "id": "caption-word-6-0",
+          "text": "오전부터",
+          "start": 10.7,
+          "end": 11.4
+        },
+        {
+          "id": "caption-word-6-1",
+          "text": "몸은",
+          "start": 11.42,
+          "end": 11.82
+        },
+        {
+          "id": "caption-word-6-2",
+          "text": "천근만근",
+          "start": 11.84,
+          "end": 12.48
+        },
+        {
+          "id": "caption-word-6-3",
+          "text": "무겁기만",
+          "start": 12.5,
+          "end": 13.2
+        }
+      ]
+    },
+    {
+      "id": "caption-group-7",
+      "frame": 2,
+      "start": 13.22,
+      "end": 13.551,
+      "text": "합니다.",
+      "words": [
+        {
+          "id": "caption-word-7-0",
+          "text": "합니다.",
+          "start": 13.22,
+          "end": 13.431
+        }
+      ]
+    },
+    {
+      "id": "caption-group-8",
+      "frame": 3,
+      "start": 14.3,
+      "end": 16.629,
+      "text": "우리 직장인들을 끈질기게 괴롭히는",
+      "words": [
+        {
+          "id": "caption-word-8-0",
+          "text": "우리",
+          "start": 14.3,
+          "end": 14.629
+        },
+        {
+          "id": "caption-word-8-1",
+          "text": "직장인들을",
+          "start": 14.649,
+          "end": 15.41
+        },
+        {
+          "id": "caption-word-8-2",
+          "text": "끈질기게",
+          "start": 15.43,
+          "end": 16.069
+        },
+        {
+          "id": "caption-word-8-3",
+          "text": "괴롭히는",
+          "start": 16.089,
+          "end": 16.609
+        }
+      ]
+    },
+    {
+      "id": "caption-group-9",
+      "frame": 3,
+      "start": 16.629,
+      "end": 17.71,
+      "text": "이 만성 피로의",
+      "words": [
+        {
+          "id": "caption-word-9-0",
+          "text": "이",
+          "start": 16.629,
+          "end": 16.909
+        },
+        {
+          "id": "caption-word-9-1",
+          "text": "만성",
+          "start": 16.929,
+          "end": 17.269
+        },
+        {
+          "id": "caption-word-9-2",
+          "text": "피로의",
+          "start": 17.289,
+          "end": 17.69
+        }
+      ]
+    },
+    {
+      "id": "caption-group-10",
+      "frame": 3,
+      "start": 17.71,
+      "end": 18.65,
+      "text": "원인은,",
+      "words": [
+        {
+          "id": "caption-word-10-0",
+          "text": "원인은,",
+          "start": 17.71,
+          "end": 18.63
+        }
+      ]
+    },
+    {
+      "id": "caption-group-11",
+      "frame": 3,
+      "start": 18.65,
+      "end": 19.97,
+      "text": "단순히 수면 부족만이",
+      "words": [
+        {
+          "id": "caption-word-11-0",
+          "text": "단순히",
+          "start": 18.65,
+          "end": 19.109
+        },
+        {
+          "id": "caption-word-11-1",
+          "text": "수면",
+          "start": 19.129,
+          "end": 19.53
+        },
+        {
+          "id": "caption-word-11-2",
+          "text": "부족만이",
+          "start": 19.55,
+          "end": 19.95
+        }
+      ]
+    },
+    {
+      "id": "caption-group-12",
+      "frame": 3,
+      "start": 19.97,
+      "end": 20.567,
+      "text": "아닙니다.",
+      "words": [
+        {
+          "id": "caption-word-12-0",
+          "text": "아닙니다.",
+          "start": 19.97,
+          "end": 20.447
+        }
+      ]
+    },
+    {
+      "id": "caption-group-13",
+      "frame": 4,
+      "start": 21.179,
+      "end": 22.489,
+      "text": "하루 종일 엑셀과",
+      "words": [
+        {
+          "id": "caption-word-13-0",
+          "text": "하루",
+          "start": 21.179,
+          "end": 21.509
+        },
+        {
+          "id": "caption-word-13-1",
+          "text": "종일",
+          "start": 21.529,
+          "end": 21.869
+        },
+        {
+          "id": "caption-word-13-2",
+          "text": "엑셀과",
+          "start": 21.889,
+          "end": 22.469
+        }
+      ]
+    },
+    {
+      "id": "caption-group-14",
+      "frame": 4,
+      "start": 22.489,
+      "end": 23.749,
+      "text": "메신저 창을 번갈아",
+      "words": [
+        {
+          "id": "caption-word-14-0",
+          "text": "메신저",
+          "start": 22.489,
+          "end": 22.949
+        },
+        {
+          "id": "caption-word-14-1",
+          "text": "창을",
+          "start": 22.969,
+          "end": 23.309
+        },
+        {
+          "id": "caption-word-14-2",
+          "text": "번갈아",
+          "start": 23.329,
+          "end": 23.729
+        }
+      ]
+    },
+    {
+      "id": "caption-group-15",
+      "frame": 4,
+      "start": 23.749,
+      "end": 26.001,
+      "text": "보며 생기는 시각적 피로,",
+      "words": [
+        {
+          "id": "caption-word-15-0",
+          "text": "보며",
+          "start": 23.749,
+          "end": 24.609
+        },
+        {
+          "id": "caption-word-15-1",
+          "text": "생기는",
+          "start": 24.629,
+          "end": 25.089
+        },
+        {
+          "id": "caption-word-15-2",
+          "text": "시각적",
+          "start": 25.109,
+          "end": 25.569
+        },
+        {
+          "id": "caption-word-15-3",
+          "text": "피로,",
+          "start": 25.589,
+          "end": 25.881
+        }
+      ]
+    },
+    {
+      "id": "caption-group-16",
+      "frame": 5,
+      "start": 26.383,
+      "end": 27.759,
+      "text": "그리고 퇴근 후에도",
+      "words": [
+        {
+          "id": "caption-word-16-0",
+          "text": "그리고",
+          "start": 26.383,
+          "end": 26.779
+        },
+        {
+          "id": "caption-word-16-1",
+          "text": "퇴근",
+          "start": 26.799,
+          "end": 27.079
+        },
+        {
+          "id": "caption-word-16-2",
+          "text": "후에도",
+          "start": 27.099,
+          "end": 27.739
+        }
+      ]
+    },
+    {
+      "id": "caption-group-17",
+      "frame": 5,
+      "start": 27.759,
+      "end": 29.619,
+      "text": "머릿속을 맴도는 업무 스트레스로",
+      "words": [
+        {
+          "id": "caption-word-17-0",
+          "text": "머릿속을",
+          "start": 27.759,
+          "end": 28.399
+        },
+        {
+          "id": "caption-word-17-1",
+          "text": "맴도는",
+          "start": 28.419,
+          "end": 28.939
+        },
+        {
+          "id": "caption-word-17-2",
+          "text": "업무",
+          "start": 28.959,
+          "end": 29.179
+        },
+        {
+          "id": "caption-word-17-3",
+          "text": "스트레스로",
+          "start": 29.199,
+          "end": 29.599
+        }
+      ]
+    },
+    {
+      "id": "caption-group-18",
+      "frame": 5,
+      "start": 29.619,
+      "end": 31.759,
+      "text": "인한 뇌의 과부하가 진짜",
+      "words": [
+        {
+          "id": "caption-word-18-0",
+          "text": "인한",
+          "start": 29.619,
+          "end": 30.419
+        },
+        {
+          "id": "caption-word-18-1",
+          "text": "뇌의",
+          "start": 30.439,
+          "end": 30.719
+        },
+        {
+          "id": "caption-word-18-2",
+          "text": "과부하가",
+          "start": 30.739,
+          "end": 31.379
+        },
+        {
+          "id": "caption-word-18-3",
+          "text": "진짜",
+          "start": 31.399,
+          "end": 31.739
+        }
+      ]
+    },
+    {
+      "id": "caption-group-19",
+      "frame": 5,
+      "start": 31.759,
+      "end": 32.434,
+      "text": "범인이죠.",
+      "words": [
+        {
+          "id": "caption-word-19-0",
+          "text": "범인이죠.",
+          "start": 31.759,
+          "end": 32.314
+        }
+      ]
+    },
+    {
+      "id": "caption-group-20",
+      "frame": 6,
+      "start": 33.029,
+      "end": 34.219,
+      "text": "몸은 가만히 의자에",
+      "words": [
+        {
+          "id": "caption-word-20-0",
+          "text": "몸은",
+          "start": 33.029,
+          "end": 33.419
+        },
+        {
+          "id": "caption-word-20-1",
+          "text": "가만히",
+          "start": 33.439,
+          "end": 33.839
+        },
+        {
+          "id": "caption-word-20-2",
+          "text": "의자에",
+          "start": 33.859,
+          "end": 34.199
+        }
+      ]
+    },
+    {
+      "id": "caption-group-21",
+      "frame": 6,
+      "start": 34.219,
+      "end": 35.369,
+      "text": "앉아 있지만,",
+      "words": [
+        {
+          "id": "caption-word-21-0",
+          "text": "앉아",
+          "start": 34.219,
+          "end": 34.498
+        },
+        {
+          "id": "caption-word-21-1",
+          "text": "있지만,",
+          "start": 34.518,
+          "end": 35.349
+        }
+      ]
+    },
+    {
+      "id": "caption-group-22",
+      "frame": 6,
+      "start": 35.369,
+      "end": 36.028,
+      "text": "우리의 뇌는",
+      "words": [
+        {
+          "id": "caption-word-22-0",
+          "text": "우리의",
+          "start": 35.369,
+          "end": 35.709
+        },
+        {
+          "id": "caption-word-22-1",
+          "text": "뇌는",
+          "start": 35.729,
+          "end": 36.008
+        }
+      ]
+    },
+    {
+      "id": "caption-group-23",
+      "frame": 6,
+      "start": 36.028,
+      "end": 37.229,
+      "text": "하루 종일 마라톤을",
+      "words": [
+        {
+          "id": "caption-word-23-0",
+          "text": "하루",
+          "start": 36.028,
+          "end": 36.309
+        },
+        {
+          "id": "caption-word-23-1",
+          "text": "종일",
+          "start": 36.329,
+          "end": 36.608
+        },
+        {
+          "id": "caption-word-23-2",
+          "text": "마라톤을",
+          "start": 36.628,
+          "end": 37.209
+        }
+      ]
+    },
+    {
+      "id": "caption-group-24",
+      "frame": 6,
+      "start": 37.229,
+      "end": 38.238,
+      "text": "하고 있는 셈입니다.",
+      "words": [
+        {
+          "id": "caption-word-24-0",
+          "text": "하고",
+          "start": 37.229,
+          "end": 37.328
+        },
+        {
+          "id": "caption-word-24-1",
+          "text": "있는",
+          "start": 37.348,
+          "end": 37.569
+        },
+        {
+          "id": "caption-word-24-2",
+          "text": "셈입니다.",
+          "start": 37.589,
+          "end": 38.118
+        }
+      ]
+    },
+    {
+      "id": "caption-group-25",
+      "frame": 7,
+      "start": 38.686,
+      "end": 39.828,
+      "text": "그렇다면 이 무거운",
+      "words": [
+        {
+          "id": "caption-word-25-0",
+          "text": "그렇다면",
+          "start": 38.686,
+          "end": 39.208
+        },
+        {
+          "id": "caption-word-25-1",
+          "text": "이",
+          "start": 39.228,
+          "end": 39.448
+        },
+        {
+          "id": "caption-word-25-2",
+          "text": "무거운",
+          "start": 39.468,
+          "end": 39.808
+        }
+      ]
+    },
+    {
+      "id": "caption-group-26",
+      "frame": 7,
+      "start": 39.828,
+      "end": 41.088,
+      "text": "피로를 어떻게 덜어낼",
+      "words": [
+        {
+          "id": "caption-word-26-0",
+          "text": "피로를",
+          "start": 39.828,
+          "end": 40.348
+        },
+        {
+          "id": "caption-word-26-1",
+          "text": "어떻게",
+          "start": 40.368,
+          "end": 40.648
+        },
+        {
+          "id": "caption-word-26-2",
+          "text": "덜어낼",
+          "start": 40.668,
+          "end": 41.068
+        }
+      ]
+    },
+    {
+      "id": "caption-group-27",
+      "frame": 7,
+      "start": 41.088,
+      "end": 42.528,
+      "text": "수 있을까요?",
+      "words": [
+        {
+          "id": "caption-word-27-0",
+          "text": "수",
+          "start": 41.088,
+          "end": 41.248
+        },
+        {
+          "id": "caption-word-27-1",
+          "text": "있을까요?",
+          "start": 41.268,
+          "end": 42.508
+        }
+      ]
+    },
+    {
+      "id": "caption-group-28",
+      "frame": 7,
+      "start": 42.528,
+      "end": 44.688,
+      "text": "거창한 헬스장 등록보다 중요한",
+      "words": [
+        {
+          "id": "caption-word-28-0",
+          "text": "거창한",
+          "start": 42.528,
+          "end": 43.049
+        },
+        {
+          "id": "caption-word-28-1",
+          "text": "헬스장",
+          "start": 43.069,
+          "end": 43.528
+        },
+        {
+          "id": "caption-word-28-2",
+          "text": "등록보다",
+          "start": 43.548,
+          "end": 44.248
+        },
+        {
+          "id": "caption-word-28-3",
+          "text": "중요한",
+          "start": 44.268,
+          "end": 44.668
+        }
+      ]
+    },
+    {
+      "id": "caption-group-29",
+      "frame": 7,
+      "start": 44.688,
+      "end": 44.929,
+      "text": "건,",
+      "words": [
+        {
+          "id": "caption-word-29-0",
+          "text": "건,",
+          "start": 44.688,
+          "end": 44.909
+        }
+      ]
+    },
+    {
+      "id": "caption-group-30",
+      "frame": 7,
+      "start": 44.929,
+      "end": 46.008,
+      "text": "일상 속 작은",
+      "words": [
+        {
+          "id": "caption-word-30-0",
+          "text": "일상",
+          "start": 44.929,
+          "end": 45.269
+        },
+        {
+          "id": "caption-word-30-1",
+          "text": "속",
+          "start": 45.289,
+          "end": 45.568
+        },
+        {
+          "id": "caption-word-30-2",
+          "text": "작은",
+          "start": 45.588,
+          "end": 45.988
+        }
+      ]
+    },
+    {
+      "id": "caption-group-31",
+      "frame": 7,
+      "start": 46.008,
+      "end": 46.907,
+      "text": "끊어내기입니다.",
+      "words": [
+        {
+          "id": "caption-word-31-0",
+          "text": "끊어내기입니다.",
+          "start": 46.008,
+          "end": 46.787
+        }
+      ]
+    },
+    {
+      "id": "caption-group-32",
+      "frame": 8,
+      "start": 47.388,
+      "end": 48.484,
+      "text": "업무 중 50분이",
+      "words": [
+        {
+          "id": "caption-word-32-0",
+          "text": "업무",
+          "start": 47.388,
+          "end": 47.709
+        },
+        {
+          "id": "caption-word-32-1",
+          "text": "중",
+          "start": 47.729,
+          "end": 47.884
+        },
+        {
+          "id": "caption-word-32-2",
+          "text": "50분이",
+          "start": 47.904,
+          "end": 48.464
+        }
+      ]
+    },
+    {
+      "id": "caption-group-33",
+      "frame": 8,
+      "start": 48.484,
+      "end": 49.673,
+      "text": "지났다면,",
+      "words": [
+        {
+          "id": "caption-word-33-0",
+          "text": "지났다면,",
+          "start": 48.484,
+          "end": 49.653
+        }
+      ]
+    },
+    {
+      "id": "caption-group-34",
+      "frame": 8,
+      "start": 49.673,
+      "end": 51.478,
+      "text": "딱 5분만 모니터와",
+      "words": [
+        {
+          "id": "caption-word-34-0",
+          "text": "딱",
+          "start": 49.673,
+          "end": 50.07
+        },
+        {
+          "id": "caption-word-34-1",
+          "text": "5분만",
+          "start": 50.09,
+          "end": 50.54
+        },
+        {
+          "id": "caption-word-34-2",
+          "text": "모니터와",
+          "start": 50.56,
+          "end": 51.458
+        }
+      ]
+    },
+    {
+      "id": "caption-group-35",
+      "frame": 8,
+      "start": 51.478,
+      "end": 52.687,
+      "text": "스마트폰에서 눈을 떼고,",
+      "words": [
+        {
+          "id": "caption-word-35-0",
+          "text": "스마트폰에서",
+          "start": 51.478,
+          "end": 51.967
+        },
+        {
+          "id": "caption-word-35-1",
+          "text": "눈을",
+          "start": 51.987,
+          "end": 52.301
+        },
+        {
+          "id": "caption-word-35-2",
+          "text": "떼고,",
+          "start": 52.321,
+          "end": 52.667
+        }
+      ]
+    },
+    {
+      "id": "caption-group-36",
+      "frame": 8,
+      "start": 52.687,
+      "end": 53.89,
+      "text": "먼 곳을 바라보세요.",
+      "words": [
+        {
+          "id": "caption-word-36-0",
+          "text": "먼",
+          "start": 52.687,
+          "end": 52.831
+        },
+        {
+          "id": "caption-word-36-1",
+          "text": "곳을",
+          "start": 52.851,
+          "end": 53.125
+        },
+        {
+          "id": "caption-word-36-2",
+          "text": "바라보세요.",
+          "start": 53.145,
+          "end": 53.77
+        }
+      ]
+    },
+    {
+      "id": "caption-group-37",
+      "frame": 9,
+      "start": 54.369,
+      "end": 55.039,
+      "text": "의자에 앉은",
+      "words": [
+        {
+          "id": "caption-word-37-0",
+          "text": "의자에",
+          "start": 54.369,
+          "end": 54.735
+        },
+        {
+          "id": "caption-word-37-1",
+          "text": "앉은",
+          "start": 54.755,
+          "end": 55.019
+        }
+      ]
+    },
+    {
+      "id": "caption-group-38",
+      "frame": 9,
+      "start": 55.039,
+      "end": 56.347,
+      "text": "채로 가볍게 기지개를",
+      "words": [
+        {
+          "id": "caption-word-38-0",
+          "text": "채로",
+          "start": 55.039,
+          "end": 55.335
+        },
+        {
+          "id": "caption-word-38-1",
+          "text": "가볍게",
+          "start": 55.355,
+          "end": 55.779
+        },
+        {
+          "id": "caption-word-38-2",
+          "text": "기지개를",
+          "start": 55.799,
+          "end": 56.327
+        }
+      ]
+    },
+    {
+      "id": "caption-group-39",
+      "frame": 9,
+      "start": 56.347,
+      "end": 56.627,
+      "text": "켜며,",
+      "words": [
+        {
+          "id": "caption-word-39-0",
+          "text": "켜며,",
+          "start": 56.347,
+          "end": 56.607
+        }
+      ]
+    },
+    {
+      "id": "caption-group-40",
+      "frame": 9,
+      "start": 56.627,
+      "end": 57.983,
+      "text": "굽은 목과 어깨를",
+      "words": [
+        {
+          "id": "caption-word-40-0",
+          "text": "굽은",
+          "start": 56.627,
+          "end": 57.207
+        },
+        {
+          "id": "caption-word-40-1",
+          "text": "목과",
+          "start": 57.227,
+          "end": 57.519
+        },
+        {
+          "id": "caption-word-40-2",
+          "text": "어깨를",
+          "start": 57.539,
+          "end": 57.963
+        }
+      ]
+    },
+    {
+      "id": "caption-group-41",
+      "frame": 9,
+      "start": 57.983,
+      "end": 59.628,
+      "text": "열어주는 것만으로도,",
+      "words": [
+        {
+          "id": "caption-word-41-0",
+          "text": "열어주는",
+          "start": 57.983,
+          "end": 58.569
+        },
+        {
+          "id": "caption-word-41-1",
+          "text": "것만으로도,",
+          "start": 58.589,
+          "end": 59.608
+        }
+      ]
+    },
+    {
+      "id": "caption-group-42",
+      "frame": 9,
+      "start": 59.628,
+      "end": 61.039,
+      "text": "뇌에 신선한 산소가",
+      "words": [
+        {
+          "id": "caption-word-42-0",
+          "text": "뇌에",
+          "start": 59.628,
+          "end": 60.087
+        },
+        {
+          "id": "caption-word-42-1",
+          "text": "신선한",
+          "start": 60.107,
+          "end": 60.543
+        },
+        {
+          "id": "caption-word-42-2",
+          "text": "산소가",
+          "start": 60.563,
+          "end": 61.019
+        }
+      ]
+    },
+    {
+      "id": "caption-group-43",
+      "frame": 9,
+      "start": 61.039,
+      "end": 61.792,
+      "text": "공급됩니다.",
+      "words": [
+        {
+          "id": "caption-word-43-0",
+          "text": "공급됩니다.",
+          "start": 61.039,
+          "end": 61.672
+        }
+      ]
+    },
+    {
+      "id": "caption-group-44",
+      "frame": 10,
+      "start": 62.288,
+      "end": 64.079,
+      "text": "당신의 방전된 체력,",
+      "words": [
+        {
+          "id": "caption-word-44-0",
+          "text": "당신의",
+          "start": 62.288,
+          "end": 62.739
+        },
+        {
+          "id": "caption-word-44-1",
+          "text": "방전된",
+          "start": 62.759,
+          "end": 63.279
+        },
+        {
+          "id": "caption-word-44-2",
+          "text": "체력,",
+          "start": 63.299,
+          "end": 64.059
+        }
+      ]
+    },
+    {
+      "id": "caption-group-45",
+      "frame": 10,
+      "start": 64.079,
+      "end": 66.419,
+      "text": "오늘부터는 차가운 카페인이 아니라,",
+      "words": [
+        {
+          "id": "caption-word-45-0",
+          "text": "오늘부터는",
+          "start": 64.079,
+          "end": 64.779
+        },
+        {
+          "id": "caption-word-45-1",
+          "text": "차가운",
+          "start": 64.799,
+          "end": 65.138
+        },
+        {
+          "id": "caption-word-45-2",
+          "text": "카페인이",
+          "start": 65.158,
+          "end": 65.619
+        },
+        {
+          "id": "caption-word-45-3",
+          "text": "아니라,",
+          "start": 65.639,
+          "end": 66.399
+        }
+      ]
+    },
+    {
+      "id": "caption-group-46",
+      "frame": 10,
+      "start": 66.419,
+      "end": 68.579,
+      "text": "짧지만 진짜인 휴식으로 채워보는",
+      "words": [
+        {
+          "id": "caption-word-46-0",
+          "text": "짧지만",
+          "start": 66.419,
+          "end": 66.938
+        },
+        {
+          "id": "caption-word-46-1",
+          "text": "진짜인",
+          "start": 66.958,
+          "end": 67.419
+        },
+        {
+          "id": "caption-word-46-2",
+          "text": "휴식으로",
+          "start": 67.439,
+          "end": 68.078
+        },
+        {
+          "id": "caption-word-46-3",
+          "text": "채워보는",
+          "start": 68.098,
+          "end": 68.559
+        }
+      ]
+    },
+    {
+      "id": "caption-group-47",
+      "frame": 10,
+      "start": 68.579,
+      "end": 69.442,
+      "text": "건 어떨까요?",
+      "words": [
+        {
+          "id": "caption-word-47-0",
+          "text": "건",
+          "start": 68.579,
+          "end": 68.738
+        },
+        {
+          "id": "caption-word-47-1",
+          "text": "어떨까요?",
+          "start": 68.758,
+          "end": 69.322
+        }
+      ]
+    },
+    {
+      "id": "caption-group-48",
+      "frame": 11,
+      "start": 69.919,
+      "end": 71.289,
+      "text": "오늘도 묵묵히 하루를",
+      "words": [
+        {
+          "id": "caption-word-48-0",
+          "text": "오늘도",
+          "start": 69.919,
+          "end": 70.429
+        },
+        {
+          "id": "caption-word-48-1",
+          "text": "묵묵히",
+          "start": 70.449,
+          "end": 70.849
+        },
+        {
+          "id": "caption-word-48-2",
+          "text": "하루를",
+          "start": 70.869,
+          "end": 71.269
+        }
+      ]
+    },
+    {
+      "id": "caption-group-49",
+      "frame": 11,
+      "start": 71.289,
+      "end": 72.309,
+      "text": "버텨낸 당신을,",
+      "words": [
+        {
+          "id": "caption-word-49-0",
+          "text": "버텨낸",
+          "start": 71.289,
+          "end": 71.749
+        },
+        {
+          "id": "caption-word-49-1",
+          "text": "당신을,",
+          "start": 71.769,
+          "end": 72.289
+        }
+      ]
+    },
+    {
+      "id": "caption-group-50",
+      "frame": 11,
+      "start": 72.309,
+      "end": 73.539,
+      "text": "진심으로 응원합니다.",
+      "words": [
+        {
+          "id": "caption-word-50-0",
+          "text": "진심으로",
+          "start": 72.309,
+          "end": 72.769
+        },
+        {
+          "id": "caption-word-50-1",
+          "text": "응원합니다.",
+          "start": 72.789,
+          "end": 73.419
+        }
+      ]
+    }
+  ]
+}
