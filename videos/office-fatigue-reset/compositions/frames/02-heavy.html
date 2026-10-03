@@ -3,66 +3,70 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#1B1B3A;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f02-bg{position:absolute;inset:0;background:#fdfae7}
+.f02-bg{position:absolute;inset:0;background:#FFF4E0}
 .f02-stage{position:absolute;inset:0}
-.f02-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f02-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f02-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f02-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f02-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f02-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f02-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f02-muted{color:#6b6b6b;font-weight:600}
+.f02-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f02-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,212,59,0.38)}
+.f02-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(35,64,245,0.12)}
+.f02-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(35,64,245,0.12)}
+.f02-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#DE3A16;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f02-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#DE3A16}
+.f02-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(27,27,58,0.72);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f02-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,140,90,0.11)}
+.f02-prog{position:absolute;left:0;bottom:0;height:6px;background:#DE3A16}
+.f02-card{background:rgba(255,140,90,0.06);border:1.5px solid rgba(255,140,90,0.28);border-radius:14px}
+.f02-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#1B1B3A}
+.f02-muted{color:rgba(27,27,58,0.72);font-weight:600}
 .f02-w{display:inline-block}
-.f02-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f02-mark{background-image:linear-gradient(rgba(255,212,59,0.85),rgba(255,212,59,0.85));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f02-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f02-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f02-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f02-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f02-pill.solid{background:#DE3A16;color:#FFF4E0}
+.f02-pill.soft{background:rgba(255,140,90,0.11);color:#DE3A16}
+.f02-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#DE3A16;color:#FFF4E0;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#1B1B3A;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#DE3A16;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,140,90,0.35);stroke-width:8;stroke-linecap:round}
 
 
 .f02-left{position:absolute;left:150px;top:250px;width:640px}
 .f02-night{margin-bottom:46px}
 .f02-battwrap{position:relative;width:520px;height:260px}
-.f02-pct{position:absolute;left:0;width:470px;top:300px;text-align:center;font-size:64px;font-weight:800;color:#1e2bfa;font-variant-numeric:tabular-nums}
-.f02-times{position:relative;margin-top:120px;width:470px;height:40px;font-size:30px;font-weight:600;color:#6b6b6b}
+.f02-pct{position:absolute;left:0;width:470px;top:300px;text-align:center;font-size:64px;font-weight:800;color:#DE3A16;font-variant-numeric:tabular-nums}
+.f02-times{position:relative;margin-top:120px;width:470px;height:40px;font-size:30px;font-weight:600;color:rgba(27,27,58,0.72)}
 .f02-t{position:absolute;top:0}
 .f02-t1{left:0}.f02-t2{left:180px}.f02-t3{right:0}
 .f02-right{position:absolute;left:960px;top:330px;width:880px}
 .f02-sub{font-size:56px;margin-bottom:10px}
 .f02-hero{font-size:230px;line-height:1.05}
 .f02-weight{display:flex;gap:26px;margin-top:34px;padding-left:12px}
-.f02-weight i{display:block;width:180px;height:12px;border-radius:6px;background:#111}
+.f02-weight i{display:block;width:180px;height:12px;border-radius:6px;background:#1B1B3A}
 
 </style>
-<div data-hf-id="hf-wyxd" id="root" data-composition-id="02-heavy" data-width="1920" data-height="1080" data-duration="7.085">
-  <div data-hf-id="hf-n5x8" id="f02-bg" class="f02-bg clip" data-start="0" data-duration="7.085" data-track-index="0"></div>
-  <div data-hf-id="hf-2bcf" id="f02-stage" class="f02-stage clip" data-start="0" data-duration="7.085" data-track-index="1">
-    <div data-hf-id="hf-i1vm" class="f02-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-n2v5">잠은 잤는데</span></div>
-    <div data-hf-id="hf-jkae" class="f02-counter">02 / 11</div>
+<div id="root" data-composition-id="02-heavy" data-width="1920" data-height="1080" data-duration="7.085">
+  <div id="f02-bg" class="f02-bg clip" data-start="0" data-duration="7.085" data-track-index="0"><div class="f02-deco f02-deco1"></div><div class="f02-deco f02-deco2"></div><div class="f02-deco f02-deco3"></div></div>
+  <div id="f02-stage" class="f02-stage clip" data-start="0" data-duration="7.085" data-track-index="1">
+    <div class="f02-eyebrow"><i></i><span>잠은 잤는데</span></div>
+    <div class="f02-counter">02 / 11</div>
 
-    <div data-hf-id="hf-52fy" class="f02-left">
-      <div data-hf-id="hf-13mz" class="f02-pill soft f02-night">어젯밤 · 푹 잠 ✓</div>
-      <div data-hf-id="hf-agfy" class="f02-battwrap"><svg data-hf-id="hf-0dqv" class="f02-batt" viewBox="0 0 520 260" width="520" height="260">
-      <rect data-hf-id="hf-atnd" x="8" y="8" width="460" height="244" rx="34" class="ink" />
-      <rect data-hf-id="hf-am7k" x="478" y="88" width="34" height="84" rx="10" fill="#111" />
-      <rect data-hf-id="hf-88zz" class="f02-fill" x="34" y="34" width="408" height="192" rx="18" fill="#1e2bfa" />
-    </svg><div data-hf-id="hf-7n7p" class="f02-pct"><span data-hf-id="hf-d3y7" class="f02-num">100</span>%</div></div>
-      <div data-hf-id="hf-vkwx" class="f02-times"><span data-hf-id="hf-kp1z" class="f02-t f02-t1">09:00</span><span data-hf-id="hf-8mgc" class="f02-t f02-t2">10:00</span><span data-hf-id="hf-ncp6" class="f02-t f02-t3">11:00</span></div>
+    <div class="f02-left">
+      <div class="f02-pill soft f02-night">어젯밤 · 푹 잠 ✓</div>
+      <div class="f02-battwrap"><svg class="f02-batt" viewBox="0 0 520 260" width="520" height="260">
+      <rect x="8" y="8" width="460" height="244" rx="34" class="ink"/>
+      <rect x="478" y="88" width="34" height="84" rx="10" fill="#1B1B3A"/>
+      <rect class="f02-fill" x="34" y="34" width="408" height="192" rx="18" fill="#12B886"/>
+    </svg><div class="f02-pct"><span class="f02-num">100</span>%</div></div>
+      <div class="f02-times"><span class="f02-t f02-t1">09:00</span><span class="f02-t f02-t2">10:00</span><span class="f02-t f02-t3">11:00</span></div>
     </div>
-    <div data-hf-id="hf-qm6t" class="f02-right">
-      <div data-hf-id="hf-zasl" class="f02-sub f02-muted">오전부터 몸은</div>
-      <div data-hf-id="hf-pyq5" class="f02-h1 f02-hero">천근만근</div>
-      <div data-hf-id="hf-qkjp" class="f02-weight"><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i></div>
+    <div class="f02-right">
+      <div class="f02-sub f02-muted">오전부터 몸은</div>
+      <div class="f02-h1 f02-hero">천근만근</div>
+      <div class="f02-weight"><i></i><i></i><i></i></div>
     </div>
 
-    <div data-hf-id="hf-lkvq" class="f02-track"></div>
-    <div data-hf-id="hf-8v0t" class="f02-prog"></div>
+    <div class="f02-track"></div>
+    <div class="f02-prog"></div>
   </div>
 </div>
 <script>
@@ -79,6 +83,9 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f02-prog"), { width: 175 }, { width: 349, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f02-eyebrow", 0.25);
+tl.fromTo(q(".f02-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f02-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f02-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f02-counter", 0.25);
 
 
@@ -92,7 +99,7 @@ up(".f02-t2", 3.0, { y: 16, duration: 0.5 });
 up(".f02-t3", 3.4, { y: 16, duration: 0.5 });
 tl.fromTo(q(".f02-fill"), { scaleX: 1, transformOrigin: "0% 50%" }, { scaleX: 0.12, duration: 1.4, ease: "power2.inOut" }, 2.6);
 tl.fromTo(pct, { v: 100 }, { v: 12, duration: 1.4, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(pct.v); } }, 2.6);
-tl.to(q(".f02-fill"), { fill: "#9a9a9a", duration: 0.4 }, 3.7);
+tl.to(q(".f02-fill"), { fill: "#FF5A36", duration: 0.4 }, 3.5);
 up(".f02-sub", 3.3);
 tl.fromTo(q(".f02-hero"), { opacity: 0, y: -120 }, { opacity: 1, y: 0, duration: 0.55, ease: "power4.in" }, 3.8);
 tl.fromTo(q(".f02-hero"), { y: 0 }, { y: 10, duration: 0.18, ease: "power2.out" }, 4.35);

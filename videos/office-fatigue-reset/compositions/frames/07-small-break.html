@@ -3,58 +3,62 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#0F2A2A;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f07-bg{position:absolute;inset:0;background:#fdfae7}
+.f07-bg{position:absolute;inset:0;background:#34D399}
 .f07-stage{position:absolute;inset:0}
-.f07-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f07-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f07-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f07-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f07-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f07-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f07-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f07-muted{color:#6b6b6b;font-weight:600}
+.f07-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f07-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.26)}
+.f07-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(35,64,245,0.18)}
+.f07-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(35,64,245,0.18)}
+.f07-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#2340F5;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f07-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#2340F5}
+.f07-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(15,42,42,0.74);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f07-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.32)}
+.f07-prog{position:absolute;left:0;bottom:0;height:6px;background:#2340F5}
+.f07-card{background:rgba(255,255,255,0.16);border:1.5px solid rgba(255,255,255,0.80);border-radius:14px}
+.f07-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#0F2A2A}
+.f07-muted{color:rgba(15,42,42,0.74);font-weight:600}
 .f07-w{display:inline-block}
-.f07-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f07-mark{background-image:linear-gradient(rgba(255,212,59,0.95),rgba(255,212,59,0.95));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f07-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f07-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f07-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f07-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f07-pill.solid{background:#2340F5;color:#34D399}
+.f07-pill.soft{background:rgba(255,255,255,0.32);color:#2340F5}
+.f07-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#2340F5;color:#34D399;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#0F2A2A;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#2340F5;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:round}
 
 
 .f07-ask{position:absolute;left:96px;top:180px;font-size:110px;transform-origin:0 0}
-.f07-gym{position:absolute;left:96px;top:330px;height:150px;display:flex;align-items:center;gap:30px;padding:0 50px;font-size:56px;font-weight:700}
-.f07-answer{position:absolute;left:96px;top:510px;width:1728px}
+.f07-gym{position:absolute;left:96px;top:290px;height:150px;display:flex;align-items:center;gap:30px;padding:0 50px;font-size:56px;font-weight:700}
+.f07-answer{position:absolute;left:96px;top:470px;width:1728px}
 .f07-sub{font-size:48px;margin-bottom:6px}
 .f07-hero{font-size:170px;line-height:1.15}
-.f07-cut{position:relative;height:14px;width:1000px;margin-top:44px}
-.f07-cut i{position:absolute;top:0;height:14px;width:494px;border-radius:7px;background:#1e2bfa}
+.f07-cut{position:relative;height:14px;width:1000px;margin-top:84px}
+.f07-cut i{position:absolute;top:0;height:14px;width:494px;border-radius:7px;background:#2340F5}
 .f07-cl{left:0}.f07-cr{left:506px}
 
 </style>
-<div data-hf-id="hf-o5by" id="root" data-composition-id="07-small-break" data-width="1920" data-height="1080" data-duration="9.751">
-  <div data-hf-id="hf-cxpo" id="f07-bg" class="f07-bg clip" data-start="0" data-duration="9.751" data-track-index="0"></div>
-  <div data-hf-id="hf-eifp" id="f07-stage" class="f07-stage clip" data-start="0" data-duration="9.751" data-track-index="1">
-    <div data-hf-id="hf-somr" class="f07-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-qg8c">그렇다면</span></div>
-    <div data-hf-id="hf-4it4" class="f07-counter">07 / 11</div>
+<div id="root" data-composition-id="07-small-break" data-width="1920" data-height="1080" data-duration="9.751">
+  <div id="f07-bg" class="f07-bg clip" data-start="0" data-duration="9.751" data-track-index="0"><div class="f07-deco f07-deco1"></div><div class="f07-deco f07-deco2"></div><div class="f07-deco f07-deco3"></div></div>
+  <div id="f07-stage" class="f07-stage clip" data-start="0" data-duration="9.751" data-track-index="1">
+    <div class="f07-eyebrow"><i></i><span>그렇다면</span></div>
+    <div class="f07-counter">07 / 11</div>
 
-    <div data-hf-id="hf-61vs" class="f07-ask f07-h1"><span data-hf-id="hf-k6r0" class="f07-w f07-a">어떻게</span> <span data-hf-id="hf-sy7n" class="f07-w f07-b">덜어낼까?</span></div>
-    <div data-hf-id="hf-mnpr" class="f07-card f07-gym">
-      <svg data-hf-id="hf-y76w" viewBox="0 0 200 80" width="200" height="80"><path data-hf-id="hf-4fsq" class="ink" d="M20 20 L20 60 M44 10 L44 70 M44 40 L156 40 M156 10 L156 70 M180 20 L180 60" /></svg>
-      <span data-hf-id="hf-agox">거창한 헬스장 등록</span>
+    <div class="f07-ask f07-h1"><span class="f07-w f07-a">어떻게</span> <span class="f07-w f07-b">덜어낼까?</span></div>
+    <div class="f07-card f07-gym">
+      <svg viewBox="0 0 200 80" width="200" height="80"><path class="ink" d="M20 20 L20 60 M44 10 L44 70 M44 40 L156 40 M156 10 L156 70 M180 20 L180 60"/></svg>
+      <span>거창한 헬스장 등록</span>
     </div>
-    <div data-hf-id="hf-4boc" class="f07-answer">
-      <div data-hf-id="hf-j1ju" class="f07-sub f07-muted">중요한 건 일상 속</div>
-      <div data-hf-id="hf-6p0s" class="f07-h1 f07-hero">작은 끊어내기</div>
-      <div data-hf-id="hf-amha" class="f07-cut"><i data-hf-id="hf-uqmz" class="f07-cl"></i><i data-hf-id="hf-kj7p" class="f07-cr"></i></div>
+    <div class="f07-answer">
+      <div class="f07-sub f07-muted">중요한 건 일상 속</div>
+      <div class="f07-h1 f07-hero">작은 끊어내기</div>
+      <div class="f07-cut"><i class="f07-cl"></i><i class="f07-cr"></i></div>
     </div>
 
-    <div data-hf-id="hf-ilpf" class="f07-track"></div>
-    <div data-hf-id="hf-gor2" class="f07-prog"></div>
+    <div class="f07-track"></div>
+    <div class="f07-prog"></div>
   </div>
 </div>
 <script>
@@ -71,12 +75,15 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f07-prog"), { width: 1047 }, { width: 1222, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f07-eyebrow", 0.25);
+tl.fromTo(q(".f07-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f07-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f07-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f07-counter", 0.25);
 
 
 up(".f07-a", 0.4, { y: 50 });
 up(".f07-b", 2.3, { y: 50 });
-tl.to(q(".f07-ask"), { scale: 0.55, y: -30, color: "#6b6b6b", duration: 0.8, ease: E }, 4.1);
+tl.to(q(".f07-ask"), { scale: 0.55, y: -30, color: "rgba(15,42,42,0.74)", duration: 0.8, ease: E }, 4.1);
 up(".f07-gym", 4.6, { y: 50 });
 tl.to(q(".f07-gym"), { opacity: 0.3, scale: 0.86, transformOrigin: "0% 50%", duration: 0.6, ease: E }, 5.9);
 up(".f07-sub", 6.1);

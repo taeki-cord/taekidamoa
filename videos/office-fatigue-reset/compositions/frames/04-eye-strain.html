@@ -3,27 +3,31 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#FFFFFF;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f04-bg{position:absolute;inset:0;background:#fdfae7}
+.f04-bg{position:absolute;inset:0;background:#2340F5}
 .f04-stage{position:absolute;inset:0}
-.f04-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f04-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f04-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f04-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f04-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f04-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f04-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f04-muted{color:#6b6b6b;font-weight:600}
+.f04-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f04-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.10)}
+.f04-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(255,212,59,0.30)}
+.f04-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(255,212,59,0.30)}
+.f04-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#FFD43B;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f04-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#FFD43B}
+.f04-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(255,255,255,0.80);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f04-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.24)}
+.f04-prog{position:absolute;left:0;bottom:0;height:6px;background:#FFD43B}
+.f04-card{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.60);border-radius:14px}
+.f04-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#FFFFFF}
+.f04-muted{color:rgba(255,255,255,0.80);font-weight:600}
 .f04-w{display:inline-block}
-.f04-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f04-mark{background-image:linear-gradient(rgba(255,90,54,0.95),rgba(255,90,54,0.95));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f04-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f04-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f04-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f04-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f04-pill.solid{background:#FFD43B;color:#2340F5}
+.f04-pill.soft{background:rgba(255,255,255,0.24);color:#FFD43B}
+.f04-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#FFD43B;color:#2340F5;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#FFFFFF;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#FFD43B;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:round}
 
 
 .f04-tag{position:absolute;left:96px;top:170px;display:flex;align-items:center;gap:22px;font-size:44px;font-weight:800}
@@ -32,49 +36,49 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 .f04-label .f04-h1{font-size:150px}
 .f04-label .f04-sub{font-size:48px;margin-bottom:18px}
 
-.f04-win{position:absolute;width:560px;height:380px;background:#fdfae7;overflow:hidden}
-.f04-win.f04-card{background:#fbf8e6}
+.f04-win{position:absolute;width:560px;height:380px;background:#2340F5;overflow:hidden}
+.f04-win.f04-card{background:#FFFFFF}
 .f04-xl{left:0;top:150px}
 .f04-msg{left:300px;top:230px}
-.f04-bar{height:54px;display:flex;align-items:center;gap:10px;padding:0 20px;border-bottom:1.5px solid rgba(30,43,250,0.2)}
-.f04-bar i{display:block;width:14px;height:14px;border-radius:50%;background:rgba(30,43,250,0.25)}
-.f04-bar b{margin-left:14px;font-size:26px;font-weight:700;color:#1e2bfa}
-.f04-grid{position:absolute;left:20px;right:20px;top:74px;bottom:20px;background-image:linear-gradient(rgba(17,17,17,0.18) 2px,transparent 2px),linear-gradient(90deg,rgba(17,17,17,0.18) 2px,transparent 2px);background-size:86px 46px}
+.f04-bar{height:54px;display:flex;align-items:center;gap:10px;padding:0 20px;border-bottom:1.5px solid rgba(35,64,245,0.2)}
+.f04-bar i{display:block;width:14px;height:14px;border-radius:50%;background:rgba(35,64,245,0.3)}
+.f04-bar b{margin-left:14px;font-size:26px;font-weight:700;color:#2340F5}
+.f04-grid{position:absolute;left:20px;right:20px;top:74px;bottom:20px;background-image:linear-gradient(rgba(27,27,58,0.18) 2px,transparent 2px),linear-gradient(90deg,rgba(27,27,58,0.18) 2px,transparent 2px);background-size:86px 46px}
 .f04-bub{position:absolute;height:52px;border-radius:26px}
-.f04-bub1{left:24px;top:86px;width:300px;background:rgba(30,43,250,0.10)}
-.f04-bub2{right:24px;top:160px;width:240px;background:#1e2bfa}
-.f04-bub3{left:24px;top:234px;width:360px;background:rgba(30,43,250,0.10)}
+.f04-bub1{left:24px;top:86px;width:300px;background:rgba(35,64,245,0.14)}
+.f04-bub2{right:24px;top:160px;width:240px;background:#2340F5}
+.f04-bub3{left:24px;top:234px;width:360px;background:rgba(35,64,245,0.14)}
 .f04-eye{position:absolute;left:330px;top:0}
 
 </style>
-<div data-hf-id="hf-nwkq" id="root" data-composition-id="04-eye-strain" data-width="1920" data-height="1080" data-duration="6.157">
-  <div data-hf-id="hf-h0dd" id="f04-bg" class="f04-bg clip" data-start="0" data-duration="6.157" data-track-index="0"></div>
-  <div data-hf-id="hf-4sy4" id="f04-stage" class="f04-stage clip" data-start="0" data-duration="6.157" data-track-index="1">
-    <div data-hf-id="hf-0hk0" class="f04-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-iw9r">진짜 범인</span></div>
-    <div data-hf-id="hf-9yay" class="f04-counter">04 / 11</div>
+<div id="root" data-composition-id="04-eye-strain" data-width="1920" data-height="1080" data-duration="6.157">
+  <div id="f04-bg" class="f04-bg clip" data-start="0" data-duration="6.157" data-track-index="0"><div class="f04-deco f04-deco1"></div><div class="f04-deco f04-deco2"></div><div class="f04-deco f04-deco3"></div></div>
+  <div id="f04-stage" class="f04-stage clip" data-start="0" data-duration="6.157" data-track-index="1">
+    <div class="f04-eyebrow"><i></i><span>진짜 범인</span></div>
+    <div class="f04-counter">04 / 11</div>
 
-    <div data-hf-id="hf-cpt9" class="f04-tag"><span data-hf-id="hf-0onr" class="f04-step">1</span><span data-hf-id="hf-8pzf">눈</span></div>
-    <div data-hf-id="hf-whn6" class="f04-art">
-      <div data-hf-id="hf-ea27" class="f04-win f04-xl f04-card">
-        <div data-hf-id="hf-syrm" class="f04-bar"><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i><b data-hf-id="hf-2glw">엑셀</b></div>
-        <div data-hf-id="hf-r90n" class="f04-grid"></div>
+    <div class="f04-tag"><span class="f04-step">1</span><span>눈</span></div>
+    <div class="f04-art">
+      <div class="f04-win f04-xl f04-card">
+        <div class="f04-bar"><i></i><i></i><i></i><b>엑셀</b></div>
+        <div class="f04-grid"></div>
       </div>
-      <div data-hf-id="hf-jdge" class="f04-win f04-msg f04-card">
-        <div data-hf-id="hf-q63q" class="f04-bar"><i data-hf-id="hf-0l8b"></i><i data-hf-id="hf-0zjc"></i><i data-hf-id="hf-zsm9"></i><b data-hf-id="hf-xd2z">메신저</b></div>
-        <div data-hf-id="hf-u0u1" class="f04-bub f04-bub1"></div><div data-hf-id="hf-06ju" class="f04-bub f04-bub2"></div><div data-hf-id="hf-44nv" class="f04-bub f04-bub3"></div>
+      <div class="f04-win f04-msg f04-card">
+        <div class="f04-bar"><i></i><i></i><i></i><b>메신저</b></div>
+        <div class="f04-bub f04-bub1"></div><div class="f04-bub f04-bub2"></div><div class="f04-bub f04-bub3"></div>
       </div>
-      <svg data-hf-id="hf-6bah" class="f04-eye" viewBox="0 0 220 130" width="220" height="130">
-        <path data-hf-id="hf-ut2f" class="ink" d="M10 65 Q110 -20 210 65 Q110 150 10 65 Z" />
-        <circle data-hf-id="hf-748z" class="f04-pupil" cx="110" cy="65" r="26" fill="#1e2bfa" />
+      <svg class="f04-eye" viewBox="0 0 220 130" width="220" height="130">
+        <path class="ink" d="M10 65 Q110 -20 210 65 Q110 150 10 65 Z"/>
+        <circle class="f04-pupil" cx="110" cy="65" r="26" fill="#FFD43B"/>
       </svg>
     </div>
-    <div data-hf-id="hf-2gtf" class="f04-label">
-      <div data-hf-id="hf-0jt8" class="f04-sub f04-muted">하루 종일 번갈아 보며</div>
-      <div data-hf-id="hf-pn5m" class="f04-h1"><span data-hf-id="hf-y9v3" class="f04-mark f04-m">시각적 피로</span></div>
+    <div class="f04-label">
+      <div class="f04-sub f04-muted">하루 종일 번갈아 보며</div>
+      <div class="f04-h1"><span class="f04-mark f04-m">시각적 피로</span></div>
     </div>
 
-    <div data-hf-id="hf-sn9s" class="f04-track"></div>
-    <div data-hf-id="hf-32ib" class="f04-prog"></div>
+    <div class="f04-track"></div>
+    <div class="f04-prog"></div>
   </div>
 </div>
 <script>
@@ -91,6 +95,9 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f04-prog"), { width: 524 }, { width: 698, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f04-eyebrow", 0.25);
+tl.fromTo(q(".f04-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f04-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f04-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f04-counter", 0.25);
 
 

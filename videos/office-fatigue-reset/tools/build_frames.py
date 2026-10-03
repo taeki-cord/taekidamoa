@@ -30,6 +30,10 @@ BASE_CSS = """
 #root *{box-sizing:border-box}
 .P-bg{position:absolute;inset:0;background:#fdfae7}
 .P-stage{position:absolute;inset:0}
+.P-deco{position:absolute;border-radius:50%;pointer-events:none}
+.P-deco1{width:760px;height:760px;right:-220px;top:-260px;background:@DECO1@}
+.P-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:@DECO2@}
+.P-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid @DECO2@}
 .P-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
 .P-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
 .P-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
@@ -39,7 +43,7 @@ BASE_CSS = """
 .P-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
 .P-muted{color:#6b6b6b;font-weight:600}
 .P-w{display:inline-block}
-.P-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.P-mark{background-image:linear-gradient(@MARK@,@MARK@);background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .P-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
 .P-pill.solid{background:#1e2bfa;color:#fdfae7}
 .P-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
@@ -61,8 +65,50 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".P-prog"), { width: __PFROM__ }, { width: __PTO__, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".P-eyebrow", 0.25);
+tl.fromTo(q(".P-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".P-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".P-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".P-counter", 0.25);
 """
+
+
+# ── per-scene color themes (lively remix of the blue-professional atoms) ─────
+# Each theme maps the base literals the frames are written in (cream / cobalt / ink)
+# onto its own palette at generation time, so frame code stays theme-agnostic.
+THEMES = {
+    "sun":   dict(bg="#FFD43B", ink="#1B1B3A", accent="#2340F5", muted="rgba(27,27,58,0.74)", tint=(255, 255, 255), k=6.0,
+                  mark="rgba(255,90,54,0.55)", ok="#12B886", warn="#FF5A36", deco1="rgba(255,255,255,0.30)", deco2="rgba(255,90,54,0.22)"),
+    "cream": dict(bg="#FFF4E0", ink="#1B1B3A", accent="#DE3A16", muted="rgba(27,27,58,0.72)", tint=(255, 140, 90), k=1.4,
+                  mark="rgba(255,212,59,0.85)", ok="#12B886", warn="#FF5A36", deco1="rgba(255,212,59,0.38)", deco2="rgba(35,64,245,0.12)"),
+    "coral": dict(bg="#F2542D", ink="#1B1B3A", accent="#FFFFFF", muted="rgba(27,27,58,0.78)", tint=(255, 255, 255), k=3.0,
+                  mark="rgba(255,212,59,0.9)", ok="#12B886", warn="#1B1B3A", deco1="rgba(255,255,255,0.16)", deco2="rgba(255,212,59,0.35)"),
+    "blue":  dict(bg="#2340F5", ink="#FFFFFF", accent="#FFD43B", muted="rgba(255,255,255,0.80)", tint=(255, 255, 255), k=3.0,
+                  mark="rgba(255,90,54,0.95)", ok="#3DDC97", warn="#FF7A59", deco1="rgba(255,255,255,0.10)", deco2="rgba(255,212,59,0.30)"),
+    "mint":  dict(bg="#34D399", ink="#0F2A2A", accent="#2340F5", muted="rgba(15,42,42,0.74)", tint=(255, 255, 255), k=4.0,
+                  mark="rgba(255,212,59,0.95)", ok="#2340F5", warn="#FF5A36", deco1="rgba(255,255,255,0.26)", deco2="rgba(35,64,245,0.18)"),
+}
+THEME_FOR = {1: "sun", 2: "cream", 3: "coral", 4: "blue", 5: "blue", 6: "cream",
+             7: "mint", 8: "cream", 9: "mint", 10: "blue", 11: "sun"}
+
+
+def apply_theme(html, t):
+    def rgb(hexv):
+        h = hexv.lstrip("#")
+        return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+    ar, ag, ab = rgb(t["accent"])
+    ir, ig, ib = rgb(t["ink"])
+    tr, tg, tb = t["tint"]
+    # low-alpha cobalt tints → theme tint (boosted so cards/pills read on saturated grounds)
+    html = re.sub(r"rgba\(30,43,250,([\d.]+)\)",
+                  lambda m: "rgba(%d,%d,%d,%.2f)" % (tr, tg, tb, min(1.0, float(m.group(1)) * t["k"])), html)
+    html = re.sub(r"rgba\(17,17,17,([\d.]+)\)", lambda m: "rgba(%d,%d,%d,%s)" % (ir, ig, ib, m.group(1)), html)
+    for a, b in [("#1e2bfa", t["accent"]), ("#fdfae7", t["bg"]), ("#fbf8e6", "#FFFFFF"),
+                 ("#6b6b6b", t["muted"]), ("#7a7a7a", t["muted"]), ("#9a9a9a", t["muted"]),
+                 ("@MARK@", t["mark"]), ("@OK@", t["ok"]), ("@WARN@", t["warn"]),
+                 ("@DECO1@", t["deco1"]), ("@DECO2@", t["deco2"])]:
+        html = html.replace(a, b)
+    html = re.sub(r"#111(?![0-9a-fA-F])", t["ink"], html)
+    return html
 
 
 def frame(n, fid, eyebrow, body, css, js, final=False):
@@ -81,7 +127,7 @@ def frame(n, fid, eyebrow, body, css, js, final=False):
 {css}
 </style>
 <div id="root" data-composition-id="{fid}" data-width="1920" data-height="1080" data-duration="{dur}">
-  <div id="P-bg" class="P-bg clip" data-start="0" data-duration="{dur}" data-track-index="0"></div>
+  <div id="P-bg" class="P-bg clip" data-start="0" data-duration="{dur}" data-track-index="0"><div class="P-deco P-deco1"></div><div class="P-deco P-deco2"></div><div class="P-deco P-deco3"></div></div>
   <div id="P-stage" class="P-stage clip" data-start="0" data-duration="{dur}" data-track-index="1">
     <div class="P-eyebrow"><i></i><span>{eyebrow}</span></div>
     <div class="P-counter">{n:02d} / {TOTAL}</div>
@@ -103,6 +149,7 @@ window.__timelines["{fid}"] = tl;
 """
     html = html.replace("__ID__", fid).replace("__PFROM__", str(pfrom)).replace("__PTO__", str(pto))
     html = html.replace("P-", p)
+    html = apply_theme(html, THEMES[THEME_FOR[n]])
     out = ROOT / "compositions" / "frames" / f"{fid}.html"
     out.write_text(html, encoding="utf-8")
     print("wrote", out.relative_to(ROOT), dur)
@@ -111,10 +158,10 @@ window.__timelines["{fid}"] = tl;
 # ── reusable SVG pieces ──────────────────────────────────────────────────────
 def cup_svg(cls="P-cup"):
     return f"""<svg class="{cls}" viewBox="0 0 400 540" width="400" height="540">
-      <path class="P-liquid" d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(30,43,250,0.14)"/>
-      <rect class="P-ice" x="130" y="250" width="70" height="70" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(-12 165 285)"/>
-      <rect class="P-ice" x="210" y="290" width="66" height="66" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(10 243 323)"/>
-      <rect class="P-ice" x="150" y="350" width="62" height="62" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(6 181 381)"/>
+      <path class="P-liquid" d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(122,74,42,0.88)"/>
+      <rect class="P-ice" x="130" y="250" width="70" height="70" rx="10" fill="#ffffff" stroke="#1e2bfa" stroke-width="6" transform="rotate(-12 165 285)"/>
+      <rect class="P-ice" x="210" y="290" width="66" height="66" rx="10" fill="#ffffff" stroke="#1e2bfa" stroke-width="6" transform="rotate(10 243 323)"/>
+      <rect class="P-ice" x="150" y="350" width="62" height="62" rx="10" fill="#ffffff" stroke="#1e2bfa" stroke-width="6" transform="rotate(6 181 381)"/>
       <path class="ink" pathLength="1" d="M70 150 L330 150 L300 500 Q298 520 276 520 L124 520 Q102 520 100 500 Z"/>
       <path class="ink" pathLength="1" d="M56 150 Q56 112 96 112 L304 112 Q344 112 344 150"/>
       <path class="cob" pathLength="1" d="M236 112 L262 20 L300 20"/>
@@ -125,7 +172,7 @@ def battery_svg(cls="P-batt"):
     return f"""<svg class="{cls}" viewBox="0 0 520 260" width="520" height="260">
       <rect x="8" y="8" width="460" height="244" rx="34" class="ink"/>
       <rect x="478" y="88" width="34" height="84" rx="10" fill="#111"/>
-      <rect class="P-fill" x="34" y="34" width="408" height="192" rx="18" fill="#1e2bfa"/>
+      <rect class="P-fill" x="34" y="34" width="408" height="192" rx="18" fill="@OK@"/>
     </svg>"""
 
 
@@ -210,7 +257,7 @@ up(".P-t2", 3.0, { y: 16, duration: 0.5 });
 up(".P-t3", 3.4, { y: 16, duration: 0.5 });
 tl.fromTo(q(".P-fill"), { scaleX: 1, transformOrigin: "0% 50%" }, { scaleX: 0.12, duration: 1.4, ease: "power2.inOut" }, 2.6);
 tl.fromTo(pct, { v: 100 }, { v: 12, duration: 1.4, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(pct.v); } }, 2.6);
-tl.to(q(".P-fill"), { fill: "#9a9a9a", duration: 0.4 }, 3.7);
+tl.to(q(".P-fill"), { fill: "@WARN@", duration: 0.4 }, 3.5);
 up(".P-sub", 3.3);
 tl.fromTo(q(".P-hero"), { opacity: 0, y: -120 }, { opacity: 1, y: 0, duration: 0.55, ease: "power4.in" }, 3.8);
 tl.fromTo(q(".P-hero"), { y: 0 }, { y: 10, duration: 0.18, ease: "power2.out" }, 4.35);
@@ -293,14 +340,14 @@ STAGE_CSS + """
 .P-win.P-card{background:#fbf8e6}
 .P-xl{left:0;top:150px}
 .P-msg{left:300px;top:230px}
-.P-bar{height:54px;display:flex;align-items:center;gap:10px;padding:0 20px;border-bottom:1.5px solid rgba(30,43,250,0.2)}
-.P-bar i{display:block;width:14px;height:14px;border-radius:50%;background:rgba(30,43,250,0.25)}
-.P-bar b{margin-left:14px;font-size:26px;font-weight:700;color:#1e2bfa}
-.P-grid{position:absolute;left:20px;right:20px;top:74px;bottom:20px;background-image:linear-gradient(rgba(17,17,17,0.18) 2px,transparent 2px),linear-gradient(90deg,rgba(17,17,17,0.18) 2px,transparent 2px);background-size:86px 46px}
+.P-bar{height:54px;display:flex;align-items:center;gap:10px;padding:0 20px;border-bottom:1.5px solid rgba(35,64,245,0.2)}
+.P-bar i{display:block;width:14px;height:14px;border-radius:50%;background:rgba(35,64,245,0.3)}
+.P-bar b{margin-left:14px;font-size:26px;font-weight:700;color:#2340F5}
+.P-grid{position:absolute;left:20px;right:20px;top:74px;bottom:20px;background-image:linear-gradient(rgba(27,27,58,0.18) 2px,transparent 2px),linear-gradient(90deg,rgba(27,27,58,0.18) 2px,transparent 2px);background-size:86px 46px}
 .P-bub{position:absolute;height:52px;border-radius:26px}
-.P-bub1{left:24px;top:86px;width:300px;background:rgba(30,43,250,0.10)}
-.P-bub2{right:24px;top:160px;width:240px;background:#1e2bfa}
-.P-bub3{left:24px;top:234px;width:360px;background:rgba(30,43,250,0.10)}
+.P-bub1{left:24px;top:86px;width:300px;background:rgba(35,64,245,0.14)}
+.P-bub2{right:24px;top:160px;width:240px;background:#2340F5}
+.P-bub3{left:24px;top:234px;width:360px;background:rgba(35,64,245,0.14)}
 .P-eye{position:absolute;left:330px;top:0}
 """,
 """
@@ -435,11 +482,11 @@ frame(7, "07-small-break", "그렇다면",
 """,
 """
 .P-ask{position:absolute;left:96px;top:180px;font-size:110px;transform-origin:0 0}
-.P-gym{position:absolute;left:96px;top:330px;height:150px;display:flex;align-items:center;gap:30px;padding:0 50px;font-size:56px;font-weight:700}
-.P-answer{position:absolute;left:96px;top:510px;width:1728px}
+.P-gym{position:absolute;left:96px;top:290px;height:150px;display:flex;align-items:center;gap:30px;padding:0 50px;font-size:56px;font-weight:700}
+.P-answer{position:absolute;left:96px;top:470px;width:1728px}
 .P-sub{font-size:48px;margin-bottom:6px}
 .P-hero{font-size:170px;line-height:1.15}
-.P-cut{position:relative;height:14px;width:1000px;margin-top:44px}
+.P-cut{position:relative;height:14px;width:1000px;margin-top:84px}
 .P-cut i{position:absolute;top:0;height:14px;width:494px;border-radius:7px;background:#1e2bfa}
 .P-cl{left:0}.P-cr{left:506px}
 """,
@@ -602,13 +649,13 @@ f"""
 .P-x{position:absolute;left:0;top:40px}
 .P-state{position:absolute;left:0;top:380px;width:470px;height:80px;font-size:60px;font-weight:800;text-align:center}
 .P-state span{position:absolute;left:0;right:0}
-.P-s1{color:#9a9a9a}.P-s2{color:#1e2bfa}
+.P-s1{color:@WARN@}.P-s2{color:#1e2bfa}
 .P-right{position:absolute;left:960px;top:300px;width:880px}
 .P-sub{font-size:52px;margin-bottom:20px}
 .P-hero{font-size:150px}
 """,
 """
-tl.set(q(".P-fill"), { scaleX: 0.12, fill: "#9a9a9a", transformOrigin: "0% 50%" }, 0);
+tl.set(q(".P-fill"), { scaleX: 0.12, fill: "@WARN@", transformOrigin: "0% 50%" }, 0);
 up(".P-battwrap", 0.5);
 up(".P-s1", 1.0, { y: 20 });
 fade(".P-cupmini", 2.6, { duration: 0.5 });
@@ -620,7 +667,7 @@ up(".P-a", 4.2, { y: 60, duration: 0.8 });
 up(".P-b", 4.7, { y: 60, duration: 0.8 });
 up(".P-c", 5.2, { y: 60, duration: 0.8 });
 mark(".P-c", 5.8);
-tl.to(q(".P-fill"), { scaleX: 1, fill: "#1e2bfa", duration: 1.6, ease: "power2.inOut" }, 5.2);
+tl.to(q(".P-fill"), { scaleX: 1, fill: "@OK@", duration: 1.6, ease: "power2.inOut" }, 5.2);
 tl.to(q(".P-s1"), { opacity: 0, y: -20, duration: 0.4 }, 6.2);
 up(".P-s2", 6.4, { y: 20 });
 """)

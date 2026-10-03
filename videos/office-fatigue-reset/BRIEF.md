@@ -25,6 +25,7 @@ vo_mode: verbatim
 
 - 임시 나레이션: 오프라인 한국어 TTS(sherpa-onnx, vits-mimic3 ko_KO-kss). 사용자 음성이 오면 교체 후 싱크 재조정.
 - 한글 폰트: Pretendard (assets/fonts).
+- 2차 수정(사용자 요청 "생동감 없고 단조로움 → 생기찬 느낌"): 장면별 컬러 배경 테마(sun/cream/coral/blue/mint) + 장식 원형 도형. tools/build_frames.py THEMES.
 
 ## Notes
 

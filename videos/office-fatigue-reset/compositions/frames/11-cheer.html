@@ -3,27 +3,31 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#1B1B3A;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f11-bg{position:absolute;inset:0;background:#fdfae7}
+.f11-bg{position:absolute;inset:0;background:#FFD43B}
 .f11-stage{position:absolute;inset:0}
-.f11-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f11-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f11-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f11-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f11-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f11-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f11-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f11-muted{color:#6b6b6b;font-weight:600}
+.f11-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f11-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.30)}
+.f11-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(255,90,54,0.22)}
+.f11-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(255,90,54,0.22)}
+.f11-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#2340F5;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f11-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#2340F5}
+.f11-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(27,27,58,0.74);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f11-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.48)}
+.f11-prog{position:absolute;left:0;bottom:0;height:6px;background:#2340F5}
+.f11-card{background:rgba(255,255,255,0.24);border:1.5px solid rgba(255,255,255,1.00);border-radius:14px}
+.f11-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#1B1B3A}
+.f11-muted{color:rgba(27,27,58,0.74);font-weight:600}
 .f11-w{display:inline-block}
-.f11-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f11-mark{background-image:linear-gradient(rgba(255,90,54,0.55),rgba(255,90,54,0.55));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f11-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f11-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f11-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f11-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f11-pill.solid{background:#2340F5;color:#FFD43B}
+.f11-pill.soft{background:rgba(255,255,255,0.48);color:#2340F5}
+.f11-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#2340F5;color:#FFD43B;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#1B1B3A;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#2340F5;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:round}
 
 
 .f11-rings{position:absolute;left:0;top:0}
@@ -33,26 +37,26 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 .f11-sub2{margin:84px auto 0;font-size:38px}
 
 </style>
-<div data-hf-id="hf-lw7j" id="root" data-composition-id="11-cheer" data-width="1920" data-height="1080" data-duration="7.16">
-  <div data-hf-id="hf-wmte" id="f11-bg" class="f11-bg clip" data-start="0" data-duration="7.16" data-track-index="0"></div>
-  <div data-hf-id="hf-ybd7" id="f11-stage" class="f11-stage clip" data-start="0" data-duration="7.16" data-track-index="1">
-    <div data-hf-id="hf-xddy" class="f11-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-7tpk">오늘도 수고하셨습니다</span></div>
-    <div data-hf-id="hf-mbs6" class="f11-counter">11 / 11</div>
+<div id="root" data-composition-id="11-cheer" data-width="1920" data-height="1080" data-duration="7.16">
+  <div id="f11-bg" class="f11-bg clip" data-start="0" data-duration="7.16" data-track-index="0"><div class="f11-deco f11-deco1"></div><div class="f11-deco f11-deco2"></div><div class="f11-deco f11-deco3"></div></div>
+  <div id="f11-stage" class="f11-stage clip" data-start="0" data-duration="7.16" data-track-index="1">
+    <div class="f11-eyebrow"><i></i><span>오늘도 수고하셨습니다</span></div>
+    <div class="f11-counter">11 / 11</div>
 
-    <svg data-hf-id="hf-8291" class="f11-rings" viewBox="0 0 1920 1080" width="1920" height="1080">
-      <circle data-hf-id="hf-m6t9" class="f11-ring" cx="960" cy="470" r="220" fill="none" stroke="rgba(30,43,250,0.18)" stroke-width="3" />
-      <circle data-hf-id="hf-le1h" class="f11-ring" cx="960" cy="470" r="360" fill="none" stroke="rgba(30,43,250,0.13)" stroke-width="3" />
-      <circle data-hf-id="hf-am6k" class="f11-ring" cx="960" cy="470" r="500" fill="none" stroke="rgba(30,43,250,0.09)" stroke-width="3" />
-      <circle data-hf-id="hf-pt6e" class="f11-ring" cx="960" cy="470" r="640" fill="none" stroke="rgba(30,43,250,0.06)" stroke-width="3" />
+    <svg class="f11-rings" viewBox="0 0 1920 1080" width="1920" height="1080">
+      <circle class="f11-ring" cx="960" cy="470" r="220" fill="none" stroke="rgba(255,255,255,1.00)" stroke-width="3"/>
+      <circle class="f11-ring" cx="960" cy="470" r="360" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="3"/>
+      <circle class="f11-ring" cx="960" cy="470" r="500" fill="none" stroke="rgba(255,255,255,0.54)" stroke-width="3"/>
+      <circle class="f11-ring" cx="960" cy="470" r="640" fill="none" stroke="rgba(255,255,255,0.36)" stroke-width="3"/>
     </svg>
-    <div data-hf-id="hf-5oee" class="f11-center">
-      <div data-hf-id="hf-3xhv" class="f11-sub f11-muted"><span data-hf-id="hf-urkb" class="f11-w f11-a">오늘도</span> <span data-hf-id="hf-1gca" class="f11-w f11-b">버텨낸</span> <span data-hf-id="hf-bqea" class="f11-w f11-c">당신을</span></div>
-      <div data-hf-id="hf-fq5v" class="f11-h1 f11-hero">응원합니다</div>
-      <div data-hf-id="hf-oi45" class="f11-pill solid f11-sub2">구독하고 함께 쉬어가요</div>
+    <div class="f11-center">
+      <div class="f11-sub f11-muted"><span class="f11-w f11-a">오늘도</span> <span class="f11-w f11-b">버텨낸</span> <span class="f11-w f11-c">당신을</span></div>
+      <div class="f11-h1 f11-hero">응원합니다</div>
+      <div class="f11-pill solid f11-sub2">구독하고 함께 쉬어가요</div>
     </div>
 
-    <div data-hf-id="hf-blgi" class="f11-track"></div>
-    <div data-hf-id="hf-pj3d" class="f11-prog"></div>
+    <div class="f11-track"></div>
+    <div class="f11-prog"></div>
   </div>
 </div>
 <script>
@@ -69,6 +73,9 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f11-prog"), { width: 1745 }, { width: 1920, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f11-eyebrow", 0.25);
+tl.fromTo(q(".f11-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f11-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f11-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f11-counter", 0.25);
 
 

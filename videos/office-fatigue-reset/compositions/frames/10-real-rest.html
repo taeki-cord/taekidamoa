@@ -3,27 +3,31 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#FFFFFF;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f10-bg{position:absolute;inset:0;background:#fdfae7}
+.f10-bg{position:absolute;inset:0;background:#2340F5}
 .f10-stage{position:absolute;inset:0}
-.f10-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f10-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f10-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f10-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f10-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f10-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f10-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f10-muted{color:#6b6b6b;font-weight:600}
+.f10-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f10-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.10)}
+.f10-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(255,212,59,0.30)}
+.f10-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(255,212,59,0.30)}
+.f10-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#FFD43B;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f10-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#FFD43B}
+.f10-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(255,255,255,0.80);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f10-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.24)}
+.f10-prog{position:absolute;left:0;bottom:0;height:6px;background:#FFD43B}
+.f10-card{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.60);border-radius:14px}
+.f10-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#FFFFFF}
+.f10-muted{color:rgba(255,255,255,0.80);font-weight:600}
 .f10-w{display:inline-block}
-.f10-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f10-mark{background-image:linear-gradient(rgba(255,90,54,0.95),rgba(255,90,54,0.95));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f10-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f10-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f10-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f10-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f10-pill.solid{background:#FFD43B;color:#2340F5}
+.f10-pill.soft{background:rgba(255,255,255,0.24);color:#FFD43B}
+.f10-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#FFD43B;color:#2340F5;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#FFFFFF;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#FFD43B;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:round}
 
 
 .f10-left{position:absolute;left:130px;top:250px;width:760px;height:640px}
@@ -33,44 +37,44 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 .f10-x{position:absolute;left:0;top:40px}
 .f10-state{position:absolute;left:0;top:380px;width:470px;height:80px;font-size:60px;font-weight:800;text-align:center}
 .f10-state span{position:absolute;left:0;right:0}
-.f10-s1{color:#9a9a9a}.f10-s2{color:#1e2bfa}
+.f10-s1{color:#FF7A59}.f10-s2{color:#FFD43B}
 .f10-right{position:absolute;left:960px;top:300px;width:880px}
 .f10-sub{font-size:52px;margin-bottom:20px}
 .f10-hero{font-size:150px}
 
 </style>
-<div data-hf-id="hf-qbos" id="root" data-composition-id="10-real-rest" data-width="1920" data-height="1080" data-duration="8.796">
-  <div data-hf-id="hf-oqve" id="f10-bg" class="f10-bg clip" data-start="0" data-duration="8.796" data-track-index="0"></div>
-  <div data-hf-id="hf-b973" id="f10-stage" class="f10-stage clip" data-start="0" data-duration="8.796" data-track-index="1">
-    <div data-hf-id="hf-msgz" class="f10-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-pf4b">오늘부터는</span></div>
-    <div data-hf-id="hf-sny0" class="f10-counter">10 / 11</div>
+<div id="root" data-composition-id="10-real-rest" data-width="1920" data-height="1080" data-duration="8.796">
+  <div id="f10-bg" class="f10-bg clip" data-start="0" data-duration="8.796" data-track-index="0"><div class="f10-deco f10-deco1"></div><div class="f10-deco f10-deco2"></div><div class="f10-deco f10-deco3"></div></div>
+  <div id="f10-stage" class="f10-stage clip" data-start="0" data-duration="8.796" data-track-index="1">
+    <div class="f10-eyebrow"><i></i><span>오늘부터는</span></div>
+    <div class="f10-counter">10 / 11</div>
 
-    <div data-hf-id="hf-wcat" class="f10-left">
-      <div data-hf-id="hf-5yxt" class="f10-battwrap"><svg data-hf-id="hf-r23a" class="f10-batt" viewBox="0 0 520 260" width="520" height="260">
-      <rect data-hf-id="hf-atnd" x="8" y="8" width="460" height="244" rx="34" class="ink" />
-      <rect data-hf-id="hf-am7k" x="478" y="88" width="34" height="84" rx="10" fill="#111" />
-      <rect data-hf-id="hf-imrw" class="f10-fill" x="34" y="34" width="408" height="192" rx="18" fill="#1e2bfa" />
+    <div class="f10-left">
+      <div class="f10-battwrap"><svg class="f10-batt" viewBox="0 0 520 260" width="520" height="260">
+      <rect x="8" y="8" width="460" height="244" rx="34" class="ink"/>
+      <rect x="478" y="88" width="34" height="84" rx="10" fill="#FFFFFF"/>
+      <rect class="f10-fill" x="34" y="34" width="408" height="192" rx="18" fill="#3DDC97"/>
     </svg></div>
-      <div data-hf-id="hf-4pwj" class="f10-cupmini"><svg data-hf-id="hf-02ol" class="f10-cup" viewBox="0 0 400 540" width="400" height="540">
-      <path data-hf-id="hf-6a50" class="f10-liquid" d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(30,43,250,0.14)" />
-      <rect data-hf-id="hf-ntya" class="f10-ice" x="130" y="250" width="70" height="70" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(-12 165 285)" />
-      <rect data-hf-id="hf-4mxi" class="f10-ice" x="210" y="290" width="66" height="66" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(10 243 323)" />
-      <rect data-hf-id="hf-xtq2" class="f10-ice" x="150" y="350" width="62" height="62" rx="10" fill="#fdfae7" stroke="#1e2bfa" stroke-width="6" transform="rotate(6 181 381)" />
-      <path data-hf-id="hf-xepq" class="ink" pathLength="1" d="M70 150 L330 150 L300 500 Q298 520 276 520 L124 520 Q102 520 100 500 Z" />
-      <path data-hf-id="hf-e2xt" class="ink" pathLength="1" d="M56 150 Q56 112 96 112 L304 112 Q344 112 344 150" />
-      <path data-hf-id="hf-9voz" class="cob" pathLength="1" d="M236 112 L262 20 L300 20" />
+      <div class="f10-cupmini"><svg class="f10-cup" viewBox="0 0 400 540" width="400" height="540">
+      <path class="f10-liquid" d="M88 208 L312 208 L292 500 Q290 516 274 516 L126 516 Q110 516 108 500 Z" fill="rgba(122,74,42,0.88)"/>
+      <rect class="f10-ice" x="130" y="250" width="70" height="70" rx="10" fill="#ffffff" stroke="#FFD43B" stroke-width="6" transform="rotate(-12 165 285)"/>
+      <rect class="f10-ice" x="210" y="290" width="66" height="66" rx="10" fill="#ffffff" stroke="#FFD43B" stroke-width="6" transform="rotate(10 243 323)"/>
+      <rect class="f10-ice" x="150" y="350" width="62" height="62" rx="10" fill="#ffffff" stroke="#FFD43B" stroke-width="6" transform="rotate(6 181 381)"/>
+      <path class="ink" pathLength="1" d="M70 150 L330 150 L300 500 Q298 520 276 520 L124 520 Q102 520 100 500 Z"/>
+      <path class="ink" pathLength="1" d="M56 150 Q56 112 96 112 L304 112 Q344 112 344 150"/>
+      <path class="cob" pathLength="1" d="M236 112 L262 20 L300 20"/>
     </svg>
-        <svg data-hf-id="hf-6fx1" class="f10-x" viewBox="0 0 200 200" width="200" height="200"><path data-hf-id="hf-9b3n" class="cob" pathLength="1" d="M20 20 L180 180" style="stroke-width:12" /><path data-hf-id="hf-v43x" class="cob" pathLength="1" d="M180 20 L20 180" style="stroke-width:12" /></svg>
+        <svg class="f10-x" viewBox="0 0 200 200" width="200" height="200"><path class="cob" pathLength="1" d="M20 20 L180 180" style="stroke-width:12"/><path class="cob" pathLength="1" d="M180 20 L20 180" style="stroke-width:12"/></svg>
       </div>
-      <div data-hf-id="hf-5tkl" class="f10-state" data-layout-allow-overlap=""><span data-hf-id="hf-mbxi" class="f10-s1">방전</span><span data-hf-id="hf-62of" class="f10-s2">충전 완료</span></div>
+      <div class="f10-state" data-layout-allow-overlap><span class="f10-s1">방전</span><span class="f10-s2">충전 완료</span></div>
     </div>
-    <div data-hf-id="hf-3lgo" class="f10-right">
-      <div data-hf-id="hf-9umn" class="f10-sub f10-muted"><span data-hf-id="hf-4ac5" class="f10-w f10-no">차가운 카페인 말고</span></div>
-      <div data-hf-id="hf-ih7f" class="f10-h1 f10-hero"><span data-hf-id="hf-zlji" class="f10-w f10-a">짧지만</span><br data-hf-id="hf-x5px"><span data-hf-id="hf-8t3a" class="f10-w f10-b">진짜인</span> <span data-hf-id="hf-ml6n" class="f10-w f10-c f10-mark">휴식</span></div>
+    <div class="f10-right">
+      <div class="f10-sub f10-muted"><span class="f10-w f10-no">차가운 카페인 말고</span></div>
+      <div class="f10-h1 f10-hero"><span class="f10-w f10-a">짧지만</span><br><span class="f10-w f10-b">진짜인</span> <span class="f10-w f10-c f10-mark">휴식</span></div>
     </div>
 
-    <div data-hf-id="hf-x75f" class="f10-track"></div>
-    <div data-hf-id="hf-eny6" class="f10-prog"></div>
+    <div class="f10-track"></div>
+    <div class="f10-prog"></div>
   </div>
 </div>
 <script>
@@ -87,10 +91,13 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f10-prog"), { width: 1571 }, { width: 1745, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f10-eyebrow", 0.25);
+tl.fromTo(q(".f10-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f10-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f10-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f10-counter", 0.25);
 
 
-tl.set(q(".f10-fill"), { scaleX: 0.12, fill: "#9a9a9a", transformOrigin: "0% 50%" }, 0);
+tl.set(q(".f10-fill"), { scaleX: 0.12, fill: "#FF7A59", transformOrigin: "0% 50%" }, 0);
 up(".f10-battwrap", 0.5);
 up(".f10-s1", 1.0, { y: 20 });
 fade(".f10-cupmini", 2.6, { duration: 0.5 });
@@ -102,7 +109,7 @@ up(".f10-a", 4.2, { y: 60, duration: 0.8 });
 up(".f10-b", 4.7, { y: 60, duration: 0.8 });
 up(".f10-c", 5.2, { y: 60, duration: 0.8 });
 mark(".f10-c", 5.8);
-tl.to(q(".f10-fill"), { scaleX: 1, fill: "#1e2bfa", duration: 1.6, ease: "power2.inOut" }, 5.2);
+tl.to(q(".f10-fill"), { scaleX: 1, fill: "#3DDC97", duration: 1.6, ease: "power2.inOut" }, 5.2);
 tl.to(q(".f10-s1"), { opacity: 0, y: -20, duration: 0.4 }, 6.2);
 up(".f10-s2", 6.4, { y: 20 });
 

@@ -3,27 +3,31 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#FFFFFF;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f05-bg{position:absolute;inset:0;background:#fdfae7}
+.f05-bg{position:absolute;inset:0;background:#2340F5}
 .f05-stage{position:absolute;inset:0}
-.f05-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f05-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f05-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f05-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f05-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f05-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f05-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f05-muted{color:#6b6b6b;font-weight:600}
+.f05-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f05-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.10)}
+.f05-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(255,212,59,0.30)}
+.f05-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(255,212,59,0.30)}
+.f05-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#FFD43B;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f05-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#FFD43B}
+.f05-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(255,255,255,0.80);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f05-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.24)}
+.f05-prog{position:absolute;left:0;bottom:0;height:6px;background:#FFD43B}
+.f05-card{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.60);border-radius:14px}
+.f05-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#FFFFFF}
+.f05-muted{color:rgba(255,255,255,0.80);font-weight:600}
 .f05-w{display:inline-block}
-.f05-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f05-mark{background-image:linear-gradient(rgba(255,90,54,0.95),rgba(255,90,54,0.95));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f05-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f05-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f05-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f05-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f05-pill.solid{background:#FFD43B;color:#2340F5}
+.f05-pill.soft{background:rgba(255,255,255,0.24);color:#FFD43B}
+.f05-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#FFD43B;color:#2340F5;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#FFFFFF;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#FFD43B;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:round}
 
 
 .f05-tag{position:absolute;left:96px;top:170px;display:flex;align-items:center;gap:22px;font-size:44px;font-weight:800}
@@ -34,7 +38,7 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 
 .f05-off{position:absolute;left:0;top:0}
 .f05-brain{position:absolute;left:270px;top:150px}
-.f05-chip{position:absolute;padding:14px 26px;border-radius:100px;background:rgba(30,43,250,0.08);border:1.5px solid rgba(30,43,250,0.2);color:#1e2bfa;font-size:32px;font-weight:700;white-space:nowrap}
+.f05-chip{position:absolute;padding:14px 26px;border-radius:100px;background:rgba(255,255,255,0.24);border:1.5px solid rgba(255,255,255,0.60);color:#FFD43B;font-size:32px;font-weight:700;white-space:nowrap}
 .f05-k1{left:40px;top:150px}
 .f05-k2{left:640px;top:190px}
 .f05-k3{left:0;top:420px}
@@ -42,33 +46,33 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 .f05-culprit{margin-top:80px}
 
 </style>
-<div data-hf-id="hf-k7fp" id="root" data-composition-id="05-brain-overload" data-width="1920" data-height="1080" data-duration="7.626">
-  <div data-hf-id="hf-cs1x" id="f05-bg" class="f05-bg clip" data-start="0" data-duration="7.626" data-track-index="0"></div>
-  <div data-hf-id="hf-yrkq" id="f05-stage" class="f05-stage clip" data-start="0" data-duration="7.626" data-track-index="1">
-    <div data-hf-id="hf-nu0l" class="f05-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-iw9r">진짜 범인</span></div>
-    <div data-hf-id="hf-17cw" class="f05-counter">05 / 11</div>
+<div id="root" data-composition-id="05-brain-overload" data-width="1920" data-height="1080" data-duration="7.626">
+  <div id="f05-bg" class="f05-bg clip" data-start="0" data-duration="7.626" data-track-index="0"><div class="f05-deco f05-deco1"></div><div class="f05-deco f05-deco2"></div><div class="f05-deco f05-deco3"></div></div>
+  <div id="f05-stage" class="f05-stage clip" data-start="0" data-duration="7.626" data-track-index="1">
+    <div class="f05-eyebrow"><i></i><span>진짜 범인</span></div>
+    <div class="f05-counter">05 / 11</div>
 
-    <div data-hf-id="hf-af04" class="f05-tag"><span data-hf-id="hf-9avv" class="f05-step">2</span><span data-hf-id="hf-wkd3">뇌</span></div>
-    <div data-hf-id="hf-qcl7" class="f05-art">
-      <div data-hf-id="hf-z1lk" class="f05-pill soft f05-off">퇴근 후에도</div>
-      <svg data-hf-id="hf-9a3j" class="f05-brain" viewBox="0 0 360 320" width="360" height="320">
-        <path data-hf-id="hf-khrm" class="ink" pathLength="1" d="M180 40 C120 0 50 40 60 100 C10 120 10 200 70 220 C70 280 150 300 180 260 C210 300 290 280 290 220 C350 200 350 120 300 100 C310 40 240 0 180 40 Z" />
-        <path data-hf-id="hf-wr51" class="ink" pathLength="1" d="M180 40 L180 260" />
-        <path data-hf-id="hf-0fdp" class="ink" pathLength="1" d="M110 120 Q140 140 120 170 M250 120 Q220 140 240 170" />
+    <div class="f05-tag"><span class="f05-step">2</span><span>뇌</span></div>
+    <div class="f05-art">
+      <div class="f05-pill soft f05-off">퇴근 후에도</div>
+      <svg class="f05-brain" viewBox="0 0 360 320" width="360" height="320">
+        <path class="ink" pathLength="1" d="M180 40 C120 0 50 40 60 100 C10 120 10 200 70 220 C70 280 150 300 180 260 C210 300 290 280 290 220 C350 200 350 120 300 100 C310 40 240 0 180 40 Z"/>
+        <path class="ink" pathLength="1" d="M180 40 L180 260"/>
+        <path class="ink" pathLength="1" d="M110 120 Q140 140 120 170 M250 120 Q220 140 240 170"/>
       </svg>
-      <div data-hf-id="hf-r74u" class="f05-chip f05-k1">보고서</div>
-      <div data-hf-id="hf-vf1j" class="f05-chip f05-k2">내일 회의</div>
-      <div data-hf-id="hf-t0f9" class="f05-chip f05-k3">미확인 메시지</div>
-      <div data-hf-id="hf-9zvs" class="f05-chip f05-k4">실적</div>
+      <div class="f05-chip f05-k1">보고서</div>
+      <div class="f05-chip f05-k2">내일 회의</div>
+      <div class="f05-chip f05-k3">미확인 메시지</div>
+      <div class="f05-chip f05-k4">실적</div>
     </div>
-    <div data-hf-id="hf-39s6" class="f05-label">
-      <div data-hf-id="hf-0fte" class="f05-sub f05-muted">업무 스트레스로</div>
-      <div data-hf-id="hf-jped" class="f05-h1"><span data-hf-id="hf-k8zr" class="f05-mark f05-m">뇌의 과부하</span></div>
-      <div data-hf-id="hf-3juf" class="f05-pill solid f05-culprit">진짜 범인</div>
+    <div class="f05-label">
+      <div class="f05-sub f05-muted">업무 스트레스로</div>
+      <div class="f05-h1"><span class="f05-mark f05-m">뇌의 과부하</span></div>
+      <div class="f05-pill solid f05-culprit">진짜 범인</div>
     </div>
 
-    <div data-hf-id="hf-g3oh" class="f05-track"></div>
-    <div data-hf-id="hf-h7rc" class="f05-prog"></div>
+    <div class="f05-track"></div>
+    <div class="f05-prog"></div>
   </div>
 </div>
 <script>
@@ -85,6 +89,9 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f05-prog"), { width: 698 }, { width: 873, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f05-eyebrow", 0.25);
+tl.fromTo(q(".f05-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f05-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f05-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f05-counter", 0.25);
 
 
@@ -97,7 +104,7 @@ draw(".f05-brain [pathLength]", 1.9, 1.0, { stagger: 0.2 });
   const dx = [40, -30, 30, -40][i], dy = [30, 40, -30, -30][i];
   tl.to(q(s), { x: dx, y: dy, duration: 7.1 - t, ease: "sine.inOut" }, t + 0.5);
 });
-tl.to(q(".f05-brain .ink"), { stroke: "#1e2bfa", duration: 0.5 }, 4.5);
+tl.to(q(".f05-brain .ink"), { stroke: "#FFD43B", duration: 0.5 }, 4.5);
 up(".f05-label .f05-sub", 3.1);
 up(".f05-label .f05-h1", 4.5, { y: 60, duration: 0.8 });
 mark(".f05-m", 5.0);

@@ -3,32 +3,36 @@
 <style>
 @font-face{font-family:"Pretendard";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:500;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:600;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:700;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}@font-face{font-family:"Pretendard";font-weight:800;font-style:normal;font-display:block;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
 
-#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#111;container-type:size;word-break:keep-all}
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;font-family:"Pretendard",sans-serif;color:#0F2A2A;container-type:size;word-break:keep-all}
 #root *{box-sizing:border-box}
-.f09-bg{position:absolute;inset:0;background:#fdfae7}
+.f09-bg{position:absolute;inset:0;background:#34D399}
 .f09-stage{position:absolute;inset:0}
-.f09-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#1e2bfa;font-weight:700;font-size:32px;letter-spacing:0.02em}
-.f09-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#1e2bfa}
-.f09-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:#7a7a7a;letter-spacing:0.06em;font-variant-numeric:tabular-nums}
-.f09-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(30,43,250,0.08)}
-.f09-prog{position:absolute;left:0;bottom:0;height:6px;background:#1e2bfa}
-.f09-card{background:rgba(30,43,250,0.04);border:1.5px solid rgba(30,43,250,0.2);border-radius:14px}
-.f09-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#111}
-.f09-muted{color:#6b6b6b;font-weight:600}
+.f09-deco{position:absolute;border-radius:50%;pointer-events:none}
+.f09-deco1{width:760px;height:760px;right:-220px;top:-260px;background:rgba(255,255,255,0.26)}
+.f09-deco2{width:420px;height:420px;left:-150px;bottom:-170px;background:rgba(35,64,245,0.18)}
+.f09-deco3{width:120px;height:120px;right:110px;bottom:60px;border:14px solid rgba(35,64,245,0.18)}
+.f09-eyebrow{position:absolute;left:96px;top:80px;display:flex;align-items:center;gap:20px;color:#2340F5;font-weight:700;font-size:32px;letter-spacing:0.02em}
+.f09-eyebrow i{display:block;width:60px;height:5px;border-radius:3px;background:#2340F5}
+.f09-counter{position:absolute;right:96px;top:84px;font-size:26px;font-weight:600;color:rgba(15,42,42,0.74);letter-spacing:0.06em;font-variant-numeric:tabular-nums}
+.f09-track{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,0.32)}
+.f09-prog{position:absolute;left:0;bottom:0;height:6px;background:#2340F5}
+.f09-card{background:rgba(255,255,255,0.16);border:1.5px solid rgba(255,255,255,0.80);border-radius:14px}
+.f09-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#0F2A2A}
+.f09-muted{color:rgba(15,42,42,0.74);font-weight:600}
 .f09-w{display:inline-block}
-.f09-mark{background-image:linear-gradient(rgba(30,43,250,0.16),rgba(30,43,250,0.16));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
+.f09-mark{background-image:linear-gradient(rgba(255,212,59,0.95),rgba(255,212,59,0.95));background-repeat:no-repeat;background-position:0 88%;background-size:0% 34%}
 .f09-pill{display:flex;width:fit-content;align-items:center;gap:12px;padding:14px 30px;border-radius:100px;font-weight:700;font-size:34px}
-.f09-pill.solid{background:#1e2bfa;color:#fdfae7}
-.f09-pill.soft{background:rgba(30,43,250,0.08);color:#1e2bfa}
-.f09-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1e2bfa;color:#fdfae7;font-weight:800;font-size:32px}
-svg .ink{fill:none;stroke:#111;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .cob{fill:none;stroke:#1e2bfa;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:round}
+.f09-pill.solid{background:#2340F5;color:#34D399}
+.f09-pill.soft{background:rgba(255,255,255,0.32);color:#2340F5}
+.f09-step{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#2340F5;color:#34D399;font-weight:800;font-size:32px}
+svg .ink{fill:none;stroke:#0F2A2A;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .cob{fill:none;stroke:#2340F5;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+svg .soft{fill:none;stroke:rgba(255,255,255,1.00);stroke-width:8;stroke-linecap:round}
 
 
 .f09-fig{position:absolute;left:180px;top:240px;width:600px;height:640px}
-.f09-dot{position:absolute;display:flex;align-items:center;gap:12px;font-size:34px;font-weight:700;color:#1e2bfa}
-.f09-dot i{display:block;width:22px;height:22px;border-radius:50%;background:#1e2bfa}
+.f09-dot{position:absolute;display:flex;align-items:center;gap:12px;font-size:34px;font-weight:700;color:#2340F5}
+.f09-dot i{display:block;width:22px;height:22px;border-radius:50%;background:#2340F5}
 .f09-dneck{left:330px;top:250px}
 .f09-dsh{left:410px;top:300px}
 .f09-label{position:absolute;left:960px;top:360px;width:880px}
@@ -37,42 +41,42 @@ svg .soft{fill:none;stroke:rgba(30,43,250,0.25);stroke-width:8;stroke-linecap:ro
 .f09-oxy{margin-top:80px;font-size:40px}
 
 </style>
-<div data-hf-id="hf-5wc6" id="root" data-composition-id="09-stretch" data-width="1920" data-height="1080" data-duration="9.335">
-  <div data-hf-id="hf-xg9y" id="f09-bg" class="f09-bg clip" data-start="0" data-duration="9.335" data-track-index="0"></div>
-  <div data-hf-id="hf-hioj" id="f09-stage" class="f09-stage clip" data-start="0" data-duration="9.335" data-track-index="1">
-    <div data-hf-id="hf-t1m1" class="f09-eyebrow"><i data-hf-id="hf-wt6k"></i><span data-hf-id="hf-a1fd">실천 둘</span></div>
-    <div data-hf-id="hf-kx08" class="f09-counter">09 / 11</div>
+<div id="root" data-composition-id="09-stretch" data-width="1920" data-height="1080" data-duration="9.335">
+  <div id="f09-bg" class="f09-bg clip" data-start="0" data-duration="9.335" data-track-index="0"><div class="f09-deco f09-deco1"></div><div class="f09-deco f09-deco2"></div><div class="f09-deco f09-deco3"></div></div>
+  <div id="f09-stage" class="f09-stage clip" data-start="0" data-duration="9.335" data-track-index="1">
+    <div class="f09-eyebrow"><i></i><span>실천 둘</span></div>
+    <div class="f09-counter">09 / 11</div>
 
-    <div data-hf-id="hf-8xz2" class="f09-fig">
-      <svg data-hf-id="hf-61mi" viewBox="0 0 600 640" width="600" height="640">
-        <g data-hf-id="hf-iad1" class="f09-o2">
-          <circle data-hf-id="hf-bwge" cx="170" cy="560" r="14" fill="#1e2bfa" /><circle data-hf-id="hf-phdy" cx="430" cy="590" r="12" fill="#1e2bfa" />
-          <circle data-hf-id="hf-cbhi" cx="300" cy="620" r="16" fill="#1e2bfa" /><circle data-hf-id="hf-kkcx" cx="235" cy="600" r="10" fill="#1e2bfa" />
-          <circle data-hf-id="hf-7dv4" cx="370" cy="570" r="13" fill="#1e2bfa" />
+    <div class="f09-fig">
+      <svg viewBox="0 0 600 640" width="600" height="640">
+        <g class="f09-o2">
+          <circle cx="170" cy="560" r="14" fill="#2340F5"/><circle cx="430" cy="590" r="12" fill="#2340F5"/>
+          <circle cx="300" cy="620" r="16" fill="#2340F5"/><circle cx="235" cy="600" r="10" fill="#2340F5"/>
+          <circle cx="370" cy="570" r="13" fill="#2340F5"/>
         </g>
-        <path data-hf-id="hf-bx29" class="ink" d="M190 540 L410 540 M210 540 L210 620 M390 540 L390 620" />
-        <path data-hf-id="hf-tshk" class="ink" d="M300 300 L300 520" />
-        <g data-hf-id="hf-2d5e" class="f09-upper">
-          <g data-hf-id="hf-9kqc" class="f09-head">
-            <circle data-hf-id="hf-lm41" class="f09-glow" cx="300" cy="190" r="96" fill="rgba(30,43,250,0.12)" />
-            <circle data-hf-id="hf-4mrt" cx="300" cy="196" r="58" class="ink" />
+        <path class="ink" d="M190 540 L410 540 M210 540 L210 620 M390 540 L390 620"/>
+        <path class="ink" d="M300 300 L300 520"/>
+        <g class="f09-upper">
+          <g class="f09-head">
+            <circle class="f09-glow" cx="300" cy="190" r="96" fill="rgba(255,255,255,0.48)"/>
+            <circle cx="300" cy="196" r="58" class="ink"/>
           </g>
-          <path data-hf-id="hf-25kq" class="f09-shoulders ink" d="M210 304 L390 304" />
-          <g data-hf-id="hf-b5kw" class="f09-armL"><path data-hf-id="hf-1ptb" class="ink" d="M212 304 L170 420 L222 476" /></g>
-          <g data-hf-id="hf-btra" class="f09-armR"><path data-hf-id="hf-y4wo" class="ink" d="M388 304 L430 420 L378 476" /></g>
+          <path class="f09-shoulders ink" d="M210 304 L390 304"/>
+          <g class="f09-armL"><path class="ink" d="M212 304 L170 420 L222 476"/></g>
+          <g class="f09-armR"><path class="ink" d="M388 304 L430 420 L378 476"/></g>
         </g>
       </svg>
-      <div data-hf-id="hf-vj63" class="f09-dot f09-dneck"><i data-hf-id="hf-zeb8"></i>목</div>
-      <div data-hf-id="hf-rg2o" class="f09-dot f09-dsh"><i data-hf-id="hf-y7e5"></i>어깨</div>
+      <div class="f09-dot f09-dneck"><i></i>목</div>
+      <div class="f09-dot f09-dsh"><i></i>어깨</div>
     </div>
-    <div data-hf-id="hf-u71u" class="f09-label">
-      <div data-hf-id="hf-24df" class="f09-sub f09-muted">앉은 채로, 가볍게</div>
-      <div data-hf-id="hf-utap" class="f09-h1 f09-hero">기지개 한 번</div>
-      <div data-hf-id="hf-eb4w" class="f09-pill soft f09-oxy">뇌에 산소 공급 ↑</div>
+    <div class="f09-label">
+      <div class="f09-sub f09-muted">앉은 채로, 가볍게</div>
+      <div class="f09-h1 f09-hero">기지개 한 번</div>
+      <div class="f09-pill soft f09-oxy">뇌에 산소 공급 ↑</div>
     </div>
 
-    <div data-hf-id="hf-3bd9" class="f09-track"></div>
-    <div data-hf-id="hf-6644" class="f09-prog"></div>
+    <div class="f09-track"></div>
+    <div class="f09-prog"></div>
   </div>
 </div>
 <script>
@@ -89,6 +93,9 @@ const mark = (s, t) => tl.fromTo(q(s), { backgroundSize: "0% 34%" }, { backgroun
 q("[pathLength='1']").forEach((p) => { p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
 tl.fromTo(q(".f09-prog"), { width: 1396 }, { width: 1571, duration: 0.9, ease: "power2.inOut" }, 0.1);
 up(".f09-eyebrow", 0.25);
+tl.fromTo(q(".f09-deco1"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0);
+tl.fromTo(q(".f09-deco2"), { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: E }, 0.15);
+tl.fromTo(q(".f09-deco3"), { scale: 0.5, opacity: 0, rotation: -30 }, { scale: 1, opacity: 1, rotation: 0, duration: 1.0, ease: E }, 0.3);
 fade(".f09-counter", 0.25);
 
 
