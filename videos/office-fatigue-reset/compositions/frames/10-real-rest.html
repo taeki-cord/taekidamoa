@@ -43,9 +43,9 @@ svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:
 .f10-hero{font-size:150px}
 
 </style>
-<div id="root" data-composition-id="10-real-rest" data-width="1920" data-height="1080" data-duration="8.243">
-  <div id="f10-bg" class="f10-bg clip" data-start="0" data-duration="8.243" data-track-index="0"><div class="f10-deco f10-deco1"></div><div class="f10-deco f10-deco2"></div><div class="f10-deco f10-deco3"></div></div>
-  <div id="f10-stage" class="f10-stage clip" data-start="0" data-duration="8.243" data-track-index="1">
+<div id="root" data-composition-id="10-real-rest" data-width="1920" data-height="1080" data-duration="8.34">
+  <div id="f10-bg" class="f10-bg clip" data-start="0" data-duration="8.34" data-track-index="0"><div class="f10-deco f10-deco1"></div><div class="f10-deco f10-deco2"></div><div class="f10-deco f10-deco3"></div></div>
+  <div id="f10-stage" class="f10-stage clip" data-start="0" data-duration="8.34" data-track-index="1">
     <div class="f10-eyebrow"><i></i><span>오늘부터는</span></div>
     <div class="f10-counter">10 / 11</div>
 
@@ -82,7 +82,7 @@ svg .soft{fill:none;stroke:rgba(255,255,255,0.75);stroke-width:8;stroke-linecap:
 
 const tl = gsap.timeline({ paused: true });
 // W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
-const __K = [[0.0, 0.0], [0.5, 0.305], [0.839, 0.668], [1.178, 0.992], [1.517, 1.351], [1.856, 2.144], [2.195, 2.441], [2.534, 2.72], [2.873, 3.019], [3.212, 3.295], [3.551, 3.556], [3.89, 3.916], [4.229, 4.466], [4.568, 4.879], [4.907, 5.17], [5.246, 5.54], [5.585, 5.936], [5.924, 6.188], [6.263, 6.44], [6.602, 6.739], [6.941, 7.117], [7.28, 7.359]], D = 7.643;
+const __K = [[0.0, 0.0], [0.5, 0.316], [0.839, 0.698], [1.178, 1.076], [1.517, 1.436], [1.856, 2.268], [2.195, 2.565], [2.534, 2.808], [2.873, 3.144], [3.212, 3.42], [3.551, 3.734], [3.89, 4.139], [4.229, 4.655], [4.568, 5.123], [4.907, 5.415], [5.246, 5.748], [5.585, 6.0], [5.924, 6.252], [6.263, 6.504], [6.602, 6.804], [6.941, 7.235], [7.28, 7.44]], D = 7.74;
 const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="10-real-rest"] ' + s);
@@ -116,7 +116,7 @@ tl.to(q(".f10-fill"), { scaleX: 1, fill: "#3DDC97", duration: 1.6, ease: "power2
 tl.to(q(".f10-s1"), { opacity: 0, y: -20, duration: 0.4 }, W(6.2));
 up(".f10-s2", 6.4, { y: 20 });
 
-tl.set({}, {}, 7.643);
+tl.set({}, {}, 7.74);
 window.__timelines = window.__timelines || {};
 window.__timelines["10-real-rest"] = tl;
 })();

@@ -5,881 +5,881 @@
     {
       "frame": 1,
       "path": "assets/voice/01.wav",
-      "duration_s": 7.832,
+      "duration_s": 7.665,
       "words": [
         {
           "id": "w1-0",
           "text": "출근길",
-          "start": 0.43,
-          "end": 1.18
+          "start": 0.479,
+          "end": 1.24
         },
         {
           "id": "w1-1",
           "text": "지옥철을",
-          "start": 1.2,
+          "start": 1.26,
           "end": 1.96
         },
         {
           "id": "w1-2",
           "text": "뚫고",
           "start": 1.98,
-          "end": 2.38
+          "end": 2.5
         },
         {
           "id": "w1-3",
           "text": "자리에",
-          "start": 2.4,
-          "end": 2.74
+          "start": 2.52,
+          "end": 2.92
         },
         {
           "id": "w1-4",
           "text": "앉자마자,",
-          "start": 2.76,
-          "end": 3.46
+          "start": 2.94,
+          "end": 3.94
         },
         {
           "id": "w1-5",
           "text": "습관적으로",
-          "start": 3.48,
-          "end": 4.87
+          "start": 3.96,
+          "end": 4.66
         },
         {
           "id": "w1-6",
           "text": "아이스",
-          "start": 4.89,
-          "end": 5.29
+          "start": 4.68,
+          "end": 5.14
         },
         {
           "id": "w1-7",
           "text": "아메리카노부터",
-          "start": 5.31,
-          "end": 6.31
+          "start": 5.16,
+          "end": 6.1
         },
         {
           "id": "w1-8",
           "text": "찾고",
-          "start": 6.33,
-          "end": 6.61
+          "start": 6.12,
+          "end": 6.4
         },
         {
           "id": "w1-9",
           "text": "계시진",
-          "start": 6.63,
-          "end": 7.03
+          "start": 6.42,
+          "end": 6.88
         },
         {
           "id": "w1-10",
           "text": "않나요?",
-          "start": 7.05,
-          "end": 7.45
+          "start": 6.9,
+          "end": 7.283
         }
       ]
     },
     {
       "frame": 2,
       "path": "assets/voice/02.wav",
-      "duration_s": 6.037,
+      "duration_s": 6.093,
       "words": [
         {
           "id": "w2-0",
           "text": "분명",
-          "start": 0.368,
-          "end": 0.818
+          "start": 0.362,
+          "end": 0.885
         },
         {
           "id": "w2-1",
           "text": "어제",
-          "start": 0.838,
-          "end": 1.118
+          "start": 0.905,
+          "end": 1.305
         },
         {
           "id": "w2-2",
           "text": "푹",
-          "start": 1.138,
-          "end": 1.358
+          "start": 1.325,
+          "end": 1.665
         },
         {
           "id": "w2-3",
           "text": "잔",
-          "start": 1.378,
-          "end": 1.538
+          "start": 1.685,
+          "end": 1.845
         },
         {
           "id": "w2-4",
           "text": "것",
-          "start": 1.558,
-          "end": 1.658
+          "start": 1.865,
+          "end": 1.965
         },
         {
           "id": "w2-5",
           "text": "같은데도,",
-          "start": 1.678,
-          "end": 2.848
+          "start": 1.985,
+          "end": 2.865
         },
         {
           "id": "w2-6",
           "text": "오전부터",
-          "start": 2.868,
-          "end": 3.568
+          "start": 2.885,
+          "end": 3.345
         },
         {
           "id": "w2-7",
           "text": "몸은",
-          "start": 3.588,
-          "end": 3.988
+          "start": 3.365,
+          "end": 4.165
         },
         {
           "id": "w2-8",
           "text": "천근만근",
-          "start": 4.008,
-          "end": 4.648
+          "start": 4.185,
+          "end": 4.825
         },
         {
           "id": "w2-9",
           "text": "무겁기만",
-          "start": 4.668,
-          "end": 5.368
+          "start": 4.845,
+          "end": 5.605
         },
         {
           "id": "w2-10",
           "text": "합니다.",
-          "start": 5.388,
-          "end": 5.599
+          "start": 5.625,
+          "end": 5.814
         }
       ]
     },
     {
       "frame": 3,
       "path": "assets/voice/03.wav",
-      "duration_s": 6.947,
+      "duration_s": 6.6,
       "words": [
         {
           "id": "w3-0",
           "text": "우리",
-          "start": 0.431,
-          "end": 0.76
+          "start": 0.259,
+          "end": 0.602
         },
         {
           "id": "w3-1",
           "text": "직장인들을",
-          "start": 0.78,
-          "end": 1.541
+          "start": 0.622,
+          "end": 1.322
         },
         {
           "id": "w3-2",
           "text": "끈질기게",
-          "start": 1.561,
-          "end": 2.2
+          "start": 1.342,
+          "end": 1.982
         },
         {
           "id": "w3-3",
           "text": "괴롭히는",
-          "start": 2.22,
-          "end": 2.74
+          "start": 2.002,
+          "end": 2.582
         },
         {
           "id": "w3-4",
           "text": "이",
-          "start": 2.76,
-          "end": 3.04
+          "start": 2.602,
+          "end": 2.822
         },
         {
           "id": "w3-5",
           "text": "만성",
-          "start": 3.06,
-          "end": 3.4
+          "start": 2.842,
+          "end": 3.242
         },
         {
           "id": "w3-6",
           "text": "피로의",
-          "start": 3.42,
-          "end": 3.821
+          "start": 3.262,
+          "end": 3.722
         },
         {
           "id": "w3-7",
           "text": "원인은,",
-          "start": 3.841,
-          "end": 4.761
+          "start": 3.742,
+          "end": 4.442
         },
         {
           "id": "w3-8",
           "text": "단순히",
-          "start": 4.781,
-          "end": 5.24
+          "start": 4.462,
+          "end": 4.982
         },
         {
           "id": "w3-9",
           "text": "수면",
-          "start": 5.26,
-          "end": 5.661
+          "start": 5.002,
+          "end": 5.462
         },
         {
           "id": "w3-10",
           "text": "부족만이",
-          "start": 5.681,
-          "end": 6.081
+          "start": 5.482,
+          "end": 5.882
         },
         {
           "id": "w3-11",
           "text": "아닙니다.",
-          "start": 6.101,
-          "end": 6.578
+          "start": 5.902,
+          "end": 6.341
         }
       ]
     },
     {
       "frame": 4,
       "path": "assets/voice/04.wav",
-      "duration_s": 5.326,
+      "duration_s": 4.895,
       "words": [
         {
           "id": "w4-0",
           "text": "하루",
-          "start": 0.363,
-          "end": 0.693
+          "start": 0.239,
+          "end": 0.582
         },
         {
           "id": "w4-1",
           "text": "종일",
-          "start": 0.713,
-          "end": 1.053
+          "start": 0.602,
+          "end": 0.882
         },
         {
           "id": "w4-2",
           "text": "엑셀과",
-          "start": 1.073,
-          "end": 1.653
+          "start": 0.902,
+          "end": 1.482
         },
         {
           "id": "w4-3",
           "text": "메신저",
-          "start": 1.673,
-          "end": 2.133
+          "start": 1.502,
+          "end": 1.902
         },
         {
           "id": "w4-4",
           "text": "창을",
-          "start": 2.153,
-          "end": 2.493
+          "start": 1.922,
+          "end": 2.262
         },
         {
           "id": "w4-5",
           "text": "번갈아",
-          "start": 2.513,
-          "end": 2.913
+          "start": 2.282,
+          "end": 2.742
         },
         {
           "id": "w4-6",
           "text": "보며",
-          "start": 2.933,
-          "end": 3.793
+          "start": 2.762,
+          "end": 3.402
         },
         {
           "id": "w4-7",
           "text": "생기는",
-          "start": 3.813,
-          "end": 4.273
+          "start": 3.422,
+          "end": 3.882
         },
         {
           "id": "w4-8",
           "text": "시각적",
-          "start": 4.293,
-          "end": 4.753
+          "start": 3.902,
+          "end": 4.362
         },
         {
           "id": "w4-9",
           "text": "피로,",
-          "start": 4.773,
-          "end": 5.065
+          "start": 4.382,
+          "end": 4.642
         }
       ]
     },
     {
       "frame": 5,
       "path": "assets/voice/05.wav",
-      "duration_s": 6.503,
+      "duration_s": 7.14,
       "words": [
         {
           "id": "w5-0",
           "text": "그리고",
-          "start": 0.241,
-          "end": 0.637
+          "start": 0.233,
+          "end": 0.684
         },
         {
           "id": "w5-1",
           "text": "퇴근",
-          "start": 0.657,
-          "end": 0.937
+          "start": 0.704,
+          "end": 1.024
         },
         {
           "id": "w5-2",
           "text": "후에도",
-          "start": 0.957,
-          "end": 1.597
+          "start": 1.044,
+          "end": 1.67
         },
         {
           "id": "w5-3",
           "text": "머릿속을",
-          "start": 1.617,
-          "end": 2.257
+          "start": 1.69,
+          "end": 2.317
         },
         {
           "id": "w5-4",
           "text": "맴도는",
-          "start": 2.277,
-          "end": 2.797
+          "start": 2.337,
+          "end": 2.817
         },
         {
           "id": "w5-5",
           "text": "업무",
-          "start": 2.817,
-          "end": 3.037
+          "start": 2.837,
+          "end": 3.146
         },
         {
           "id": "w5-6",
           "text": "스트레스로",
-          "start": 3.057,
-          "end": 3.457
+          "start": 3.166,
+          "end": 3.767
         },
         {
           "id": "w5-7",
           "text": "인한",
-          "start": 3.477,
-          "end": 4.277
+          "start": 3.787,
+          "end": 4.237
         },
         {
           "id": "w5-8",
           "text": "뇌의",
-          "start": 4.297,
-          "end": 4.577
+          "start": 4.257,
+          "end": 4.827
         },
         {
           "id": "w5-9",
           "text": "과부하가",
-          "start": 4.597,
-          "end": 5.237
+          "start": 4.847,
+          "end": 5.772
         },
         {
           "id": "w5-10",
           "text": "진짜",
-          "start": 5.257,
-          "end": 5.597
+          "start": 5.792,
+          "end": 6.177
         },
         {
           "id": "w5-11",
           "text": "범인이죠.",
-          "start": 5.617,
-          "end": 6.172
+          "start": 6.197,
+          "end": 6.705
         }
       ]
     },
     {
       "frame": 6,
       "path": "assets/voice/06.wav",
-      "duration_s": 5.767,
+      "duration_s": 5.625,
       "words": [
         {
           "id": "w6-0",
           "text": "몸은",
-          "start": 0.384,
-          "end": 0.774
+          "start": 0.415,
+          "end": 0.806
         },
         {
           "id": "w6-1",
           "text": "가만히",
-          "start": 0.794,
-          "end": 1.194
+          "start": 0.826,
+          "end": 1.211
         },
         {
           "id": "w6-2",
           "text": "의자에",
-          "start": 1.214,
-          "end": 1.554
+          "start": 1.231,
+          "end": 1.555
         },
         {
           "id": "w6-3",
           "text": "앉아",
-          "start": 1.574,
-          "end": 1.853
+          "start": 1.575,
+          "end": 1.862
         },
         {
           "id": "w6-4",
           "text": "있지만,",
-          "start": 1.873,
-          "end": 2.704
+          "start": 1.882,
+          "end": 2.322
         },
         {
           "id": "w6-5",
           "text": "우리의",
-          "start": 2.724,
-          "end": 3.064
+          "start": 2.342,
+          "end": 2.892
         },
         {
           "id": "w6-6",
           "text": "뇌는",
-          "start": 3.084,
-          "end": 3.363
+          "start": 2.912,
+          "end": 3.228
         },
         {
           "id": "w6-7",
           "text": "하루",
-          "start": 3.383,
-          "end": 3.664
+          "start": 3.248,
+          "end": 3.506
         },
         {
           "id": "w6-8",
           "text": "종일",
-          "start": 3.684,
-          "end": 3.963
+          "start": 3.526,
+          "end": 3.799
         },
         {
           "id": "w6-9",
           "text": "마라톤을",
-          "start": 3.983,
-          "end": 4.564
+          "start": 3.819,
+          "end": 4.431
         },
         {
           "id": "w6-10",
           "text": "하고",
-          "start": 4.584,
-          "end": 4.683
+          "start": 4.451,
+          "end": 4.558
         },
         {
           "id": "w6-11",
           "text": "있는",
-          "start": 4.703,
-          "end": 4.924
+          "start": 4.578,
+          "end": 4.812
         },
         {
           "id": "w6-12",
           "text": "셈입니다.",
-          "start": 4.944,
-          "end": 5.473
+          "start": 4.832,
+          "end": 5.284
         }
       ]
     },
     {
       "frame": 7,
       "path": "assets/voice/07.wav",
-      "duration_s": 8.682,
+      "duration_s": 8.662,
       "words": [
         {
           "id": "w7-0",
           "text": "그렇다면",
-          "start": 0.274,
-          "end": 0.796
+          "start": 0.321,
+          "end": 0.89
         },
         {
           "id": "w7-1",
           "text": "이",
-          "start": 0.816,
-          "end": 1.036
+          "start": 0.91,
+          "end": 1.118
         },
         {
           "id": "w7-2",
           "text": "무거운",
-          "start": 1.056,
-          "end": 1.396
+          "start": 1.138,
+          "end": 1.483
         },
         {
           "id": "w7-3",
           "text": "피로를",
-          "start": 1.416,
-          "end": 1.936
+          "start": 1.503,
+          "end": 2.034
         },
         {
           "id": "w7-4",
           "text": "어떻게",
-          "start": 1.956,
-          "end": 2.236
+          "start": 2.054,
+          "end": 2.373
         },
         {
           "id": "w7-5",
           "text": "덜어낼",
-          "start": 2.256,
-          "end": 2.656
+          "start": 2.393,
+          "end": 2.759
         },
         {
           "id": "w7-6",
           "text": "수",
-          "start": 2.676,
-          "end": 2.836
+          "start": 2.779,
+          "end": 2.973
         },
         {
           "id": "w7-7",
           "text": "있을까요?",
-          "start": 2.856,
-          "end": 4.096
+          "start": 2.993,
+          "end": 3.725
         },
         {
           "id": "w7-8",
           "text": "거창한",
-          "start": 4.116,
-          "end": 4.637
+          "start": 3.745,
+          "end": 4.498
         },
         {
           "id": "w7-9",
           "text": "헬스장",
-          "start": 4.657,
-          "end": 5.116
+          "start": 4.518,
+          "end": 5.023
         },
         {
           "id": "w7-10",
           "text": "등록보다",
-          "start": 5.136,
-          "end": 5.836
+          "start": 5.043,
+          "end": 5.763
         },
         {
           "id": "w7-11",
           "text": "중요한",
-          "start": 5.856,
-          "end": 6.256
+          "start": 5.783,
+          "end": 6.264
         },
         {
           "id": "w7-12",
           "text": "건,",
-          "start": 6.276,
-          "end": 6.497
+          "start": 6.284,
+          "end": 6.528
         },
         {
           "id": "w7-13",
           "text": "일상",
-          "start": 6.517,
-          "end": 6.857
+          "start": 6.548,
+          "end": 6.893
         },
         {
           "id": "w7-14",
           "text": "속",
-          "start": 6.877,
-          "end": 7.156
+          "start": 6.913,
+          "end": 7.116
         },
         {
           "id": "w7-15",
           "text": "작은",
-          "start": 7.176,
-          "end": 7.576
+          "start": 7.136,
+          "end": 7.46
         },
         {
           "id": "w7-16",
           "text": "끊어내기입니다.",
-          "start": 7.596,
-          "end": 8.375
+          "start": 7.48,
+          "end": 8.207
         }
       ]
     },
     {
       "frame": 8,
       "path": "assets/voice/08.wav",
-      "duration_s": 6.979,
+      "duration_s": 6.97,
       "words": [
         {
           "id": "w8-0",
           "text": "업무",
-          "start": 0.294,
-          "end": 0.615
+          "start": 0.434,
+          "end": 0.704
         },
         {
           "id": "w8-1",
           "text": "중",
-          "start": 0.635,
-          "end": 0.79
+          "start": 0.724,
+          "end": 0.876
         },
         {
           "id": "w8-2",
           "text": "50분이",
-          "start": 0.81,
-          "end": 1.37
+          "start": 0.896,
+          "end": 1.408
         },
         {
           "id": "w8-3",
           "text": "지났다면,",
-          "start": 1.39,
-          "end": 2.559
+          "start": 1.428,
+          "end": 2.472
         },
         {
           "id": "w8-4",
           "text": "딱",
-          "start": 2.579,
-          "end": 2.976
+          "start": 2.492,
+          "end": 2.842
         },
         {
           "id": "w8-5",
           "text": "5분만",
-          "start": 2.996,
-          "end": 3.446
+          "start": 2.862,
+          "end": 3.312
         },
         {
           "id": "w8-6",
           "text": "모니터와",
-          "start": 3.466,
-          "end": 4.364
+          "start": 3.332,
+          "end": 4.29
         },
         {
           "id": "w8-7",
           "text": "스마트폰에서",
-          "start": 4.384,
-          "end": 4.873
+          "start": 4.31,
+          "end": 4.779
         },
         {
           "id": "w8-8",
           "text": "눈을",
-          "start": 4.893,
-          "end": 5.207
+          "start": 4.799,
+          "end": 5.073
         },
         {
           "id": "w8-9",
           "text": "떼고,",
-          "start": 5.227,
-          "end": 5.573
+          "start": 5.093,
+          "end": 5.619
         },
         {
           "id": "w8-10",
           "text": "먼",
-          "start": 5.593,
-          "end": 5.737
+          "start": 5.639,
+          "end": 5.795
         },
         {
           "id": "w8-11",
           "text": "곳을",
-          "start": 5.757,
-          "end": 6.031
+          "start": 5.815,
+          "end": 6.134
         },
         {
           "id": "w8-12",
           "text": "바라보세요.",
-          "start": 6.051,
-          "end": 6.676
+          "start": 6.154,
+          "end": 6.639
         }
       ]
     },
     {
       "frame": 9,
       "path": "assets/voice/09.wav",
-      "duration_s": 7.91,
+      "duration_s": 8.191,
       "words": [
         {
           "id": "w9-0",
           "text": "의자에",
-          "start": 0.296,
-          "end": 0.662
+          "start": 0.311,
+          "end": 0.702
         },
         {
           "id": "w9-1",
           "text": "앉은",
-          "start": 0.682,
-          "end": 0.946
+          "start": 0.722,
+          "end": 0.997
         },
         {
           "id": "w9-2",
           "text": "채로",
-          "start": 0.966,
-          "end": 1.262
+          "start": 1.017,
+          "end": 1.342
         },
         {
           "id": "w9-3",
           "text": "가볍게",
-          "start": 1.282,
-          "end": 1.706
+          "start": 1.362,
+          "end": 1.81
         },
         {
           "id": "w9-4",
           "text": "기지개를",
-          "start": 1.726,
-          "end": 2.254
+          "start": 1.83,
+          "end": 2.334
         },
         {
           "id": "w9-5",
           "text": "켜며,",
-          "start": 2.274,
-          "end": 2.534
+          "start": 2.354,
+          "end": 2.858
         },
         {
           "id": "w9-6",
           "text": "굽은",
-          "start": 2.554,
-          "end": 3.134
+          "start": 2.878,
+          "end": 3.338
         },
         {
           "id": "w9-7",
           "text": "목과",
-          "start": 3.154,
-          "end": 3.446
+          "start": 3.358,
+          "end": 3.664
         },
         {
           "id": "w9-8",
           "text": "어깨를",
-          "start": 3.466,
-          "end": 3.89
+          "start": 3.684,
+          "end": 4.158
         },
         {
           "id": "w9-9",
           "text": "열어주는",
-          "start": 3.91,
-          "end": 4.496
+          "start": 4.178,
+          "end": 4.778
         },
         {
           "id": "w9-10",
           "text": "것만으로도,",
-          "start": 4.516,
-          "end": 5.535
+          "start": 4.798,
+          "end": 5.464
         },
         {
           "id": "w9-11",
           "text": "뇌에",
-          "start": 5.555,
-          "end": 6.014
+          "start": 5.484,
+          "end": 6.27
         },
         {
           "id": "w9-12",
           "text": "신선한",
-          "start": 6.034,
-          "end": 6.47
+          "start": 6.29,
+          "end": 6.752
         },
         {
           "id": "w9-13",
           "text": "산소가",
-          "start": 6.49,
-          "end": 6.946
+          "start": 6.772,
+          "end": 7.218
         },
         {
           "id": "w9-14",
           "text": "공급됩니다.",
-          "start": 6.966,
-          "end": 7.599
+          "start": 7.238,
+          "end": 7.854
         }
       ]
     },
     {
       "frame": 10,
       "path": "assets/voice/10.wav",
-      "duration_s": 7.643,
+      "duration_s": 7.74,
       "words": [
         {
           "id": "w10-0",
           "text": "당신의",
-          "start": 0.305,
-          "end": 0.756
+          "start": 0.316,
+          "end": 0.84
         },
         {
           "id": "w10-1",
           "text": "방전된",
-          "start": 0.776,
-          "end": 1.296
+          "start": 0.86,
+          "end": 1.38
         },
         {
           "id": "w10-2",
           "text": "체력,",
-          "start": 1.316,
-          "end": 2.076
+          "start": 1.4,
+          "end": 2.2
         },
         {
           "id": "w10-3",
           "text": "오늘부터는",
-          "start": 2.096,
-          "end": 2.796
+          "start": 2.22,
+          "end": 2.86
         },
         {
           "id": "w10-4",
           "text": "차가운",
-          "start": 2.816,
-          "end": 3.155
+          "start": 2.88,
+          "end": 3.28
         },
         {
           "id": "w10-5",
           "text": "카페인이",
-          "start": 3.175,
-          "end": 3.636
+          "start": 3.3,
+          "end": 3.879
         },
         {
           "id": "w10-6",
           "text": "아니라,",
-          "start": 3.656,
-          "end": 4.416
+          "start": 3.899,
+          "end": 4.599
         },
         {
           "id": "w10-7",
           "text": "짧지만",
-          "start": 4.436,
-          "end": 4.955
+          "start": 4.619,
+          "end": 5.2
         },
         {
           "id": "w10-8",
           "text": "진짜인",
-          "start": 4.975,
-          "end": 5.436
+          "start": 5.22,
+          "end": 5.68
         },
         {
           "id": "w10-9",
           "text": "휴식으로",
-          "start": 5.456,
-          "end": 6.095
+          "start": 5.7,
+          "end": 6.159
         },
         {
           "id": "w10-10",
           "text": "채워보는",
-          "start": 6.115,
-          "end": 6.576
+          "start": 6.179,
+          "end": 6.64
         },
         {
           "id": "w10-11",
           "text": "건",
-          "start": 6.596,
-          "end": 6.755
+          "start": 6.66,
+          "end": 6.82
         },
         {
           "id": "w10-12",
           "text": "어떨까요?",
-          "start": 6.775,
-          "end": 7.339
+          "start": 6.84,
+          "end": 7.42
         }
       ]
     },
     {
       "frame": 11,
       "path": "assets/voice/11.wav",
-      "duration_s": 6.413,
+      "duration_s": 6.619,
       "words": [
         {
           "id": "w11-0",
           "text": "오늘도",
-          "start": 0.293,
-          "end": 0.803
+          "start": 0.3,
+          "end": 0.82
         },
         {
           "id": "w11-1",
           "text": "묵묵히",
-          "start": 0.823,
-          "end": 1.223
+          "start": 0.84,
+          "end": 1.359
         },
         {
           "id": "w11-2",
           "text": "하루를",
-          "start": 1.243,
-          "end": 1.643
+          "start": 1.379,
+          "end": 1.779
         },
         {
           "id": "w11-3",
           "text": "버텨낸",
-          "start": 1.663,
-          "end": 2.123
+          "start": 1.799,
+          "end": 2.259
         },
         {
           "id": "w11-4",
           "text": "당신을,",
-          "start": 2.143,
-          "end": 2.663
+          "start": 2.279,
+          "end": 2.8
         },
         {
           "id": "w11-5",
           "text": "진심으로",
-          "start": 2.683,
-          "end": 3.143
+          "start": 2.82,
+          "end": 3.399
         },
         {
           "id": "w11-6",
           "text": "응원합니다.",
-          "start": 3.163,
-          "end": 3.793
+          "start": 3.419,
+          "end": 3.999
         }
       ]
     }

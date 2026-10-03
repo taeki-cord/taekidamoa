@@ -19,7 +19,7 @@ vo_mode: verbatim
 
 ## Assets
 
-- assets/voice/narration-full-clean.wav — 사용자 본인 목소리(Voicebox) 나레이션, ** 낭독 부분 4곳 제거. 처리 기록: tools/VOICE_NOTES.md
+- assets/voice/narration-full.wav — 사용자 본인 목소리(Voicebox) 나레이션 (2차, ** 없이 재생성). 분할/타이밍: tools/align_voice.py
 
 ## Customizations
 

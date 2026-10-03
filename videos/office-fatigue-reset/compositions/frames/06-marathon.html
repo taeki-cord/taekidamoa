@@ -42,9 +42,9 @@ svg .soft{fill:none;stroke:rgba(255,140,90,0.35);stroke-width:8;stroke-linecap:r
 .f06-mind .f06-meter{margin-bottom:40px}
 
 </style>
-<div id="root" data-composition-id="06-marathon" data-width="1920" data-height="1080" data-duration="5.767">
-  <div id="f06-bg" class="f06-bg clip" data-start="0" data-duration="5.767" data-track-index="0"><div class="f06-deco f06-deco1"></div><div class="f06-deco f06-deco2"></div><div class="f06-deco f06-deco3"></div></div>
-  <div id="f06-stage" class="f06-stage clip" data-start="0" data-duration="5.767" data-track-index="1">
+<div id="root" data-composition-id="06-marathon" data-width="1920" data-height="1080" data-duration="5.625">
+  <div id="f06-bg" class="f06-bg clip" data-start="0" data-duration="5.625" data-track-index="0"><div class="f06-deco f06-deco1"></div><div class="f06-deco f06-deco2"></div><div class="f06-deco f06-deco3"></div></div>
+  <div id="f06-stage" class="f06-stage clip" data-start="0" data-duration="5.625" data-track-index="1">
     <div class="f06-eyebrow"><i></i><span>몸 vs 뇌</span></div>
     <div class="f06-counter">06 / 11</div>
 
@@ -79,7 +79,7 @@ svg .soft{fill:none;stroke:rgba(255,140,90,0.35);stroke-width:8;stroke-linecap:r
 
 const tl = gsap.timeline({ paused: true });
 // W(): maps cue times authored against the draft voice onto the real narration (tools/voice_align.json)
-const __K = [[0.0, 0.0], [0.41, 0.384], [0.691, 0.722], [0.972, 1.022], [1.253, 1.226], [1.534, 1.429], [1.815, 1.649], [2.096, 1.93], [2.377, 2.412], [2.658, 2.796], [2.939, 2.958], [3.22, 3.203], [3.501, 3.488], [3.782, 3.732], [4.063, 3.995], [4.344, 4.2], [4.625, 4.463], [4.906, 4.655], [5.187, 4.811], [5.468, 5.124], [5.749, 5.351], [6.03, 5.492]], D = 5.767;
+const __K = [[0.0, 0.0], [0.41, 0.415], [0.691, 0.774], [0.972, 0.993], [1.253, 1.248], [1.534, 1.413], [1.815, 1.662], [2.096, 1.905], [2.377, 2.103], [2.658, 2.493], [2.939, 2.79], [3.22, 3.087], [3.501, 3.349], [3.782, 3.573], [4.063, 3.831], [4.344, 4.089], [4.625, 4.377], [4.906, 4.521], [5.187, 4.683], [5.468, 5.007], [5.749, 5.19], [6.03, 5.304]], D = 5.625;
 const W = (t) => { const K = __K; if (t >= K[K.length - 1][0]) return Math.min(D - 0.35, K[K.length - 1][1] + (t - K[K.length - 1][0])); for (let i = 1; i < K.length; i++) { if (t <= K[i][0]) { const [a0, b0] = K[i - 1], [a1, b1] = K[i]; return Math.min(D - 0.35, b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0)); } } return t; };
 const E = "power3.out";
 const q = (s) => document.querySelectorAll('[data-composition-id="06-marathon"] ' + s);
@@ -106,7 +106,7 @@ tl.fromTo(km, { v: 0 }, { v: 42.195, duration: 2.0, ease: "power2.inOut", onUpda
 pop(".f06-b2", 5.6, { duration: 0.5 });
 tl.to(q(".f06-body, .f06-mind"), { rotationY: 0, duration: 0.8, ease: E }, W(6.0));
 
-tl.set({}, {}, 5.767);
+tl.set({}, {}, 5.625);
 window.__timelines = window.__timelines || {};
 window.__timelines["06-marathon"] = tl;
 })();
