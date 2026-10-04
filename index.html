@@ -334,6 +334,7 @@
 
     /* 행운 번호 */
     .lotto-sets { display: grid; gap: 12px; margin-top: 24px; }
+    .lotto-art { display: block; width: min(100%, 320px); aspect-ratio: 1; margin: 24px 0 0; border-radius: 16px; background: #000; }
     .lotto-set {
       display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
       background: var(--surface); border: 1px solid var(--line);
@@ -597,6 +598,7 @@
       <p class="lead">버튼을 누르면 1~45 중에서 번호 6개씩, 5세트를 뽑아드립니다.</p>
       <p class="lotto-dday" id="lottoDday"></p>
       <button type="button" class="btn" id="lottoBtn">🎯 번호 뽑기</button>
+      <canvas class="lotto-art" id="lottoArt" hidden aria-hidden="true"></canvas>
       <div class="lotto-sets" id="lottoSets" aria-live="polite"></div>
       <p class="lotto-wish" id="lottoWish" hidden>🍀 행운을 빕니다!</p>
       <p class="lotto-note">재미로 보는 무작위 번호입니다. 당첨을 보장하지 않으니 가볍게 즐겨주세요.</p>
@@ -897,9 +899,62 @@
       while (nums.size < 6) nums.add(Math.floor(Math.random() * 45) + 1);
       return [...nums].sort((a, b) => a - b);
     }
+    // 번호 뽑기 전에 무지개 무늬를 1.5초 동안 그립니다 (원래 파이썬 거북이 그림을 옮긴 것)
+    function drawLottoArt(done) {
+      const canvas = document.getElementById('lottoArt');
+      canvas.hidden = false;
+      const size = canvas.clientWidth, ratio = window.devicePixelRatio || 1;
+      canvas.width = canvas.height = Math.round(size * ratio);
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(ratio, 0, 0, ratio, canvas.width / 2, canvas.height / 2);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(-size / 2, -size / 2, size, size);
+      ctx.lineWidth = 1;
+      const STEPS = 72, R = size * 0.28, SIDE = size * 0.1;
+      // 한 번에 선 하나 + 그 끝에 사각형 하나, 5도씩 돌아가며 그립니다
+      function step(i) {
+        const a = (i / STEPS) * Math.PI * 2;
+        ctx.strokeStyle = 'hsl(' + (i / STEPS) * 360 + ', 100%, 50%)';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        let x = Math.cos(a) * R, y = Math.sin(a) * R, h = a + Math.PI / 4;
+        ctx.lineTo(x, y);
+        for (let k = 0; k < 4; k++) {
+          x += Math.cos(h) * SIDE; y += Math.sin(h) * SIDE;
+          ctx.lineTo(x, y);
+          h -= Math.PI / 2;
+        }
+        ctx.stroke();
+      }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        for (let i = 0; i < STEPS; i++) step(i);
+        done();
+        return;
+      }
+      const DURATION = 1500;
+      let drawn = 0, start = null;
+      function frame(t) {
+        if (start === null) start = t;
+        const target = Math.min(STEPS, Math.ceil(((t - start) / DURATION) * STEPS));
+        while (drawn < target) step(drawn++);
+        if (drawn < STEPS) requestAnimationFrame(frame); else done();
+      }
+      requestAnimationFrame(frame);
+    }
+
     document.getElementById('lottoBtn').addEventListener('click', () => {
+      const btn = document.getElementById('lottoBtn');
+      if (btn.disabled) return;
+      btn.disabled = true;
       const box = document.getElementById('lottoSets');
       box.innerHTML = '';
+      document.getElementById('lottoWish').hidden = true;
+      drawLottoArt(() => {
+        btn.disabled = false;
+        showLottoSets(box);
+      });
+    });
+    function showLottoSets(box) {
       'ABCDE'.split('').forEach(label => {
         const row = document.createElement('div');
         row.className = 'lotto-set';
@@ -913,7 +968,7 @@
         box.appendChild(row);
       });
       document.getElementById('lottoWish').hidden = false;
-    });
+    }
     // 첫 화면 버튼: 행운 번호 코너로 내려가면서 바로 번호를 뽑아줍니다
     document.getElementById('heroLotto').addEventListener('click', () => {
       document.getElementById('lottoBtn').click();
