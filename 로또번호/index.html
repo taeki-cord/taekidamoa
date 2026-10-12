@@ -4,11 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>행운 번호 뽑기 | 안전, 그리고 우리 가족</title>
-  <!-- 로또 번호 추천기는 첫 화면의 '행운 번호' 코너로 옮겼습니다 -->
-  <meta http-equiv="refresh" content="0; url=../#lotto" />
-  <link rel="canonical" href="../#lotto" />
+  <meta name="description" content="버튼 한 번으로 1~45 중 번호 6개씩 5세트를 뽑아 드리는 쉬어가는 코너입니다." />
+  <!-- 안전 사이트의 검색 주제가 흐려지지 않게 이 페이지는 검색 결과에서 뺍니다 -->
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://taeki-cord.github.io/taekidamoa/%EB%A1%9C%EB%98%90%EB%B2%88%ED%98%B8/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="theme-color" content="#3b7dd8" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="안전, 그리고 우리 가족" />
+  <meta property="og:title" content="🍀 오늘의 행운 번호 뽑기" />
+  <meta property="og:description" content="버튼 한 번으로 1~45 중 번호 6개씩, 5세트를 뽑아 드립니다." />
+  <meta property="og:image" content="https://taeki-cord.github.io/taekidamoa/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <p>페이지가 이동했습니다. <a href="../#lotto">행운 번호 뽑기 바로가기</a></p>
+
+  <!-- @header -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="../" class="logo">안전, 그리고 <span>우리 가족</span></a>
+      <ul>
+        <li><a class="menu" href="../">홈</a></li>
+        <li><a class="menu" href="../cases/">사고에서 배우기</a></li>
+        <li><a class="menu" href="../season/">이달의 안전</a></li>
+        <li><a class="menu" href="../checklist/">부모님 댁 점검표</a></li>
+        <li><a class="menu" href="../index.html#call">긴급 연락처</a></li>
+      </ul>
+      <a class="yt-nav" href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp/shorts" target="_blank" rel="noopener">▶ 유튜브</a>
+    </div>
+  </header>
+  <!-- /@header -->
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">홈</a> › 쉬어가는 코너</p>
+      <h1>오늘의 <em>행운 번호</em> 뽑기</h1>
+      <p>버튼을 누르면 1~45 중에서 번호 6개씩, 5세트를 뽑아드립니다.</p>
+    </div>
+  </section>
+
+  <section class="block" id="lotto">
+    <div class="wrap">
+      <p class="lotto-dday" id="lottoDday" style="margin-top:0"></p>
+      <button type="button" class="btn" id="lottoBtn">🎯 번호 뽑기</button>
+      <canvas class="lotto-art" id="lottoArt" hidden aria-hidden="true"></canvas>
+      <div class="lotto-sets" id="lottoSets" aria-live="polite"></div>
+      <p class="lotto-wish" id="lottoWish" hidden>🍀 행운을 빕니다!</p>
+      <p class="lotto-note">재미로 보는 무작위 번호입니다. 당첨을 보장하지 않으니 가볍게 즐겨주세요.</p>
+
+      <div class="quote" style="margin-top:40px">
+        <p>당첨보다 확실한 행운은, 오늘 무사히 집에 돌아가는 겁니다.</p>
+        <a class="btn" href="../season/" style="font-size:16px;padding:10px 18px">이달의 안전 수칙 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- @footer -->
+  <footer>
+    <div class="wrap">
+      <nav class="foot-links" aria-label="사이트 메뉴"><a href="../">홈</a><a href="../cases/">사고에서 배우기</a><a href="../season/">이달의 안전</a><a href="../checklist/">부모님 댁 점검표</a><a href="../index.html#call">긴급 연락처</a><a href="https://www.youtube.com/@%ED%83%9C%EA%B8%B0tp?sub_confirmation=1" target="_blank" rel="noopener">유튜브 구독</a></nav>
+      <p>안전, 그리고 우리 가족 · 37년 산업안전 강사가 정리합니다 · 오늘도 무사히 퇴근하세요.</p>
+      <button type="button" class="share-btn" data-share="재미로 뽑아보는 오늘의 행운 번호 🍀">💬 이 페이지 공유하기</button>
+      <p class="share-msg" aria-live="polite"></p>
+      <p class="foot-fun"><a href="../로또번호/">🍀 쉬어가는 코너: 행운 번호 뽑기</a></p>
+    </div>
+  </footer>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="shield-logo" viewBox="0 0 100 100"><path d="M50 4 L88 18 V48 C88 72 71 88 50 96 C29 88 12 72 12 48 V18 Z" fill="#ffd43b"/><path d="M50 26 L74 46 H67 V70 H33 V46 H26 Z" fill="#3b7dd8"/><path d="M50 66 C42 60 38 56 38 51.5 C38 48 40.5 46 43.5 46 C46 46 48 47.5 50 50 C52 47.5 54 46 56.5 46 C59.5 46 62 48 62 51.5 C62 56 58 60 50 66 Z" fill="#e8590c"/></symbol></svg>
+  <!-- /@footer -->
+
+  <script src="../assets/site.js"></script>
+  <script>
+    // 행운 번호 뽑기
+    function drawLottoSet() {
+      const nums = new Set();
+      while (nums.size < 6) nums.add(Math.floor(Math.random() * 45) + 1);
+      return [...nums].sort((a, b) => a - b);
+    }
+    // 번호 뽑기 전에 무지개 무늬를 1.5초 동안 그립니다 (원래 파이썬 거북이 그림을 옮긴 것)
+    function drawLottoArt(done) {
+      const canvas = document.getElementById('lottoArt');
+      canvas.hidden = false;
+      const size = canvas.clientWidth, ratio = window.devicePixelRatio || 1;
+      canvas.width = canvas.height = Math.round(size * ratio);
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(ratio, 0, 0, ratio, canvas.width / 2, canvas.height / 2);
+      ctx.fillStyle = '#000';
+      ctx.fillRect(-size / 2, -size / 2, size, size);
+      ctx.lineWidth = 1;
+      const STEPS = 72, R = size * 0.28, SIDE = size * 0.1;
+      // 한 번에 선 하나 + 그 끝에 사각형 하나, 5도씩 돌아가며 그립니다
+      function step(i) {
+        const a = (i / STEPS) * Math.PI * 2;
+        ctx.strokeStyle = 'hsl(' + (i / STEPS) * 360 + ', 100%, 50%)';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        let x = Math.cos(a) * R, y = Math.sin(a) * R, h = a + Math.PI / 4;
+        ctx.lineTo(x, y);
+        for (let k = 0; k < 4; k++) {
+          x += Math.cos(h) * SIDE; y += Math.sin(h) * SIDE;
+          ctx.lineTo(x, y);
+          h -= Math.PI / 2;
+        }
+        ctx.stroke();
+      }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        for (let i = 0; i < STEPS; i++) step(i);
+        done();
+        return;
+      }
+      const DURATION = 1500;
+      let drawn = 0, start = null;
+      function frame(t) {
+        if (start === null) start = t;
+        const target = Math.min(STEPS, Math.ceil(((t - start) / DURATION) * STEPS));
+        while (drawn < target) step(drawn++);
+        if (drawn < STEPS) requestAnimationFrame(frame); else done();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    document.getElementById('lottoBtn').addEventListener('click', () => {
+      const btn = document.getElementById('lottoBtn');
+      if (btn.disabled) return;
+      btn.disabled = true;
+      const box = document.getElementById('lottoSets');
+      box.innerHTML = '';
+      document.getElementById('lottoWish').hidden = true;
+      drawLottoArt(() => {
+        btn.disabled = false;
+        showLottoSets(box);
+      });
+    });
+    function showLottoSets(box) {
+      'ABCDE'.split('').forEach(label => {
+        const row = document.createElement('div');
+        row.className = 'lotto-set';
+        row.innerHTML = '<span class="label">' + label + '</span>';
+        drawLottoSet().forEach(n => {
+          const ball = document.createElement('span');
+          ball.className = 'ball c' + (Math.floor((n - 1) / 10) + 1);
+          ball.textContent = n;
+          row.appendChild(ball);
+        });
+        box.appendChild(row);
+      });
+      document.getElementById('lottoWish').hidden = false;
+    }
+
+    // 로또 추첨 D-day (매주 토요일 저녁 8시 35분 추첨, 한국 시간 기준)
+    (function () {
+      const kst = new Date(Date.now() + 9 * 3600000);
+      const kstDay = kst.getUTCDay();                  // 0=일 ~ 6=토
+      const kstMinutes = kst.getUTCHours() * 60 + kst.getUTCMinutes();
+      const DRAW_MINUTES = 20 * 60 + 35;
+      let days = (6 - kstDay + 7) % 7;               // 토요일까지 남은 날짜 수
+      if (days === 0 && kstMinutes >= DRAW_MINUTES) days = 7;
+      document.getElementById('lottoDday').textContent = days === 0
+        ? '🔔 오늘 저녁 추첨! 번호 뽑아 가세요'
+        : '🗓 ' + (days === 7 ? '다음 주' : '이번 주') + ' 추첨까지 ' + days + '일 남았습니다 (토요일 저녁 8시 35분)';
+    })();
+  </script>
 </body>
 </html>
