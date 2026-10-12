@@ -58,7 +58,7 @@ header.nav .wrap {
 }
 .logo { color: var(--hero-text); font-weight: 900; font-size: 20px; text-decoration: none; }
 .logo span { color: var(--hero-em); }
-.nav ul { display: flex; gap: 20px; list-style: none; }
+.nav ul { display: flex; gap: 20px; list-style: none; white-space: nowrap; }
 .nav a.menu { color: var(--hero-sub); text-decoration: none; font-size: 16px; }
 .nav a.menu:hover { color: #fff; }
 
@@ -286,14 +286,18 @@ h2 { font-size: clamp(28px, 4vw, 36px); font-weight: 900; margin-bottom: 12px; l
 .pledge-form { margin-bottom: 16px; }
 .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px; }
 .chips > span { color: var(--muted); font-size: 16px; }
-#chipList { display: flex; flex-wrap: wrap; gap: 8px; }
+#chipList, .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   font: inherit; font-size: 15px; color: var(--text);
   background: var(--accent-soft); border: 1px solid transparent;
   border-radius: 999px; padding: 6px 14px; cursor: pointer; text-align: left;
 }
 .chip:hover { border-color: var(--accent); }
-#pledgeMsg { color: var(--muted); font-size: 16px; margin: 0 0 20px; min-height: 1.5em; }
+#pledgeMsg, .pledge-msg { color: var(--muted); font-size: 16px; margin: 0 0 20px; min-height: 1.5em; }
+.pledge-count { font-weight: 700; color: var(--safe); margin-bottom: 12px; }
+.pledge-cta { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 48px; }
+.article .pledge-cta h2 { margin-top: 0; }
+.pledge-cta .pledge-form { border: 0; padding: 0; background: none; }
 .pledges { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
 .pledge {
   background: var(--surface); border: 1px solid var(--line);
@@ -330,12 +334,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15
 
 @media (max-width: 640px) {
   body { font-size: 17px; }
-  header.nav .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; gap: 6px 12px; }
-  .nav ul {
-    order: 3; width: 100%; gap: 18px; overflow-x: auto; white-space: nowrap;
-    padding: 2px 0 10px; scrollbar-width: none;
-  }
-  .nav ul::-webkit-scrollbar { display: none; }
   .grid { grid-template-columns: 1fr; }
   .shorts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .pledge-form { grid-template-columns: 1fr; }
@@ -348,6 +346,15 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15
 }
 
 /* ───────── 여러 페이지 공통 (2026-10 리모델링) ───────── */
+/* 화면이 좁으면 메뉴를 로고 아래 둘째 줄로 내리고, 넘치면 옆으로 밀어서 봅니다 */
+@media (max-width: 900px) {
+  header.nav .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; gap: 6px 12px; }
+  .nav ul {
+    order: 3; width: 100%; gap: 18px; overflow-x: auto;
+    padding: 2px 0 10px; scrollbar-width: none;
+  }
+  .nav ul::-webkit-scrollbar { display: none; }
+}
 .nav a.menu[aria-current="page"] { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
 
 /* 페이지 머리말 (하위 페이지용 작은 히어로) */
@@ -449,6 +456,10 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15
   .about { grid-template-columns: 1fr; }
   .about svg { width: 64px; height: 64px; }
   .page-hero { padding: 36px 0 40px; }
+  .sticky-score { top: 96px; }
+}
+
+@media (max-width: 900px) {
   .sticky-score { top: 96px; }
 }
 

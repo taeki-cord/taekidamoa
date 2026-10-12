@@ -121,3 +121,115 @@ async function countVisit() {
   }
 }
 countVisit();
+
+// 안전 다짐 게시판: class="pledge-board" 인 곳에 입력칸과 최근 다짐을 채웁니다.
+// 첫 화면·사고 글·월별 페이지가 모두 같은 게시판(pledges 표)을 써서 글이 한곳에 모입니다.
+//   data-limit="3"   보여줄 최근 다짐 개수
+//   data-more="../#pledge"  있으면 아래에 '다짐 전체 보기' 링크
+const PLEDGE_API = SUPABASE_URL + '/rest/v1/pledges';
+const PLEDGE_EXAMPLES = [
+  '딸 결혼식엔 두 발로 걸어 들어가겠습니다',
+  '손주 안아줄 허리, 오늘부터 무릎 굽혀 듭니다',
+  '“다녀올게” 약속은 “다녀왔어”로 지키겠습니다',
+  '운전대 잡으면 카톡은 도착해서 봅니다',
+  '한잔했으면 대리비가 제일 싼 보험입니다',
+  '가스 밸브 확인 3초, 후회는 평생입니다',
+  '“괜찮겠지” 한 번 참으면 가족이 평생 편합니다',
+  '내가 다치면 우리 집 월급도 멈춥니다. 안전 먼저!',
+  '퇴근길 “다 왔다” 싶을 때 한 번 더 천천히',
+  '정년까지 다친 데 없이 웃으며 퇴직하겠습니다',
+  '위험하다 싶으면 눈치 보지 않고 멈추겠습니다',
+  '“전에도 괜찮았다”는 말, 이제 믿지 않겠습니다'
+];
+
+document.querySelectorAll('.pledge-board').forEach(board => {
+  const limit = Number(board.dataset.limit) || 12;
+  board.innerHTML = `
+    <p class="pledge-count" hidden></p>
+    <form class="pledge-form">
+      <input name="who" maxlength="20" placeholder="이름 또는 별명" aria-label="이름 또는 별명" required />
+      <input name="text" maxlength="100" placeholder="나의 안전 다짐 한 줄" aria-label="나의 안전 다짐 한 줄" required />
+      <button class="btn" type="submit">내 다짐 남기기</button>
+    </form>
+    <div class="chips"><span>막막하시면 골라보세요 👉</span><div class="chip-list"></div></div>
+    <p class="pledge-msg" aria-live="polite"></p>
+    <div class="pledges"></div>` +
+    (board.dataset.more ? `<a class="more-link" href="${board.dataset.more}">다른 분들의 다짐 더 보기 →</a>` : '');
+
+  const form = board.querySelector('form');
+  const msg = board.querySelector('.pledge-msg');
+  const listEl = board.querySelector('.pledges');
+  const countEl = board.querySelector('.pledge-count');
+
+  // 예시 다짐: 누르면 입력칸에 자동으로 채워집니다
+  PLEDGE_EXAMPLES.slice().sort(() => Math.random() - 0.5).slice(0, 3).forEach(text => {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'chip';
+    chip.textContent = text;
+    chip.addEventListener('click', () => { form.elements.text.value = text; form.elements.text.focus(); });
+    board.querySelector('.chip-list').appendChild(chip);
+  });
+
+  function show(rows) {
+    listEl.innerHTML = '';
+    if (!rows.length) {
+      msg.textContent = '아직 아무도 없습니다. 첫 번째 다짐의 주인공이 되어주세요!';
+      return;
+    }
+    rows.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'pledge';
+      const p = document.createElement('p');
+      p.textContent = r.message;
+      const small = document.createElement('small');
+      small.textContent = r.name + ' · ' + new Date(r.created_at).toLocaleDateString('ko-KR');
+      card.append(p, small);
+      listEl.appendChild(card);
+    });
+  }
+
+  async function load() {
+    try {
+      const res = await fetch(PLEDGE_API + '?select=name,message,created_at&order=created_at.desc&limit=' + limit,
+        { headers: { ...headers, Prefer: 'count=exact' } });
+      if (!res.ok) throw new Error(res.status);
+      msg.textContent = '';
+      show(await res.json());
+      // 전체 개수는 Content-Range 머리글 끝 숫자 ("0-2/15" → 15)
+      const total = Number((res.headers.get('Content-Range') || '').split('/')[1]);
+      if (total >= 5) {
+        countEl.textContent = '✍️ 지금까지 ' + total.toLocaleString('ko-KR') + '분이 안전 다짐을 남겼습니다';
+        countEl.hidden = false;
+      }
+    } catch (e) {
+      msg.textContent = '다짐 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = form.elements.who.value.trim();
+    const message = form.elements.text.value.trim();
+    if (!name || !message) return;
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    try {
+      const res = await fetch(PLEDGE_API, {
+        method: 'POST',
+        headers: { ...headers, Prefer: 'return=minimal' },
+        body: JSON.stringify({ name, message })
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.elements.text.value = '';
+      await load();
+      msg.textContent = '감사합니다! 다짐이 등록됐습니다.';
+    } catch (err) {
+      msg.textContent = '등록에 실패했습니다. 잠시 후 다시 시도해 주세요.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  load();
+});
