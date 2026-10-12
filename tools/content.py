@@ -363,8 +363,8 @@ CASES = [
     },
 ]
 
-# 첫 화면 쇼츠 카드에 걸 영상 (CASES 의 slug, 4개)
-HOME_SHORTS = ['chernobyl', 'columbia', 'challenger', 'johnstown-dam']
+# 첫 화면 쇼츠 카드에 걸 영상 (CASES 의 slug, 4개). 바로 위 '사고에서 배우기' 카드(CASES 앞 6개)와 겹치지 않게 고르세요
+HOME_SHORTS = ['incheon-bridge', 'marine-city', 'rana-plaza', 'silver-bridge']
 
 # ───────────────────────── 이달의 안전 ─────────────────────────
 # 월: (제목, 한 줄 설명, [(수칙, 왜 그런지), ... 4개], 관련 사고 slug 또는 None)
