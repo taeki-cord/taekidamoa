@@ -16,7 +16,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import CASES, SEASONS, ROOMS, SITE, YT, HOME_SHORTS  # noqa: E402
+from content import CASES, SEASONS, ROOMS, SITE, YT, HOME_SHORTS, BALCONY_CHECK  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today().isoformat()
@@ -236,6 +236,7 @@ def build_case(c):
         <button type="button" class="share-btn" data-share="{esc(share)}">💬 가족·동료에게 보내기</button>
         <p class="share-msg" aria-live="polite"></p>
       </div>
+      {f'<p class="cta-row"><a class="btn" href="../{c["check"]}">🧱 우리 집 1분 점검 하러 가기</a></p>' if c.get('check') else ''}
       <p class="cta-row"><a class="btn line" href="../checklist/">부모님 댁 안전 점검표 보기</a></p>
 
       <div class="pledge-cta" id="pledge">
@@ -493,6 +494,178 @@ def build_checklist():
     return path
 
 
+# ───────────── 베란다 대피 1분 점검 ─────────────
+
+def build_balcony_check():
+    p = '../../'
+    path = 'check/balcony/'
+    case = BY_SLUG['lightweight-partition']
+    title = f'우리 집 베란다 대피 1분 점검 — 경량칸막이·대피공간 | {SITE_NAME}'
+    desc = ('불이 나면 부수고 옆집으로 피하는 경량칸막이, 우리 집엔 있을까요? 질문 5개로 1분 만에 '
+            '우리 집 베란다 대피 점수를 확인하고, 결과 카드를 가족·옆집에 보내 보세요.')
+    rows = '\n'.join(f'''      <div class="q" data-i="{i}">
+        <p class="q-text"><b>{i + 1}</b>{esc(q)}</p>
+        <div class="q-btns">
+          <button type="button" data-a="1">네</button>
+          <button type="button" data-a="0">아니요 · 모르겠어요</button>
+        </div>
+        <p class="q-todo">{esc(todo)}</p>
+      </div>''' for i, (q, _, todo) in enumerate(BALCONY_CHECK))
+    body = f'''  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../../">홈</a> › 우리 집 1분 점검</p>
+      <h1>우리 집 베란다,<br /><em>탈출구</em>가 있을까요?</h1>
+      <p>옆집과 맞닿은 베란다 벽, 두드리면 통통 빈 소리가 나나요? 불이 나면 부수고 옆집으로 피하라고 일부러 약하게 만든 <b>경량칸막이</b>일 수 있습니다. 질문 5개면 1분 만에 확인됩니다.</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:24px">
+    <div class="wrap article">
+      <div class="video-one">
+        {short_card(case)}
+      </div>
+      <p class="why" style="margin:18px 0 20px">우리 집에 있을 수 있는 대피 시설은 세 가지입니다. <b>경량칸막이</b>(옆집과 맞닿은 얇은 벽), <b>대피공간</b>(방화문이 달린 작은 방), <b>하향식 피난구</b>(바닥 뚜껑을 열면 아래층으로 내려가는 사다리). 1992년 이전에 지어진 아파트는 셋 다 없을 수도 있습니다.</p>
+      <div class="sticky-score">
+        <div class="progress-row" style="margin:0">
+          <div class="bar"><div id="barFill"></div></div>
+          <div id="score">0 / {len(BALCONY_CHECK)}</div>
+        </div>
+      </div>
+{rows}
+      <div id="result" hidden>
+        <p class="result-score"><span id="points">0</span>점</p>
+        <p class="result-msg" id="resultMsg"></p>
+        <img id="card" alt="우리 집 베란다 대피 점검 결과 카드" />
+        <p class="why" id="cardHint">카드를 길게 누르면 사진으로 저장할 수 있습니다.</p>
+        <div class="cta-row">
+          <button type="button" class="share-btn" id="shareCard">💬 결과 카드 가족에게 보내기</button>
+          <button type="button" class="share-btn" id="shareNeighbor">🏠 옆집·부모님께 점검 링크 보내기</button>
+        </div>
+        <p class="share-msg" id="shareMsg" aria-live="polite"></p>
+        <p class="why" style="margin-top:12px">💡 옆집 쪽이 짐으로 막혀 있어도 건너갈 수 없습니다. 옆집에도 한 번 보내 주세요.</p>
+      </div>
+      <button type="button" class="reset" id="resetBtn">처음부터 다시 하기</button>
+      <p class="cta-row" style="margin-top:24px"><a class="btn line" href="../../cases/{case['slug']}.html">경량칸막이 자세히 읽기</a>
+        <a class="btn line" href="../../checklist/">부모님 댁 안전 점검표</a></p>
+    </div>
+  </section>'''
+    todos = json.dumps([t for _, t, _ in BALCONY_CHECK], ensure_ascii=False)
+    script = f'''
+  <script>
+    const KEY = 'balcony-check-v1';
+    const TODOS = {todos};
+    const N = TODOS.length;
+    let ans = [];
+    try {{ ans = JSON.parse(localStorage.getItem(KEY)) || []; }} catch (e) {{}}
+    const qs = document.querySelectorAll('.q');
+    function points() {{ return ans.filter(a => a === 1).length * (100 / N); }}
+    function message(pt) {{
+      if (pt === 100) return '🎉 만점! 우리 집 탈출구를 확실히 알고 계십니다.';
+      if (pt >= 60) return '👍 거의 다 왔습니다. 아래 한두 가지만 챙기면 됩니다.';
+      if (pt >= 20) return '⚠️ 지금 상태로는 불이 났을 때 쓰지 못할 수 있습니다.';
+      return '🚨 오늘 꼭 베란다에 가서 확인해 보세요.';
+    }}
+    function render() {{
+      let done = 0;
+      qs.forEach(q => {{
+        const a = ans[q.dataset.i];
+        q.querySelectorAll('button').forEach(b => b.classList.toggle('on', a === Number(b.dataset.a)));
+        q.classList.toggle('no', a === 0);
+        q.classList.toggle('yes', a === 1);
+        if (a === 0 || a === 1) done++;
+      }});
+      document.getElementById('score').textContent = done + ' / ' + N;
+      document.getElementById('barFill').style.width = Math.round(done / N * 100) + '%';
+      const res = document.getElementById('result');
+      res.hidden = done < N;
+      if (done < N) return;
+      const pt = points();
+      document.getElementById('points').textContent = pt;
+      document.getElementById('resultMsg').textContent = message(pt);
+      drawCard(pt);
+    }}
+    qs.forEach(q => q.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {{
+      const first = ans.filter(a => a === 0 || a === 1).length;
+      ans[q.dataset.i] = Number(b.dataset.a);
+      try {{ localStorage.setItem(KEY, JSON.stringify(ans)); }} catch (e) {{}}
+      render();
+      // 다 답하면 결과로, 아니면 다음 질문으로 화면을 옮겨 줍니다
+      const next = [...qs].find(x => !(ans[x.dataset.i] === 0 || ans[x.dataset.i] === 1));
+      const target = next || (first < N ? document.getElementById('result') : null);
+      if (target) target.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    }})));
+    document.getElementById('resetBtn').addEventListener('click', () => {{
+      ans = [];
+      try {{ localStorage.setItem(KEY, '[]'); }} catch (e) {{}}
+      render();
+      qs[0].scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+    }});
+
+    // 결과 카드 (카톡으로 보낼 수 있는 정사각형 그림)
+    const cv = document.createElement('canvas');
+    cv.width = 1080; cv.height = 1080;
+    function wrap(ctx, text, x, y, maxW, lh, maxLines) {{
+      let line = '', lines = 0;
+      for (const ch of text) {{
+        if (ctx.measureText(line + ch).width > maxW && line) {{
+          if (++lines === maxLines) {{ ctx.fillText(line.slice(0, -1) + '…', x, y); return y + lh; }}
+          ctx.fillText(line, x, y); line = ch; y += lh;
+        }} else line += ch;
+      }}
+      ctx.fillText(line, x, y);
+      return y + lh;
+    }}
+    async function drawCard(pt) {{
+      try {{ await document.fonts.ready; }} catch (e) {{}}
+      const ctx = cv.getContext('2d');
+      const F = '"Noto Sans KR", sans-serif';
+      ctx.fillStyle = '#3b7dd8'; ctx.fillRect(0, 0, 1080, 1080);
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(60, 300, 960, 640);
+      ctx.fillStyle = '#eef5ff'; ctx.font = '700 44px ' + F; ctx.fillText('🧱 우리 집 베란다 대피 점검', 72, 120);
+      ctx.fillStyle = '#ffd43b'; ctx.font = '900 150px ' + F; ctx.fillText(pt + '점', 66, 270);
+      const w = ctx.measureText(pt + '점').width;
+      ctx.fillStyle = '#ffffff'; ctx.font = '700 40px ' + F; ctx.fillText('/ 100', 66 + w + 18, 270);
+      ctx.fillStyle = '#1f2933'; ctx.font = '700 40px ' + F;
+      let y = wrap(ctx, message(pt), 100, 380, 880, 56, 2) + 10;
+      const miss = TODOS.filter((_, i) => ans[i] !== 1);
+      if (miss.length) {{
+        ctx.fillStyle = '#e8590c'; ctx.font = '700 36px ' + F; ctx.fillText('오늘 챙길 것', 100, y + 14); y += 82;
+        ctx.fillStyle = '#1f2933'; ctx.font = '500 40px ' + F;
+        for (const t of miss) {{ ctx.fillText('☐  ' + t, 100, y); y += 64; }}
+      }} else {{
+        ctx.font = '500 38px ' + F;
+        ctx.fillStyle = '#2b8a3e'; y = wrap(ctx, '옆집과 부모님 댁도 한 번 확인해 주세요.', 100, y, 880, 50, 2);
+      }}
+      ctx.fillStyle = '#ffffff'; ctx.font = '700 34px ' + F; ctx.fillText('안전, 그리고 우리 가족', 72, 1010);
+      ctx.fillStyle = '#eef5ff'; ctx.font = '500 28px ' + F; ctx.fillText('1분 점검 → taeki-cord.github.io/taekidamoa', 72, 1052);
+      document.getElementById('card').src = cv.toDataURL('image/png');
+    }}
+
+    document.getElementById('shareCard').addEventListener('click', async () => {{
+      const pt = points();
+      const text = '우리 집 베란다 대피 점검 ' + pt + '점 나왔어요. 불 나면 어디로 피할지, 우리 집도 1분만 확인해 봐요 👇';
+      const msg = document.getElementById('shareMsg');
+      try {{
+        const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+        const file = new File([blob], 'balcony-check.png', {{ type: 'image/png' }});
+        if (navigator.canShare && navigator.canShare({{ files: [file] }})) {{
+          await navigator.share({{ files: [file], text: text + '\\n' + shareUrl() }});
+          return;
+        }}
+      }} catch (e) {{ if (e.name === 'AbortError') return; }}
+      sharePage(text, msg);
+    }});
+    document.getElementById('shareNeighbor').addEventListener('click', () => {{
+      sharePage('불 나면 베란다 옆집 벽을 부수고 피하라는 거 아세요? 우리 집에 그 벽이 있는지 1분 점검해 보세요 👇', document.getElementById('shareMsg'));
+    }});
+    render();
+  </script>'''
+    crumbs = breadcrumb_ld([('홈', ''), ('우리 집 1분 점검', path)])
+    write('check/balcony/index.html', page(p, head(title, desc, path, p, ld=crumbs), header(p, None), body,
+                                           footer(p, '우리 집 베란다에 탈출구가 있는지 1분 만에 확인해 보세요 👇'), script))
+    return path
+
+
 # ───────────── 직접 고치는 페이지에 공통 메뉴·꼬리말 넣기 ─────────────
 
 def inject(rel, p, current, share_text):
@@ -553,6 +726,7 @@ def main():
     paths.append(build_season_index())
     paths += [build_season(m) for m in range(1, 13)]
     paths.append(build_checklist())
+    paths.append(build_balcony_check())
     inject('index.html', '', 'home', '생활 안전 수칙이랑 긴급 연락처를 한 페이지에 정리해 놓은 곳이에요. 가족들도 한 번씩 보세요 👇')
     inject_home_cases()
     inject('로또번호/index.html', '../', None, '재미로 뽑아보는 오늘의 행운 번호 🍀')

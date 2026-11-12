@@ -472,3 +472,23 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 15
   .sticky-score { position: static; }
   section.block { padding: 8px 0; }
 }
+
+/* ───────── 우리 집 1분 점검 (check/balcony) ───────── */
+.hero-hook { display: table; margin-bottom: 18px; padding: 10px 16px; border-radius: 12px;
+  background: var(--hero-em); color: #1f2933; font-size: 17px; text-decoration: none; line-height: 1.45; }
+.hero-hook:hover { filter: brightness(1.05); }
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin-top: 14px; }
+.q-text { font-size: 19px; font-weight: 500; display: flex; gap: 12px; }
+.q-text b { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--hero); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font-size: 16px; margin-top: 1px; }
+.q-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.q-btns button { flex: 1 1 140px; font: inherit; font-size: 17px; font-weight: 700; padding: 12px 14px; border-radius: 12px;
+  border: 2px solid var(--line); background: var(--bg); color: var(--text); cursor: pointer; }
+.q-btns button.on[data-a="1"] { border-color: var(--safe); background: var(--safe-soft); color: var(--safe); }
+.q-btns button.on[data-a="0"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.q-todo { display: none; margin-top: 12px; padding: 12px 14px; border-radius: 10px; background: var(--accent-soft); font-size: 16px; }
+.q.no .q-todo { display: block; }
+#result { margin-top: 24px; padding: 24px; border-radius: 18px; background: var(--surface); border: 2px solid var(--hero); }
+.result-score { font-size: 56px; font-weight: 900; color: var(--accent); line-height: 1.1; }
+.result-msg { font-size: 20px; font-weight: 700; margin: 8px 0 16px; }
+#card { display: block; width: 100%; max-width: 420px; border-radius: 14px; border: 1px solid var(--line); }
