@@ -268,7 +268,7 @@ def build_cases_index():
     p = '../'
     path = 'cases/'
     title = f'사고에서 배우기 — 세계 대형 사고의 원인과 교훈 | {SITE_NAME}'
-    desc = ('챌린저호·컬럼비아호·체르노빌·테크노마트·실버브리지 등 국내외 대형 사고가 왜 일어났는지, '
+    desc = ('챌린저호·컬럼비아호·하얏트 리젠시·테크노마트·실버브리지 등 국내외 대형 사고가 왜 일어났는지, '
             '우리 집과 일터에서 무엇을 배워야 하는지 37년 산업안전 강사가 쉽게 정리했습니다.')
     cards = '\n        '.join(case_card(c, p) for c in CASES)
     body = f'''  <section class="page-hero">
