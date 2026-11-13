@@ -131,7 +131,7 @@ def head(title, desc, path, p, image=None, ld=None, noindex=False):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{p}assets/site.css" />{ld_html}
+  <link rel="stylesheet" href="{p}assets/site.css?v=20261113" />{ld_html}
 </head>'''
 
 
@@ -175,7 +175,7 @@ def page(p, head_html, header_html, body, footer_html, scripts=''):
 
   {footer_html}
 
-  <script src="{p}assets/site.js"></script>{scripts}
+  <script src="{p}assets/site.js?v=20261113"></script>{scripts}
 </body>
 </html>
 '''
