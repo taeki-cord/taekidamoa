@@ -233,3 +233,8 @@ document.querySelectorAll('.pledge-board').forEach(board => {
 
   load();
 });
+
+// 기간 한정 메뉴(예: 2027 토정비결): data-until 시각이 지나면 숨깁니다
+document.querySelectorAll('[data-until]').forEach(el => {
+  if (Date.now() >= new Date(el.dataset.until).getTime()) el.remove();
+});

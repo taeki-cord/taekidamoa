@@ -16,7 +16,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import CASES, SEASONS, ROOMS, SITE, YT, HOME_SHORTS, BALCONY_CHECK  # noqa: E402
+from content import CASES, SEASONS, ROOMS, SITE, YT, HOME_SHORTS, BALCONY_CHECK, TOJEONG, TOJEONG_UNTIL  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today().isoformat()
@@ -30,6 +30,12 @@ NAV = [
     ('checklist/', '부모님 댁 점검표', 'checklist'),
     ('#call', '긴급 연락처', 'call'),
 ]
+# 기간 한정 메뉴: 빌드한 날이 TOJEONG_UNTIL 전이면 '사고에서 배우기' 옆에 넣습니다.
+# 이미 올라간 페이지에서도 그 날이 지나면 site.js 가 data-until 을 보고 메뉴를 숨깁니다.
+TOJEONG_PATH = '토정비결/'
+if TODAY < TOJEONG_UNTIL:
+    NAV.insert(2, (TOJEONG_PATH, '2027 토정비결', 'tojeong'))
+UNTIL_ATTR = f' data-until="{TOJEONG_UNTIL}T00:00:00+09:00"'
 
 SHIELD = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
           '<symbol id="shield-logo" viewBox="0 0 100 100"><path d="M50 4 L88 18 V48 C88 72 71 88 50 96 C29 88 12 72 12 48 V18 Z" fill="#ffd43b"/>'
@@ -64,7 +70,7 @@ def header(p, current):
     """p: 맨 위 폴더까지의 상대 경로 ('' 또는 '../')"""
     cur = ' aria-current="page"'
     items = '\n'.join(
-        f'        <li><a class="menu" href="{link(p, href)}"{cur if key == current else ""}>{label}</a></li>'
+        f'        <li{UNTIL_ATTR if key == "tojeong" else ""}><a class="menu" href="{link(p, href)}"{cur if key == current else ""}>{label}</a></li>'
         for href, label, key in NAV)
     return f'''<header class="nav">
     <div class="wrap">
@@ -78,7 +84,8 @@ def header(p, current):
 
 
 def footer(p, share_text):
-    links = ''.join(f'<a href="{link(p, href)}">{label}</a>' for href, label, _ in NAV)
+    links = ''.join(f'<a href="{link(p, href)}"{UNTIL_ATTR if key == "tojeong" else ""}>{label}</a>'
+                    for href, label, key in NAV)
     links += f'<a href="{YT}?sub_confirmation=1" target="_blank" rel="noopener">유튜브 구독</a>'
     return f'''<footer>
     <div class="wrap">
@@ -666,6 +673,182 @@ def build_balcony_check():
     return path
 
 
+# ───────────── 2027 토정비결 (기간 한정, 검색 제외) ─────────────
+
+TOJEONG_BODY = '''  <style>
+    .tj-hero { background: linear-gradient(160deg, #a61e1e, #e8590c); }
+    .tj-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0 16px; }
+    .tj-form select { font: inherit; font-size: 18px; padding: 12px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: inherit; }
+    .tj-go { width: 100%; font-size: 19px; border: 0; cursor: pointer; }
+    .tj-gua { font-size: 15px; color: #c92a2a; font-weight: 700; margin: 0; }
+    .tj-name { font-size: 28px; font-weight: 900; margin: 4px 0 12px; }
+    .tj-box { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 14px 0; }
+    .tj-box h3 { margin: 0 0 8px; font-size: 18px; }
+    .tj-month { display: flex; gap: 12px; padding: 10px 0; border-top: 1px dashed var(--line); }
+    .tj-month:first-child { border-top: 0; }
+    .tj-month b { min-width: 46px; color: #e8590c; }
+    .tj-note { font-size: 14px; opacity: .8; }
+    @media (max-width: 520px) { .tj-form { grid-template-columns: 1fr 1fr; } .tj-form select:first-child { grid-column: 1 / -1; } }
+  </style>
+  <section class="page-hero tj-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">홈</a> › 2027 토정비결</p>
+      <h1>붉은 양의 해,<br /><em>2027 토정비결</em></h1>
+      <p>띠와 음력 생일만 고르면 144가지 괘 가운데 내 괘가 나옵니다. 한 해 총운과 조심할 달, 그 달에 꼭 챙길 안전 한마디까지 함께 알려 드립니다.</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:24px">
+    <div class="wrap article">
+      <p class="tj-note">🎲 재미로 보는 운세입니다. 풀이는 이 사이트에서 새로 쓴 글이며 실제 미래를 알려 주지 않습니다. 대신 안전 한마디는 진짜입니다.</p>
+      <div class="tj-form">
+        <select id="tjZ" aria-label="띠">__ZOPTS__</select>
+        <select id="tjM" aria-label="음력 생월">__MOPTS__</select>
+        <select id="tjD" aria-label="음력 생일">__DOPTS__</select>
+      </div>
+      <button type="button" class="btn tj-go" id="tjGo">내 2027년 괘 보기</button>
+      <p class="tj-note" style="margin-top:8px">생일은 <b>음력</b> 기준입니다. 양력 생일만 아신다면 휴대폰 달력에서 음력으로 바꿔 보세요.</p>
+
+      <div id="tjResult" hidden>
+        <div class="tj-box">
+          <p class="tj-gua" id="tjGua"></p>
+          <p class="tj-name" id="tjName"></p>
+          <p id="tjUpper"></p>
+          <p id="tjMiddle"></p>
+          <p><b id="tjLower"></b></p>
+        </div>
+        <div class="tj-box">
+          <h3>🌱 기운이 좋은 달</h3>
+          <p id="tjGood" style="margin:0"></p>
+        </div>
+        <div class="tj-box">
+          <h3>⚠️ 조심할 달과 안전 한마디</h3>
+          <div id="tjCare"></div>
+          <p class="tj-note" style="margin:8px 0 0">37년 안전강사의 귀띔: 운이 나쁜 달은 없습니다. 준비 안 된 달이 있을 뿐입니다.</p>
+        </div>
+        <img id="tjCard" alt="2027 토정비결 결과 카드" style="width:100%;border-radius:16px;margin-top:6px" />
+        <p class="why">카드를 길게 누르면 사진으로 저장할 수 있습니다.</p>
+        <div class="cta-row">
+          <button type="button" class="share-btn" id="tjShare">💬 내 결과 가족에게 보내기</button>
+          <button type="button" class="share-btn" id="tjInvite">🧧 부모님 운세도 봐 드리기</button>
+        </div>
+        <p class="share-msg" id="tjMsg" aria-live="polite"></p>
+        <p class="cta-row" style="margin-top:18px"><a class="btn line" href="../season/">달마다 챙길 안전 수칙</a>
+          <a class="btn line" href="../cases/">사고에서 배우기</a></p>
+      </div>
+    </div>
+  </section>'''
+
+TOJEONG_SCRIPT = '''
+  <script>
+    // 기간이 지나면 이 페이지는 홈으로 보냅니다
+    if (Date.now() >= new Date('__UNTIL__T00:00:00+09:00').getTime()) location.replace('../');
+    const TJ = __DATA__;
+    const $ = id => document.getElementById(id);
+    const KEY = 'tojeong-2027';
+    // 상괘(8) × 중괘(6) × 하괘(3) = 144괘. 같은 입력이면 늘 같은 괘가 나옵니다
+    function calc(z, m, d) {
+      const u = (z + m) % 8, mid = (m + d) % 6, l = d % 3;
+      const care = [], good = [];
+      for (const x of [(u * 3 + m) % 12, (m * 5 + d) % 12, (u + m + d * 4) % 12, (z + d) % 12, (u * 7 + 5) % 12, (z * 5 + 1) % 12])
+        if (!care.includes(x + 1) && care.length < 3) care.push(x + 1);
+      for (let k = 0; good.length < 2; k++) {
+        const g = ((u + mid + l) * 5 + k * 7) % 12 + 1;
+        if (!care.includes(g) && !good.includes(g)) good.push(g);
+      }
+      return { u, mid, l, care: care.sort((a, b) => a - b), good: good.sort((a, b) => a - b) };
+    }
+    let last = null;
+    function show(save) {
+      const z = +$('tjZ').value, m = +$('tjM').value, d = +$('tjD').value;
+      const r = calc(z, m, d); last = Object.assign({ z }, r);
+      $('tjGua').textContent = '제 ' + (r.u + 1) + (r.mid + 1) + (r.l + 1) + '괘 · ' + TJ.zodiac[z] + '띠';
+      $('tjName').textContent = TJ.u[r.u][0];
+      $('tjUpper').textContent = TJ.u[r.u][1];
+      $('tjMiddle').textContent = TJ.m[r.mid];
+      $('tjLower').textContent = TJ.l[r.l];
+      $('tjGood').textContent = r.good.map(x => x + '월').join(', ') + ' — 미뤄 둔 일을 시작하기 좋은 때입니다.';
+      $('tjCare').innerHTML = r.care.map(x => {
+        const t = TJ.tips[x];
+        return '<div class="tj-month"><b>' + x + '월</b><span>' + t[0] + ' — <a href="../season/' + x + '.html">' + t[1] + '</a>, ' + t[2] + '</span></div>';
+      }).join('');
+      $('tjResult').hidden = false;
+      if (save) try { localStorage.setItem(KEY, JSON.stringify([z, m, d])); } catch (e) {}
+      drawCard();
+    }
+    $('tjGo').addEventListener('click', () => { show(true); $('tjResult').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    try {
+      const v = JSON.parse(localStorage.getItem(KEY));
+      if (v) { $('tjZ').value = v[0]; $('tjM').value = v[1]; $('tjD').value = v[2]; show(false); }
+    } catch (e) {}
+
+    // 결과 카드 (카톡으로 보낼 수 있는 정사각형 그림)
+    const cv = document.createElement('canvas'); cv.width = 1080; cv.height = 1080;
+    function wrap(ctx, text, x, y, maxW, lh, maxLines) {
+      let line = '', lines = 0;
+      for (const ch of text) {
+        if (ctx.measureText(line + ch).width > maxW && line) {
+          if (++lines === maxLines) { ctx.fillText(line.slice(0, -1) + '…', x, y); return y + lh; }
+          ctx.fillText(line, x, y); line = ch; y += lh;
+        } else line += ch;
+      }
+      ctx.fillText(line, x, y); return y + lh;
+    }
+    async function drawCard() {
+      try { await document.fonts.ready; } catch (e) {}
+      const r = last, ctx = cv.getContext('2d'), F = '"Noto Sans KR", sans-serif';
+      const g = ctx.createLinearGradient(0, 0, 1080, 1080); g.addColorStop(0, '#a61e1e'); g.addColorStop(1, '#e8590c');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 1080, 1080);
+      ctx.fillStyle = '#fff8e7'; ctx.fillRect(60, 250, 960, 700);
+      ctx.fillStyle = '#ffd43b'; ctx.font = '700 44px ' + F; ctx.fillText('🐑 2027 붉은 양의 해 토정비결', 72, 110);
+      ctx.fillStyle = '#ffffff'; ctx.font = '900 62px ' + F; wrap(ctx, TJ.u[r.u][0], 72, 200, 940, 70, 1);
+      ctx.fillStyle = '#c92a2a'; ctx.font = '700 34px ' + F;
+      ctx.fillText('제 ' + (r.u + 1) + (r.mid + 1) + (r.l + 1) + '괘 · ' + TJ.zodiac[r.z] + '띠', 100, 320);
+      ctx.fillStyle = '#1f2933'; ctx.font = '500 38px ' + F;
+      let y = wrap(ctx, TJ.u[r.u][1], 100, 390, 880, 54, 3) + 6;
+      ctx.font = '700 38px ' + F; y = wrap(ctx, TJ.l[r.l], 100, y, 880, 54, 1) + 18;
+      ctx.fillStyle = '#2b8a3e'; ctx.font = '700 36px ' + F; ctx.fillText('🌱 좋은 달  ' + r.good.map(x => x + '월').join(' · '), 100, y); y += 64;
+      ctx.fillStyle = '#e8590c'; ctx.fillText('⚠️ 조심할 달  ' + r.care.map(x => x + '월').join(' · '), 100, y); y += 60;
+      ctx.fillStyle = '#1f2933'; ctx.font = '500 32px ' + F;
+      for (const x of r.care) y = wrap(ctx, x + '월 · ' + TJ.tips[x][1], 130, y, 850, 44, 1);
+      ctx.fillStyle = '#ffffff'; ctx.font = '700 34px ' + F; ctx.fillText('안전, 그리고 우리 가족', 72, 1010);
+      ctx.fillStyle = '#fff8e7'; ctx.font = '500 28px ' + F; ctx.fillText('재미로 보는 운세 · taeki-cord.github.io/taekidamoa', 72, 1052);
+      $('tjCard').src = cv.toDataURL('image/png');
+    }
+    $('tjShare').addEventListener('click', async () => {
+      const text = '2027년 내 토정비결은 "' + TJ.u[last.u][0] + '"이래요 🐑 띠랑 음력 생일만 고르면 돼요. 재미로 한번 봐요 👇';
+      try {
+        const blob = await new Promise(res => cv.toBlob(res, 'image/png'));
+        const file = new File([blob], 'tojeong-2027.png', { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text: text + '\\n' + shareUrl() }); return; }
+      } catch (e) { if (e.name === 'AbortError') return; }
+      sharePage(text, $('tjMsg'));
+    });
+    $('tjInvite').addEventListener('click', () => sharePage('엄마 아빠 2027년 토정비결 봐 드릴게요 🧧 띠랑 음력 생일만 고르면 돼요 👇', $('tjMsg')));
+  </script>'''
+
+
+def build_tojeong():
+    p = '../'
+    path = TOJEONG_PATH
+    title = f'2027 토정비결 · 재미로 보는 새해 운세 | {SITE_NAME}'
+    desc = ('붉은 양의 해 2027 정미년, 띠와 음력 생일로 보는 토정비결. '
+            '총운과 조심할 달, 그 달의 안전 한마디까지 재미로 확인해 보세요.')
+    zodiac = ['쥐', '소', '호랑이', '토끼', '용', '뱀', '말', '양', '원숭이', '닭', '개', '돼지']
+    tips = {m: [SEASONS[m][0], SEASONS[m][2][0][0], SEASONS[m][2][1][0]] for m in range(1, 13)}
+    data = json.dumps({'u': TOJEONG['upper'], 'm': TOJEONG['middle'], 'l': TOJEONG['lower'],
+                       'tips': tips, 'zodiac': zodiac}, ensure_ascii=False)
+    body = (TOJEONG_BODY
+            .replace('__ZOPTS__', ''.join(f'<option value="{i}">{z}띠</option>' for i, z in enumerate(zodiac)))
+            .replace('__MOPTS__', ''.join(f'<option value="{m}">{m}월</option>' for m in range(1, 13)))
+            .replace('__DOPTS__', ''.join(f'<option value="{d}">{d}일</option>' for d in range(1, 31))))
+    script = TOJEONG_SCRIPT.replace('__UNTIL__', TOJEONG_UNTIL).replace('__DATA__', data)
+    crumbs = breadcrumb_ld([('홈', ''), ('2027 토정비결', path)])
+    write(path + 'index.html', page(p, head(title, desc, path, p, ld=crumbs, noindex=True), header(p, 'tojeong'),
+                                     body, footer(p, '2027 붉은 양의 해 토정비결, 재미로 한번 봐요 🐑'), script))
+    return path
+
+
 # ───────────── 직접 고치는 페이지에 공통 메뉴·꼬리말 넣기 ─────────────
 
 def inject(rel, p, current, share_text):
@@ -727,6 +910,8 @@ def main():
     paths += [build_season(m) for m in range(1, 13)]
     paths.append(build_checklist())
     paths.append(build_balcony_check())
+    if TODAY < TOJEONG_UNTIL:
+        build_tojeong()  # 검색 제외(noindex) 페이지라 사이트맵에는 넣지 않습니다
     inject('index.html', '', 'home', '생활 안전 수칙이랑 긴급 연락처를 한 페이지에 정리해 놓은 곳이에요. 가족들도 한 번씩 보세요 👇')
     inject_home_cases()
     inject('로또번호/index.html', '../', None, '재미로 뽑아보는 오늘의 행운 번호 🍀')
